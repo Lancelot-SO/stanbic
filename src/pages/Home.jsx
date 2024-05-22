@@ -147,11 +147,11 @@ const Home = () => {
                         <h3 className='lg:items-center w-[300px] lg:w-full lg:flex lg:justify-center font-semibold mb-4 text-white'>OUR  PROUD SPONSORS</h3>
                         <div className="overflow-x-scroll sponsor">
                             <div className="flex justify-between">
-                                <img src={coinbase} alt="sponsor" className="" />
-                                <img src={spotify} alt="sponsor" className="" />
-                                <img src={slack} alt="sponsor" className="" />
-                                <img src={adobe} alt="sponsor" className="" />
-                                <img src={webflow} alt="sponsor" className="" />
+                                <img src={coinbase} alt="sponsor" className="mr-4 lg:mr-0" />
+                                <img src={spotify} alt="sponsor" className="mr-4 lg:mr-0" />
+                                <img src={slack} alt="sponsor" className="mr-4 lg:mr-0" />
+                                <img src={adobe} alt="sponsor" className="mr-4 lg:mr-0" />
+                                <img src={webflow} alt="sponsor" className="mr-4 lg:mr-0" />
                                 <img src={zoom} alt="sponsor" className="" />
                             </div>
                         </div>
