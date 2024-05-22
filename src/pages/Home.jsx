@@ -1,24 +1,24 @@
-import React, { useState } from 'react'
-import hero from "../assets/golfer.png"
-import logo from "../assets/logo.png"
-import ball from "../assets/golfball.png"
-import rectangle from "../assets/rectangle.png"
-import cloud from "../assets/cloud.png"
-import degree from "../assets/degree.png"
-import coinbase from "../assets/coinbase.png"
-import spotify from "../assets/spotify.png"
-import slack from "../assets/slack.png"
-import adobe from "../assets/adobe.png"
-import webflow from "../assets/webflow.png"
-import zoom from "../assets/zoom.png"
-import ballhole from "../assets/ballhole.png"
-import golfrack from "../assets/golfrack.png"
-import golfers from "../assets/bgGolfers.png"
-import badgegolf from "../assets/badgegolf.png"
-import sunny from "../assets/sunny.png"
-import clearsky from "../assets/clearsky.png"
-import rainy from "../assets/rainy.png"
-import night_storm from "../assets/night_storm.png"
+import React, { useState, useEffect, useCallback } from 'react';
+import hero from "../assets/golfer.png";
+import logo from "../assets/logo.png";
+import ball from "../assets/golfball.png";
+import rectangle from "../assets/rectangle.png";
+import cloud from "../assets/cloud.png";
+import degree from "../assets/degree.png";
+import coinbase from "../assets/coinbase.png";
+import spotify from "../assets/spotify.png";
+import slack from "../assets/slack.png";
+import adobe from "../assets/adobe.png";
+import webflow from "../assets/webflow.png";
+import zoom from "../assets/zoom.png";
+import ballhole from "../assets/ballhole.png";
+import golfrack from "../assets/golfrack.png";
+import golfers from "../assets/bgGolfers.png";
+import badgegolf from "../assets/badgegolf.png";
+import sunny from "../assets/sunny.png";
+import clearsky from "../assets/clearsky.png";
+import rainy from "../assets/rainy.png";
+import night_storm from "../assets/night_storm.png";
 
 import Slider1 from "../assets/slider1.png";
 import Slider2 from "../assets/slider2.png";
@@ -27,42 +27,45 @@ import Slider3 from "../assets/slider3.png";
 import { BiSearch } from "react-icons/bi";
 import { BsFacebook, BsTwitter, BsInstagram } from "react-icons/bs";
 
-import "./Home.css"
+import "./Home.css";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Link } from 'react-router-dom'
-import Slider from '../components/Slider'
+import { Link } from 'react-router-dom';
+import Slider from '../components/Slider';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import RegisterModal from '../components/RegisterModal'
-
+import RegisterModal from '../components/RegisterModal';
 
 const Home = () => {
 
     const api = {
         key: "e51a99ba5449d1c13ee0227cdc604c58",
         baseUrl: "https://api.openweathermap.org/data/2.5/",
-    }
+    };
 
     const [search, setSearch] = useState('');
     const [weather, setWeather] = useState({});
 
-    const searchPressed = () => {
-        fetch(`${api.baseUrl}weather?q=${search}&units=metric&APPID=${api.key}`)
+    const fetchWeather = useCallback((city) => {
+        fetch(`${api.baseUrl}weather?q=${city}&units=metric&APPID=${api.key}`)
             .then((res) => res.json())
             .then((result) => {
-                setWeather(result)
-            })
-    }
+                setWeather(result);
+            });
+    }, [api.baseUrl, api.key]);
 
+    useEffect(() => {
+        fetchWeather('Accra');
+    }, [fetchWeather]);
 
-    const [showCallModal, setshowCallModal] = useState(false);
-
+    const searchPressed = () => {
+        fetchWeather(search);
+    };
+    const [showCallModal, setShowCallModal] = useState(false);
 
     const responsive = {
         superLargeDesktop: {
-            // the naming can be any, depends on you.
             breakpoint: { max: 4000, min: 3000 },
             items: 5
         },
@@ -80,21 +83,6 @@ const Home = () => {
         }
     };
 
-    // const renderButtonGroupOutside = ({ currentSlide, totalItems, goToSlide }) => {
-    //     return (
-    //         <ul className="flex justify-center">
-    //             {[...Array(totalItems)].map((_, index) => (
-    //                 <li
-    //                     key={index}
-    //                     onClick={() => goToSlide(index)}
-    //                     className={`w-3 h-3 rounded-full mx-1 ${currentSlide === index ? 'bg-black' : 'bg-gray-300'}`}
-    //                 ></li>
-    //             ))}
-    //         </ul>
-    //     );
-    // };
-
-
     return (
         <div className='overflow-hidden'>
             <div className='relative'>
@@ -110,9 +98,9 @@ const Home = () => {
                         <h3 className='text-[12px] md:text-lg lg:text-2xl mt-2 mb-4 md:mb-6 lg:mb-6 md:w-[300px] lg:w-[334px] text-custom-blue font-normal leading-tight sm:leading-[24px] md:leading-[28px] lg:leading-[32px]'>STANBIC-ASANTEHENE</h3>
 
                         <Link to="/">
-                            <button type='button' onClick={() => setshowCallModal(true)} className='bg-white font-semibold text-blue-900 px-4 py-1 text-sm sm:text-base md:text-lg lg:text-xl lg:w-[200px] w-[150px] h-[30px] lg:h-[58px] hover:bg-blue-900 hover:text-white transition duration-300'>Register Now</button>
+                            <button type='button' onClick={() => setShowCallModal(true)} className='bg-white font-semibold text-blue-900 px-4 py-1 text-sm sm:text-base md:text-lg lg:text-xl lg:w-[200px] w-[150px] h-[30px] lg:h-[58px] hover:bg-blue-900 hover:text-white transition duration-300'>Register Now</button>
                         </Link>
-                        {showCallModal && <RegisterModal onClose={() => setshowCallModal(false)} />}
+                        {showCallModal && <RegisterModal onClose={() => setShowCallModal(false)} />}
                     </div>
                 </div>
 
@@ -140,11 +128,10 @@ const Home = () => {
                 </div>
             </div>
 
-
             <section>
                 <div className="w-full lg:h-[141px] top-[657px] px-0 lg:px-[160px] pt-[22px] lg:pt-[42px] gap-8 bg-custom-blue">
                     <div className='flex flex-col'>
-                        <h3 className='lg:items-center w-[300px] lg:w-full flex justify-center ml-8 lg:ml-0 font-semibold mb-4 text-white'>OUR  PROUD SPONSORS</h3>
+                        <h3 className='lg:items-center w-[300px] lg:w-full flex justify-center ml-8 lg:ml-0 font-semibold mb-4 text-white'>OUR PROUD SPONSORS</h3>
                         <div className="overflow-x-scroll sponsor">
                             <div className="flex justify-evenly lg:justify-between lg:w-full w-[55px]">
                                 <img src={coinbase} alt="sponsor" className="mr-4 lg:mr-0" />
@@ -155,16 +142,17 @@ const Home = () => {
                                 <img src={zoom} alt="sponsor" className="" />
                             </div>
                         </div>
-
                     </div>
                 </div>
             </section>
+
             <section>
                 <div className='lg:h-[873px] h-[773px] mb-[40px] relative'>
                     <img src={ballhole} alt='sponsor' className='w-full' />
                     <Slider />
                 </div>
             </section>
+
             <section className='relative'>
                 <img src={golfrack} alt='rack' className='w-[221px] h-[320px] absolute lg:right-[100px] right-[10px] top-[-140px]' />
 
@@ -188,7 +176,6 @@ const Home = () => {
                             <img src={Slider1} alt='rack' className="w-[568px] h-[353px]" />
                         </div>
                     </Carousel>
-
                 </div>
             </section>
 
@@ -203,65 +190,67 @@ const Home = () => {
                         reopened Giorgio Armani boutique in Los
                         Angeles.</p>
                     <Link to="/">
-                        <button type='button' onClick={() => setshowCallModal(true)} className='bg-white font-semibold text-blue-900 px-4 py-2 text-[12px] lg:text-[17px] lg:w-[200px] lg:h-[58px] hover:bg-blue-900 hover:text-white transition duration-300'>Register Here</button>
+                        <button type='button' onClick={() => setShowCallModal(true)} className='bg-white font-semibold text-blue-900 px-4 py-2 text-[12px] lg:text-[17px] lg:w-[200px] lg:h-[58px] hover:bg-blue-900 hover:text-white transition duration-300'>Register Here</button>
                     </Link>
-                    {showCallModal && <RegisterModal onClose={() => setshowCallModal(false)} />}
+                    {showCallModal && <RegisterModal onClose={() => setShowCallModal(false)} />}
                 </div>
             </section>
+
             <section className="relative">
                 <div className="relative">
-                    <img src={badgegolf} alt='golfers' className='w-full lg:h-auto h-[400px]' />
+                    <img src={badgegolf} alt='golfers' className='w-full lg:h-[600px] h-[350px]' />
                 </div>
                 <div className='absolute lg:top-20 top-[10px] left-[15px] lg:left-40 w-[343px] rounded-md h-[150px] lg:h-[193px] bg-gradient-to-r from-blue-500 to-indigo-500'>
+                    <div className='flex gap-2 items-center mt-6 ml-4 mb-2'>
+                        <input type='text' placeholder='Enter city/town' onChange={(e) => setSearch(e.target.value)} className='bg-transparent text-white' />
+                        <button onClick={searchPressed}><BiSearch size={24} className='text-white' /></button>
+                    </div>
                     {
                         typeof weather.main !== "undefined" ? (
                             <div>
                                 <div className='flex flex-col justify-center h-full px-4'>
                                     <div className='mb-2 flex justify-between'>
-                                        <h4 className="text-white">{weather.name}</h4>
+                                        <h4 className="text-white font-bold">{weather.name}</h4>
                                         <h4 className="text-white">{weather.timezone}</h4>
                                     </div>
                                     <div className='flex items-center mb-2'>
                                         <img src={sunny} alt='sunny' className="mr-2" />
                                         <div>
-                                            <h4 className="text-white">{weather.main.temp}</h4>
+                                            <h4 className="text-white">{weather.main.temp}°C</h4>
                                             <h4 className="text-white">{weather.weather[0].description}</h4>
                                         </div>
                                     </div>
-
                                 </div>
                                 <div className='w-[343px] h-[127px] mt-4 flex flex-row gap-2'>
                                     <div className='bg-yellow-100 w-[78px] items-center justify-center flex-col flex'>
                                         <img src={clearsky} alt='cloud' />
-                                        <strong className='font-bold'>{weather.main.temp_min}</strong>
-                                        <small className='text-[12px] text-zinc-700'>temp_min</small>
+                                        <strong className='font-bold'>{weather.main.temp_min}°C</strong>
+                                        <small className='text-[12px] text-zinc-700'>Temp Min</small>
                                     </div>
                                     <div className='bg-yellow-100 w-[78px] items-center justify-center flex-col flex'>
                                         <img src={rainy} alt='cloud' />
-                                        <strong className='font-bold'>{weather.main.temp_max}</strong>
-                                        <small className='text-[12px] text-zinc-700'>temp_max</small>
+                                        <strong className='font-bold'>{weather.main.temp_max}°C</strong>
+                                        <small className='text-[12px] text-zinc-700'>Temp Max</small>
                                     </div>
                                     <div className='bg-yellow-100 w-[78px] items-center justify-center flex-col flex'>
                                         <img src={night_storm} alt='cloud' />
-                                        <strong className='font-bold'>{weather.main.pressure}</strong>
-                                        <small className='text-[12px] text-zinc-700'>pressure</small>
+                                        <strong className='font-bold'>{weather.main.pressure} hPa</strong>
+                                        <small className='text-[12px] text-zinc-700'>Pressure</small>
                                     </div>
                                     <div className='bg-yellow-100 w-[78px] items-center justify-center flex-col flex'>
                                         <img src={clearsky} alt='cloud' />
-                                        <strong className='font-bold'>{weather.main.humidity}</strong>
-                                        <small className='text-[12px] text-zinc-700'>humidity</small>
+                                        <strong className='font-bold'>{weather.main.humidity}%</strong>
+                                        <small className='text-[12px] text-zinc-700'>Humidity</small>
                                     </div>
                                 </div>
                             </div>
-
                         ) : (
                             <div className='flex gap-2 items-center mt-6 ml-4'>
-                                <input type='text' placeholder='Enter city/town' onChange={(e) => setSearch(e.target.value)} className='bg-transparent text-white' />
+                                <input type='text' placeholder='Enter city/town' onChange={(e) => setSearch(e.target.value)} className='bg-red-500 text-white' />
                                 <button onClick={searchPressed}><BiSearch size={24} className='text-white' /></button>
                             </div>
                         )
                     }
-
                     <div className='w-[160px] h-[32px] flex mt-4 justify-evenly'>
                         <BsFacebook size={24} className='text-white' />
                         <BsTwitter size={24} className='text-white' />
@@ -269,9 +258,8 @@ const Home = () => {
                     </div>
                 </div>
             </section>
-
         </div>
-    )
+    );
 }
 
-export default Home
+export default Home;
