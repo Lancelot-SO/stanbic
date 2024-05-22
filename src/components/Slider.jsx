@@ -49,7 +49,7 @@ const Slider = () => {
 
     return (
         <div className='relative'>
-            <div className='absolute w-full lg:w-3/4 lg:pl-[50px] h-[435px] lg:top-[-160px] top-[-40px] lg:left-[152px] ml-4'>
+            <div className='absolute w-full lg:w-3/4 lg:pl-[50px] h-[435px] lg:top-[-160px] top-[-40px] lg:left-[152px] ml-8 lg:ml-4'>
                 <Carousel
                     ref={carouselRef}
                     swipeable={true}
