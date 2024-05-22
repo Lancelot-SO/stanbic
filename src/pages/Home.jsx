@@ -56,7 +56,7 @@ const Home = () => {
     }, [api.baseUrl, api.key]);
 
     useEffect(() => {
-        fetchWeather('Accra');
+        fetchWeather('Kumasi');
     }, [fetchWeather]);
 
     const searchPressed = () => {
