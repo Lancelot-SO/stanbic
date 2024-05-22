@@ -3,6 +3,9 @@ import axios from 'axios';
 import "../App.css"
 import ohene from "../assets/ohene.png"
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 
 const RegisterModal = ({ onClose }) => {
@@ -23,7 +26,7 @@ const RegisterModal = ({ onClose }) => {
         const newdata = { ...formData }
         newdata[e.target.name] = e.target.value
         setFormData(newdata)
-        console.log(newdata)
+        // console.log(newdata)
     };
 
     const handleSubmit = async (e) => {
@@ -31,12 +34,14 @@ const RegisterModal = ({ onClose }) => {
         try {
             const response = await axios.post(url, formData);
             if (response.status === 200) {
-                alert('Submitted successfully');
-                window.location.reload();
+                toast('Submitted successfully');
+                setTimeout(() => {
+                    window.location.reload();
+                }, 5000);
             }
         } catch (error) {
             console.error('There was an error!', error);
-            alert('There was an error submitting the form.');
+            toast('There was an error submitting the form.');
         }
     };
 
@@ -49,6 +54,7 @@ const RegisterModal = ({ onClose }) => {
         <div>
             <div ref={modalRef} onClick={closeModal} className='call-modal'>
                 <div className='call__modal-content'>
+                    <ToastContainer />
                     <div className='call-left'>
                         <img src={ohene} alt='caller' loading='lazy' />
                     </div>

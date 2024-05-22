@@ -24,10 +24,10 @@ import Slider1 from "../assets/slider1.png";
 import Slider2 from "../assets/slider2.png";
 import Slider3 from "../assets/slider3.png";
 
-import { WiRefresh } from "react-icons/wi";
+import { BiSearch } from "react-icons/bi";
 import { BsFacebook, BsTwitter, BsInstagram } from "react-icons/bs";
 
-
+import "./Home.css"
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -39,6 +39,23 @@ import RegisterModal from '../components/RegisterModal'
 
 
 const Home = () => {
+
+    const api = {
+        key: "e51a99ba5449d1c13ee0227cdc604c58",
+        baseUrl: "https://api.openweathermap.org/data/2.5/",
+    }
+
+    const [search, setSearch] = useState('');
+    const [weather, setWeather] = useState({});
+
+    const searchPressed = () => {
+        fetch(`${api.baseUrl}weather?q=${search}&units=metric&APPID=${api.key}`)
+            .then((res) => res.json())
+            .then((result) => {
+                setWeather(result)
+            })
+    }
+
 
     const [showCallModal, setshowCallModal] = useState(false);
 
@@ -79,80 +96,80 @@ const Home = () => {
 
 
     return (
-        <div>
+        <div className='overflow-hidden'>
             <div className='relative'>
-                <img src={hero} alt='hero' className='w-full h-[657px]' />
+                <img src={hero} alt='hero' className='w-full lg:h-[657px] h-[300px]' />
 
-                <div className='absolute flex top-[20%] left-[180px] flex-row '>
+                <div className='absolute flex flex-col top-[20%] lg:left-[180px] left-[5px]'>
                     <div className=''>
-                        <img src={logo} alt='hero' className='' />
+                        <img src={logo} alt='logo' className='w-[100px] lg:w-[128px] md:w-[150px] lg:h-[94px]' />
 
-                        <h1 className='text-4xl font-extrabold mt-4 w-[812px] h-[136px] text-custom-blue text-[65px] leading-[68px]'>
-                            INVITATION <br /> G<img src={ball} alt='ball' className='inline w-[63px] h-[61px]' />LF TOURNAMENT
+                        <h1 className='md:text-3xl lg:text-[65px] font-extrabold w-full md:w-[600px] lg:w-[812px] text-custom-blue leading-tight sm:leading-[40px] md:leading-[55px] lg:leading-[68px]'>
+                            INVITATION <br /> G<img src={ball} alt='ball' className='inline w-[30px] sm:w-[40px] md:w-[50px] lg:w-[63px] h-[30px] sm:h-[40px] md:h-[50px] lg:h-[61px]' />LF TOURNAMENT
                         </h1>
-                        <h3 className='text-lg mt-2 mb-10 w-[334px] h-[31px] text-custom-blue font-normal leading-[32px]'>STANBIC-ASANTEHENE</h3>
+                        <h3 className='text-base sm:text-lg md:text-xl lg:text-2xl mt-2 mb-4 md:mb-6 lg:mb-6 w-full md:w-[300px] lg:w-[334px] text-custom-blue font-normal leading-tight sm:leading-[24px] md:leading-[28px] lg:leading-[32px]'>STANBIC-ASANTEHENE</h3>
 
                         <Link to="/">
-                            <button type='button' onClick={() => setshowCallModal(true)} className='bg-white font-semibold text-blue-900 px-4 py-2 text-[17px] w-[271px] h-[58px] hover:bg-blue-900 hover:text-white transition duration-300'>Register Now</button>
+                            <button type='button' onClick={() => setshowCallModal(true)} className='bg-white font-semibold text-blue-900 px-4 py-1 text-sm sm:text-base md:text-lg lg:text-xl lg:w-[200px] h-[40px] lg:h-[58px] hover:bg-blue-900 hover:text-white transition duration-300'>Register Now</button>
                         </Link>
                         {showCallModal && <RegisterModal onClose={() => setshowCallModal(false)} />}
-
                     </div>
                 </div>
 
-                <div className='absolute mt-8 bottom-[5px] right-[180px] text-white flex flex-row'>
-                    <div className='flex flex-col'>
+                <div className='absolute bottom-[20px] md:bottom-[10px] lg:bottom-[5px] right-[20px] sm:right-[60px] md:right-[100px] lg:right-[180px] text-white flex flex-col md:flex-row'>
+                    <div className='flex flex-col mb-2 md:mb-0'>
                         <div className='flex items-center gap-2 mt-4'>
-                            <span className='w-[89px] h-[34px] leading-[16px] font-semibold text-[16px]'>Stockholm, Sweden</span>
-                            <img src={rectangle} alt='rect' className='mt-4' />
+                            <span className='text-sm sm:text-base md:text-lg lg:text-xl font-semibold leading-tight sm:leading-[16px] md:leading-[16px] lg:leading-[16px]'>Stockholm, Sweden</span>
+                            <img src={rectangle} alt='rect' className='hidden md:block' />
                         </div>
                         <div className='flex items-center gap-2'>
-                            <small>Tue, Jun 30, 2024</small>
-                            <img src={rectangle} alt='rect' />
+                            <small className='text-xs sm:text-sm md:text-base lg:text-lg'>Tue, Jun 30, 2024</small>
+                            <img src={rectangle} alt='rect' className='hidden md:block' />
                         </div>
                     </div>
-                    <div className='flex flex-row'>
-                        <img src={cloud} alt='rect' />
-                        <div className='flex flex-col pt-4'>
-                            <div className='flex'>
-                                <span className='text-custom-blue w-[41px] h-[43px] leading-[16px] font-semibold text-[35px]'>19</span>
-                                <img src={degree} alt='rect' className='w-[6px] h-[6px]' />
+                    <div className='flex items-center'>
+                        <img src={cloud} alt='rect' className='w-[30px] sm:w-[40px] md:w-[50px] lg:w-[60px]' />
+                        <div className='flex flex-col pt-4 md:pt-0'>
+                            <div className='flex items-baseline'>
+                                <span className='text-custom-blue text-2xl sm:text-3xl md:text-[35px] lg:text-[40px] font-semibold'>19</span>
+                                <img src={degree} alt='rect' className='w-[4px] sm:w-[5px] md:w-[6px] lg:w-[7px] h-[4px] sm:h-[5px] md:h-[6px] lg:h-[7px]' />
                             </div>
-                            <small>Rainy</small>
+                            <small className='text-xs sm:text-sm md:text-base lg:text-lg'>Rainy</small>
                         </div>
-
                     </div>
                 </div>
             </div>
 
 
             <section>
-                <div className="w-full h-[141px] top-[657px] px-[160px] pt-[42px] gap-8 bg-custom-blue">
+                <div className="w-full h-[141px] top-[657px] px-0 lg:px-[160px] pt-[22px] lg:pt-[42px] gap-8 bg-custom-blue">
                     <div className='flex flex-col'>
-                        <h3 className='items-center flex justify-center font-semibold mb-4 text-white'>OUR  PROUD SPONSORS</h3>
-                        <div className='flex justify-between'>
-                            <img src={coinbase} alt='sponsor' />
-                            <img src={spotify} alt='sponsor' />
-                            <img src={slack} alt='sponsor' />
-                            <img src={adobe} alt='sponsor' />
-                            <img src={webflow} alt='sponsor' />
-                            <img src={zoom} alt='sponsor' />
+                        <h3 className='lg:items-center w-[300px] lg:w-full lg:flex lg:justify-center font-semibold mb-4 text-white'>OUR  PROUD SPONSORS</h3>
+                        <div className="overflow-x-scroll sponsor">
+                            <div className="flex justify-between">
+                                <img src={coinbase} alt="sponsor" className="" />
+                                <img src={spotify} alt="sponsor" className="" />
+                                <img src={slack} alt="sponsor" className="" />
+                                <img src={adobe} alt="sponsor" className="" />
+                                <img src={webflow} alt="sponsor" className="" />
+                                <img src={zoom} alt="sponsor" className="" />
+                            </div>
                         </div>
+
                     </div>
                 </div>
             </section>
             <section>
-                <div className='h-[873px] mb-[40px] relative'>
+                <div className='lg:h-[873px] h-[773px] mb-[40px] relative'>
                     <img src={ballhole} alt='sponsor' className='w-full' />
                     <Slider />
-
                 </div>
             </section>
             <section className='relative'>
-                <img src={golfrack} alt='rack' className='w-[221px] h-[320px] absolute right-[100px] top-[-140px]' />
+                <img src={golfrack} alt='rack' className='w-[221px] h-[320px] absolute lg:right-[100px] right-[10px] top-[-140px]' />
 
-                <div className='w-full h-[759px] flex flex-col bg-blue-50 pl-[20px]'>
-                    <h2 className='text-custom-blue mt-[20px] w-[446px] h-[90px] pl-[70px] mb-[150px] text-[32px] font-bold'>Our Excellence Event <br />in images </h2>
+                <div className='w-full h-[659px] lg:h-[759px] flex flex-col bg-blue-50 lg:pl-[20px] pl-[20px]'>
+                    <h2 className='text-custom-blue mt-[20px] w-[446px] h-[90px] lg:pl-[70px] pl-4 mb-[150px] lg:text-[32px] text-[20px] font-bold'>Our Excellence Event <br />in images </h2>
                     <Carousel
                         swipeable={true}
                         draggable={true}
@@ -177,68 +194,77 @@ const Home = () => {
 
             <section className="relative">
                 <div className="relative">
-                    <img src={golfers} alt='golfers' className='w-full' />
+                    <img src={golfers} alt='golfers' className='w-full h-[230px] lg:h-full' />
                 </div>
-                <div className='absolute top-[150px] right-[250px] p-8 text-white'>
-                    <h2 className="text-3xl font-bold mb-8">OTUMFOUR</h2>
-                    <p className='mb-8 w-[378px] h-141px] text-[20px] leading-[30px] font-normal'>Lustrous yet understated. The new evening
+                <div className='absolute lg:top-[150px] top-[-20px] right-[10px] lg:right-[250px] p-8 text-white'>
+                    <h2 className="lg:text-3xl font-bold lg:mb-8">OTUMFOUR</h2>
+                    <p className='lg:mb-8 lg:w-[378px] w-[180px] h-[150px] lg:h-[141px] lg:text-[20px] text-[16px] lg:leading-[30px] font-normal'>Lustrous yet understated. The new evening
                         wear collection exclusively offered at the
                         reopened Giorgio Armani boutique in Los
                         Angeles.</p>
                     <Link to="/">
-                        <button type='button' className='bg-white font-semibold text-blue-900 px-4 py-2 text-[17px] w-[200px] h-[58px] hover:bg-blue-900 hover:text-white transition duration-300'>Register Here</button>
+                        <button type='button' className='bg-white font-semibold text-blue-900 px-4 py-2 text-[12px] lg:text-[17px] lg:w-[200px] lg:h-[58px] hover:bg-blue-900 hover:text-white transition duration-300'>Register Here</button>
                     </Link>
                 </div>
             </section>
             <section className="relative">
                 <div className="relative">
-                    <img src={badgegolf} alt='golfers' className='w-full' />
+                    <img src={badgegolf} alt='golfers' className='w-full lg:h-auto h-[400px]' />
                 </div>
-                <div className='absolute top-20 left-40 w-[343px] rounded-md h-[193px] bg-gradient-to-r from-blue-500 to-indigo-500'>
-                    <div className='flex flex-col justify-center h-full px-4'>
-                        <div className='mb-2 flex justify-between'>
-                            <h4 className="text-white">Thứ 2, 20 tháng 11, 2022</h4>
-                            <h4 className="text-white">3.30 PM</h4>
-                        </div>
-                        <div className='flex items-center mb-2'>
-                            <img src={sunny} alt='sunny' className="mr-2" />
+                <div className='absolute lg:top-20 top-[10px] left-[15px] lg:left-40 w-[343px] rounded-md h-[150px] lg:h-[193px] bg-gradient-to-r from-blue-500 to-indigo-500'>
+                    {
+                        typeof weather.main !== "undefined" ? (
                             <div>
-                                <h4 className="text-white">28º C</h4>
-                                <h4 className="text-white">Đồ Sơn - Hải Phòng</h4>
+                                <div className='flex flex-col justify-center h-full px-4'>
+                                    <div className='mb-2 flex justify-between'>
+                                        <h4 className="text-white">{weather.name}</h4>
+                                        <h4 className="text-white">{weather.timezone}</h4>
+                                    </div>
+                                    <div className='flex items-center mb-2'>
+                                        <img src={sunny} alt='sunny' className="mr-2" />
+                                        <div>
+                                            <h4 className="text-white">{weather.main.temp}</h4>
+                                            <h4 className="text-white">{weather.weather[0].description}</h4>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div className='w-[343px] h-[127px] mt-4 flex flex-row gap-2'>
+                                    <div className='bg-yellow-100 w-[78px] items-center justify-center flex-col flex'>
+                                        <img src={clearsky} alt='cloud' />
+                                        <strong className='font-bold'>{weather.main.temp_min}</strong>
+                                        <small className='text-[12px] text-zinc-700'>temp_min</small>
+                                    </div>
+                                    <div className='bg-yellow-100 w-[78px] items-center justify-center flex-col flex'>
+                                        <img src={rainy} alt='cloud' />
+                                        <strong className='font-bold'>{weather.main.temp_max}</strong>
+                                        <small className='text-[12px] text-zinc-700'>temp_max</small>
+                                    </div>
+                                    <div className='bg-yellow-100 w-[78px] items-center justify-center flex-col flex'>
+                                        <img src={night_storm} alt='cloud' />
+                                        <strong className='font-bold'>{weather.main.pressure}</strong>
+                                        <small className='text-[12px] text-zinc-700'>pressure</small>
+                                    </div>
+                                    <div className='bg-yellow-100 w-[78px] items-center justify-center flex-col flex'>
+                                        <img src={clearsky} alt='cloud' />
+                                        <strong className='font-bold'>{weather.main.humidity}</strong>
+                                        <small className='text-[12px] text-zinc-700'>humidity</small>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div className='flex gap-2 items-center'>
-                            <small className='text-white text-[14px]'>Update gần nhất 3.00 PM</small>
-                            <WiRefresh size={24} className='text-white' />
-                        </div>
-                    </div>
-                    <div className='w-[343px] h-[127px] mt-4 flex flex-row gap-2'>
-                        <div className='bg-yellow-100 w-[78px] items-center justify-center flex-col flex'>
-                            <img src={clearsky} alt='cloud' />
-                            <strong className='font-bold'>20º</strong>
-                            <small className='text-[12px] text-zinc-700'>4.00 PM</small>
-                        </div>
-                        <div className='bg-yellow-100 w-[78px] items-center justify-center flex-col flex'>
-                            <img src={rainy} alt='cloud' />
-                            <strong className='font-bold'>20º</strong>
-                            <small className='text-[12px] text-zinc-700'>5.00 PM</small>
-                        </div>
-                        <div className='bg-yellow-100 w-[78px] items-center justify-center flex-col flex'>
-                            <img src={night_storm} alt='cloud' />
-                            <strong className='font-bold'>19º</strong>
-                            <small className='text-[12px] text-zinc-700'>5.00 PM</small>
-                        </div>
-                        <div className='bg-yellow-100 w-[78px] items-center justify-center flex-col flex'>
-                            <img src={clearsky} alt='cloud' />
-                            <strong className='font-bold'>18º</strong>
-                            <small className='text-[12px] text-zinc-700'>7.00 PM</small>
-                        </div>
-                    </div>
+
+                        ) : (
+                            <div className='flex gap-2 items-center mt-6 ml-4'>
+                                <input type='text' placeholder='Enter city/town' onChange={(e) => setSearch(e.target.value)} className='bg-transparent text-white' />
+                                <button onClick={searchPressed}><BiSearch size={24} className='text-white' /></button>
+                            </div>
+                        )
+                    }
 
                     <div className='w-[160px] h-[32px] flex mt-4 justify-evenly'>
-                        <BsFacebook size={24} className='text-purple-900' />
-                        <BsTwitter size={24} className='text-purple-900' />
-                        <BsInstagram size={24} className='text-purple-900' />
+                        <BsFacebook size={24} className='text-white' />
+                        <BsTwitter size={24} className='text-white' />
+                        <BsInstagram size={24} className='text-white' />
                     </div>
                 </div>
             </section>

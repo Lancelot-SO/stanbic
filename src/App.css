@@ -5,7 +5,6 @@ html {
 * {
   margin: 0;
   padding: 0;
-  border: 0;
   outline: 0;
   box-sizing: border-box;
 }
@@ -48,6 +47,29 @@ html {
   /*TL TR BR BL*/
 }
 
+@media (max-width: 767px) {
+  .call-left {
+    display: none;
+  }
+
+  .call-close {
+    font-size: 30px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #0637A2;
+    color: #fff;
+    cursor: pointer;
+    position: fixed;
+    top: 50px;
+    left: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+  }
+}
+
 .call-right {
   flex: 1;
   padding: 10px;
@@ -67,6 +89,7 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 20;
 }
 
 .callmodal {
