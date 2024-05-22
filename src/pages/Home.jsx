@@ -197,7 +197,7 @@ const Home = () => {
                     <img src={golfers} alt='golfers' className='w-full h-[230px] lg:h-full' />
                 </div>
                 <div className='absolute lg:top-[150px] top-[-20px] right-[10px] lg:right-[250px] p-8 text-white'>
-                    <h2 className="lg:text-3xl font-bold lg:mb-8">OTUMFOUR</h2>
+                    <h2 className="lg:text-3xl font-bold lg:mb-8">OTUMFUO</h2>
                     <p className='lg:mb-8 lg:w-[378px] w-[180px] h-[150px] lg:h-[141px] lg:text-[20px] text-[16px] lg:leading-[30px] font-normal'>Lustrous yet understated. The new evening
                         wear collection exclusively offered at the
                         reopened Giorgio Armani boutique in Los
