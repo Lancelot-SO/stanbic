@@ -194,17 +194,18 @@ const Home = () => {
 
             <section className="relative">
                 <div className="relative">
-                    <img src={golfers} alt='golfers' className='w-full h-[230px] lg:h-full' />
+                    <img src={golfers} alt='golfers' className='w-full h-[200px] lg:h-full' />
                 </div>
-                <div className='absolute lg:top-[150px] top-[-20px] right-[10px] lg:right-[250px] p-8 text-white'>
+                <div className='absolute lg:top-[150px] top-[40px] right-[10px] lg:right-[250px] lg:p-8 text-white'>
                     <h2 className="lg:text-3xl font-bold lg:mb-8">OTUMFUO</h2>
-                    <p className='lg:mb-8 lg:w-[378px] w-[180px] h-[150px] lg:h-[141px] lg:text-[20px] text-[16px] lg:leading-[30px] font-normal'>Lustrous yet understated. The new evening
+                    <p className='lg:mb-8 lg:w-[378px] w-[230px] h-[80px] lg:h-[141px] lg:text-[20px] text-[12px] lg:leading-[30px] font-normal'>Lustrous yet understated. The new evening
                         wear collection exclusively offered at the
                         reopened Giorgio Armani boutique in Los
                         Angeles.</p>
                     <Link to="/">
-                        <button type='button' className='bg-white font-semibold text-blue-900 px-4 py-2 text-[12px] lg:text-[17px] lg:w-[200px] lg:h-[58px] hover:bg-blue-900 hover:text-white transition duration-300'>Register Here</button>
+                        <button type='button' onClick={() => setshowCallModal(true)} className='bg-white font-semibold text-blue-900 px-4 py-2 text-[12px] lg:text-[17px] lg:w-[200px] lg:h-[58px] hover:bg-blue-900 hover:text-white transition duration-300'>Register Here</button>
                     </Link>
+                    {showCallModal && <RegisterModal onClose={() => setshowCallModal(false)} />}
                 </div>
             </section>
             <section className="relative">
