@@ -89,7 +89,7 @@ const Slider = () => {
             </div>
 
             <div className=''>
-                <div className='absolute font-bold border-r border-t border-b p-5 lg:top-[350px] top-[450px] lg:left-[40%] md:left-[250px] left-[50px] w-[150px] items-center justify-center'>
+                <div className='absolute font-bold border-r border-t border-b p-5 lg:top-[350px] top-[450px] lg:left-[40%] md:left-[250px] tablet:left-[130px] left-[50px] w-[150px] items-center justify-center'>
                     20 images
                 </div>
                 <div className='absolute font-bold border border-r-0 border-l-0 py-5 pl-10 lg:top-[350px] top-[450px] left-[49%] w-[150px] items-center justify-center'>

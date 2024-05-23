@@ -10,7 +10,8 @@ module.exports = {
         'skybg': '#0f52ba'
       },
       screens: {
-        'tablet': '640px',
+        'small': '430px',
+        'tablet': '570px',
         'md': '768px',
         'lg': '1024px',
         'xl': '1280px',
