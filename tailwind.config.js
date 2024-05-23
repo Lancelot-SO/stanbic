@@ -9,8 +9,20 @@ module.exports = {
         'custom-blue': '#0033A1',
         'skybg': '#0f52ba'
       },
+      backdropBlur: {
+        '16': '16px',
+      },
+      backdropSaturate: {
+        '180': '180%',
+      },
+      backgroundColor: {
+        'custom-bg': 'rgba(251, 252, 254, 0.75)',
+      },
+      borderColor: {
+        'custom-border': 'rgba(255, 255, 255, 0.125)',
+      },
     },
   },
-  plugins: [],
+  plugins: [require('tailwindcss-filters'),],
 }
 

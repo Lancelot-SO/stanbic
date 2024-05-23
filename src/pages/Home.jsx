@@ -222,22 +222,22 @@ const Home = () => {
                                     </div>
                                 </div>
                                 <div className='w-[343px] h-[127px] mt-4 flex flex-row gap-2'>
-                                    <div className='bg-yellow-100 w-[78px] items-center justify-center flex-col flex'>
+                                    <div className='backdrop-blur-16 backdrop-saturate-180 bg-custom-bg rounded-xl border border-custom-border w-[78px] items-center justify-center flex-col flex'>
                                         <img src={clearsky} alt='cloud' />
                                         <strong className='font-bold'>{weather.main.temp_min}°C</strong>
                                         <small className='text-[12px] text-zinc-700'>Temp Min</small>
                                     </div>
-                                    <div className='bg-yellow-100 w-[78px] items-center justify-center flex-col flex'>
+                                    <div className='backdrop-blur-16 backdrop-saturate-180 bg-custom-bg rounded-xl border border-custom-border w-[78px] items-center justify-center flex-col flex'>
                                         <img src={rainy} alt='cloud' />
                                         <strong className='font-bold'>{weather.main.temp_max}°C</strong>
                                         <small className='text-[12px] text-zinc-700'>Temp Max</small>
                                     </div>
-                                    <div className='bg-yellow-100 w-[78px] items-center justify-center flex-col flex'>
+                                    <div className='backdrop-blur-16 backdrop-saturate-180 bg-custom-bg rounded-xl border border-custom-border w-[78px] items-center justify-center flex-col flex'>
                                         <img src={night_storm} alt='cloud' />
                                         <strong className='font-bold'>{weather.main.pressure} hPa</strong>
                                         <small className='text-[12px] text-zinc-700'>Pressure</small>
                                     </div>
-                                    <div className='bg-yellow-100 w-[78px] items-center justify-center flex-col flex'>
+                                    <div className='backdrop-blur-16 backdrop-saturate-180 bg-custom-bg rounded-xl border border-custom-border w-[78px] items-center justify-center flex-col flex'>
                                         <img src={clearsky} alt='cloud' />
                                         <strong className='font-bold'>{weather.main.humidity}%</strong>
                                         <small className='text-[12px] text-zinc-700'>Humidity</small>
