@@ -72,7 +72,7 @@ const RegisterModal = ({ onClose }) => {
                                 </div>
                                 <div className='mb-2'>
                                     <label>Club Name</label>
-                                    <select id="clubname" name='club_name' value={formData.club_name} onChange={(e) => handleChange(e)} required className="block appearance-none w-full bg-white dark:bg-custom-blue border border-gray-200 dark:border-gray-600 text-gray-700 dark:text-gray-300 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+                                    <select id="clubname" name='club_name' value={formData.club_name} onChange={(e) => handleChange(e)} required className="block appearance-none w-full bg-white border border-gray-200 text-gray-700 dark:text-gray-300 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
                                         <option>Ohene Fun Club</option>
                                         <option>Greatness Club</option>
                                         <option>Stanbic Club</option>
@@ -81,7 +81,7 @@ const RegisterModal = ({ onClose }) => {
                                 </div>
                                 <div className='mb-2'>
                                     <label>T-Shirt Size</label>
-                                    <select id="clubname" name='shirt_size' value={formData.shirt_size} onChange={(e) => handleChange(e)} required className="block appearance-none w-full bg-white dark:bg-custom-blue border border-gray-200 dark:border-gray-600 text-gray-700 dark:text-gray-300 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+                                    <select id="clubname" name='shirt_size' value={formData.shirt_size} onChange={(e) => handleChange(e)} required className="block appearance-none w-full bg-white border border-gray-200  text-gray-700 dark:text-gray-300 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
                                         <option>S</option>
                                         <option>M</option>
                                         <option>L</option>
@@ -90,7 +90,7 @@ const RegisterModal = ({ onClose }) => {
                                 </div>
                                 <div className='mb-2'>
                                     <label>Dietary Need</label>
-                                    <select id="clubname" name='dietary_needs' value={formData.dietary_needs} onChange={(e) => handleChange(e)} required className="block appearance-none w-full bg-white dark:bg-custom-blue border border-gray-200 dark:border-gray-600 text-gray-700 dark:text-gray-300 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+                                    <select id="clubname" name='dietary_needs' value={formData.dietary_needs} onChange={(e) => handleChange(e)} required className="block appearance-none w-full bg-white border border-gray-200 text-gray-700 dark:text-gray-300 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
                                         <option>Achimota</option>
                                         <option>Other</option>
                                     </select>
@@ -102,7 +102,7 @@ const RegisterModal = ({ onClose }) => {
                                 </div>
                                 <div className='mb-2'>
                                     <label>Preferred Travel Time</label>
-                                    <select id="clubname" name='preferred_travel_time' value={formData.preferred_travel_time} onChange={(e) => handleChange(e)} required className="block appearance-none w-full bg-white dark:bg-custom-blue border border-gray-200 dark:border-gray-600 text-gray-700 dark:text-gray-300 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+                                    <select id="clubname" name='preferred_travel_time' value={formData.preferred_travel_time} onChange={(e) => handleChange(e)} required className="block appearance-none w-full bg-white border border-gray-200 text-gray-700 dark:text-gray-300 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
                                         <option>Achimota</option>
                                         <option>Other</option>
                                     </select>
