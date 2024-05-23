@@ -2,3 +2,12 @@
     display: none;
     /* Hides the scrollbar in Chrome, Safari, and newer versions of Edge */
 }
+
+.caro__image {
+    position: relative;
+}
+
+.index {
+    position: absolute;
+    z-index: 999;
+}

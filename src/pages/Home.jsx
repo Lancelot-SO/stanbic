@@ -39,6 +39,23 @@ import RegisterModal from '../components/RegisterModal';
 
 const Home = () => {
 
+    const [selectedImage, setSelectedImage] = useState(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+
+    const handleImageClick = (image) => {
+        setSelectedImage(image);
+        setIsModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+        setSelectedImage(null);
+    };
+
+    const images = [Slider1, Slider2, Slider3, Slider1, Slider3];
+
+
     const api = {
         key: "e51a99ba5449d1c13ee0227cdc604c58",
         baseUrl: "https://api.openweathermap.org/data/2.5/",
@@ -71,7 +88,7 @@ const Home = () => {
         },
         desktop: {
             breakpoint: { max: 3000, min: 1024 },
-            items: 3
+            items: 4
         },
         tablet: {
             breakpoint: { max: 1024, min: 464 },
@@ -162,20 +179,30 @@ const Home = () => {
                         swipeable={true}
                         draggable={true}
                         showDots={false}
+                        className=''
                         responsive={responsive}>
-                        <div className='mr-4'>
-                            <img src={Slider1} alt='rack' className="w-[568px] h-[353px]" />
-                        </div>
-                        <div className='mr-4'>
-                            <img src={Slider2} alt='rack' className="w-[568px] h-[353px]" />
-                        </div>
-                        <div className='mr-4'>
-                            <img src={Slider3} alt='rack' className="w-[568px] h-[353px]" />
-                        </div>
-                        <div className='mr-4'>
-                            <img src={Slider1} alt='rack' className="w-[568px] h-[353px]" />
-                        </div>
+                        {images.map((image, index) => (
+                            <div
+                                key={index}
+                                className='relative transition-transform duration-300 h-[500px] flex items-center'
+                                onClick={() => handleImageClick(image)}
+                            >
+                                <img
+                                    src={image}
+                                    alt='rack'
+                                    className='w-[358px] h-[353px] cursor-pointer transform'
+                                />
+                            </div>
+                        ))}
                     </Carousel>
+                    {isModalOpen && (
+                        <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
+                            <div className="relative bg-white w-[550px] h-[550px] p-4 rounded-lg">
+                                <button onClick={closeModal} className="absolute mb-4 text-custom-blue font-bold bg-white bg-opacity-50 right-5 top-5 text-[20px] w-[30px] h-[30px] pb-1 flex mt-1 rounded-full items-center justify-center">x</button>
+                                <img src={selectedImage} alt="Selected" className="w-full h-[520px] max-h-screen max-w-full" />
+                            </div>
+                        </div>
+                    )}
                 </div>
             </section>
 
@@ -246,7 +273,7 @@ const Home = () => {
                             </div>
                         ) : (
                             <div className='flex gap-2 items-center mt-6 ml-4'>
-                                <input type='text' placeholder='Enter city/town' onChange={(e) => setSearch(e.target.value)} className='bg-red-500 text-white' />
+                                <input type='text' placeholder='Enter city/town' onChange={(e) => setSearch(e.target.value)} className='text-white' />
                                 <button onClick={searchPressed}><BiSearch size={24} className='text-white' /></button>
                             </div>
                         )
