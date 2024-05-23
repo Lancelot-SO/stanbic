@@ -18,7 +18,7 @@ const Navbar = () => {
                 backgroundSize: 'cover',
             }}
         >
-            <div className="flex items-center lg:opacity-0">
+            <div className="flex items-center lg:opacity-0 md:opacity-0">
                 <Link to="/" className="">
                     <img src={logo} alt="Logo" className="h-8" />
                 </Link>

@@ -9,6 +9,13 @@ module.exports = {
         'custom-blue': '#0033A1',
         'skybg': '#0f52ba'
       },
+      screens: {
+        'tablet': '640px',
+        'md': '768px',
+        'lg': '1024px',
+        'xl': '1280px',
+        '2xl': '1536px',
+      },
       backdropBlur: {
         '16': '16px',
       },

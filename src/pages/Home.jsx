@@ -86,11 +86,11 @@ const Home = () => {
     return (
         <div className='overflow-hidden'>
             <div className='relative'>
-                <img src={hero} alt='hero' className='w-full lg:h-[657px] h-[200px]' />
+                <img src={hero} alt='hero' className='w-full md:h-[400px] lg:h-[657px] h-[200px]' />
 
                 <div className='absolute flex flex-col top-[20%] lg:left-[180px] left-[5px]'>
                     <div className=''>
-                        <img src={logo} alt='logo' className='w-[30px] lg:w-[128px] md:w-[150px] lg:h-[94px] h-[20px]' />
+                        <img src={logo} alt='logo' className='w-[30px] lg:w-[128px] md:w-[90px] md:h-[80px]  lg:h-[94px] h-[20px]' />
 
                         <h1 className='md:text-3xl text-[22px] lg:text-[65px] font-extrabold w-full md:w-[600px] lg:w-[812px] text-custom-blue leading-tight sm:leading-[40px] md:leading-[55px] lg:leading-[68px]'>
                             INVITATION <br /> G<img src={ball} alt='ball' className='inline w-[30px] sm:w-[40px] md:w-[50px] lg:w-[63px] h-[30px] sm:h-[40px] md:h-[50px] lg:h-[61px]' />LF TOURNAMENT
@@ -98,13 +98,13 @@ const Home = () => {
                         <h3 className='text-[12px] md:text-lg lg:text-2xl mt-2 mb-4 md:mb-6 lg:mb-6 md:w-[300px] lg:w-[334px] text-custom-blue font-normal leading-tight sm:leading-[24px] md:leading-[28px] lg:leading-[32px]'>STANBIC-ASANTEHENE</h3>
 
                         <Link to="/">
-                            <button type='button' onClick={() => setShowCallModal(true)} className='bg-white font-semibold text-blue-900 px-4 py-1 text-sm sm:text-base md:text-lg lg:text-xl lg:w-[200px] w-[150px] h-[30px] lg:h-[58px] hover:bg-blue-900 hover:text-white transition duration-300'>Register Now</button>
+                            <button type='button' onClick={() => setShowCallModal(true)} className='bg-white font-semibold text-blue-900 px-4 py-1 text-sm sm:text-base md:h-[40px] md:text-lg lg:text-xl lg:w-[200px] w-[150px] h-[30px] lg:h-[58px] hover:bg-blue-900 hover:text-white transition duration-300'>Register Now</button>
                         </Link>
                         {showCallModal && <RegisterModal onClose={() => setShowCallModal(false)} />}
                     </div>
                 </div>
 
-                <div className='absolute bottom-[20px] md:bottom-[10px] lg:bottom-[5px] right-[20px] sm:right-[60px] md:right-[100px] lg:right-[180px] text-white lg:flex hidden flex-col md:flex-row'>
+                <div className='absolute bottom-[20px] md:bottom-[10px] lg:bottom-[5px] right-[20px] sm:right-[60px] md:right-[100px] lg:right-[180px] text-white lg:flex hidden md:hidden flex-col md:flex-row'>
                     <div className='flex flex-col mb-2 md:mb-0'>
                         <div className='flex items-center gap-2 mt-4'>
                             <span className='text-sm sm:text-base md:text-lg lg:text-xl font-semibold leading-tight sm:leading-[16px] md:leading-[16px] lg:leading-[16px]'>Stockholm, Sweden</span>
@@ -131,9 +131,9 @@ const Home = () => {
             <section>
                 <div className="w-full lg:h-[141px] top-[657px] px-0 lg:px-[160px] pt-[22px] lg:pt-[42px] gap-8 bg-custom-blue">
                     <div className='flex flex-col'>
-                        <h3 className='lg:items-center w-[300px] lg:w-full flex justify-center ml-8 lg:ml-0 font-semibold mb-4 text-white'>OUR PROUD SPONSORS</h3>
+                        <h3 className='lg:items-center md:items-center w-[300px] md:flex md:ml-[200px] lg:w-full flex justify-center ml-8 lg:ml-0 font-semibold mb-4 text-white'>OUR PROUD SPONSORS</h3>
                         <div className="overflow-x-scroll sponsor">
-                            <div className="flex justify-evenly lg:justify-between lg:w-full w-[55px]">
+                            <div className="flex justify-evenly lg:justify-between lg:w-full md:items-center md:w-full w-[55px]">
                                 <img src={coinbase} alt="sponsor" className="mr-4 lg:mr-0" />
                                 <img src={spotify} alt="sponsor" className="mr-4 lg:mr-0" />
                                 <img src={slack} alt="sponsor" className="mr-4 lg:mr-0" />
@@ -157,7 +157,7 @@ const Home = () => {
                 <img src={golfrack} alt='rack' className='w-[221px] h-[320px] absolute lg:right-[100px] right-[10px] top-[-140px]' />
 
                 <div className='w-full h-[659px] lg:h-[759px] flex flex-col bg-blue-50 lg:pl-[20px] pl-[20px]'>
-                    <h2 className='text-custom-blue mt-[20px] w-[446px] h-[90px] lg:pl-[70px] pl-4 mb-[150px] lg:text-[32px] text-[20px] font-bold'>Our Excellence Event <br />in images </h2>
+                    <h2 className='text-custom-blue mt-[20px] w-[446px] h-[90px] lg:pl-[70px] pl-4 mb-[150px] lg:text-[32px] md:text-[28px] text-[20px] font-bold'>Our Excellence Event <br />in images </h2>
                     <Carousel
                         swipeable={true}
                         draggable={true}
@@ -181,9 +181,9 @@ const Home = () => {
 
             <section className="relative">
                 <div className="relative">
-                    <img src={golfers} alt='golfers' className='w-full h-[200px] lg:h-full' />
+                    <img src={golfers} alt='golfers' className='w-full h-[200px]  md:h-[300px] lg:h-full' />
                 </div>
-                <div className='absolute lg:top-[150px] top-[40px] right-[10px] lg:right-[250px] lg:p-8 text-white'>
+                <div className='absolute lg:top-[150px] top-[40px]  md:top-[80px] right-[10px] md:right-[70px] lg:right-[250px] lg:p-8 text-white'>
                     <h2 className="lg:text-3xl font-bold lg:mb-8">OTUMFUO</h2>
                     <p className='lg:mb-8 lg:w-[378px] w-[230px] h-[80px] lg:h-[141px] lg:text-[20px] text-[12px] lg:leading-[30px] font-normal'>Lustrous yet understated. The new evening
                         wear collection exclusively offered at the

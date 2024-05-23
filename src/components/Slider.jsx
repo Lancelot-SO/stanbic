@@ -49,7 +49,7 @@ const Slider = () => {
 
     return (
         <div className='relative'>
-            <div className='absolute w-full lg:w-3/4 lg:pl-[50px] h-[435px] lg:top-[-160px] top-[-40px] lg:left-[152px] ml-8 lg:ml-4'>
+            <div className='absolute w-full lg:w-3/4 lg:pl-[50px] h-[435px] lg:top-[-160px] top-[-40px] md:top-[-100px] lg:left-[152px] ml-8 lg:ml-4'>
                 <Carousel
                     ref={carouselRef}
                     swipeable={true}
@@ -79,7 +79,7 @@ const Slider = () => {
             </div>
 
             {/* Navigation buttons */}
-            <div className='relative flex justify-between items-center'>
+            <div className='relative flex justify-between md:top-[140px] lg:top-0 items-center'>
                 <div className="prev absolute text-custom-blue left-4 top-1/2 transform -translate-y-1/2 cursor-pointer" onClick={goToPrev}>
                     <IoMdArrowDropleft size={24} />
                 </div>
@@ -89,7 +89,7 @@ const Slider = () => {
             </div>
 
             <div className=''>
-                <div className='absolute font-bold border-r border-t border-b p-5 lg:top-[350px] top-[450px] lg:left-[40%] left-[50px] w-[150px] items-center justify-center'>
+                <div className='absolute font-bold border-r border-t border-b p-5 lg:top-[350px] top-[450px] lg:left-[40%] md:left-[250px] left-[50px] w-[150px] items-center justify-center'>
                     20 images
                 </div>
                 <div className='absolute font-bold border border-r-0 border-l-0 py-5 pl-10 lg:top-[350px] top-[450px] left-[49%] w-[150px] items-center justify-center'>

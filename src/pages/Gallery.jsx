@@ -19,9 +19,9 @@ const Gallery = () => {
         <div className='overflow-hidden'>
             <img src={gallerybg} alt='head' className='w-full' />
 
-            <div className='absolute flex lg:top-[45%] top-[80px] lg:left-[180px] left-4 flex-row'>
+            <div className='absolute flex lg:top-[45%] md:top-[20%] top-[80px] lg:left-[180px] left-4 flex-row'>
                 <div className=''>
-                    <h1 className='lg:text-4xl text-2xl font-extrabold mt-4 lg:w-[812px] w-full lg:h-[136px] text-custom-blue lg:text-[65px] lg:leading-[68px] leading-8'>
+                    <h1 className='lg:text-4xl text-2xl font-extrabold mt-4 lg:w-[812px] w-full lg:h-[136px] text-custom-blue lg:text-[65px] md:text-[40px] md:leading-[40px] lg:leading-[68px] leading-8'>
                         OUR <br />
                         TOURNAMENT<br />
                         IMAGES
@@ -34,7 +34,7 @@ const Gallery = () => {
                     <div className='lg:w-[648px] w-full lg:h-[648px]'>
                         <img src={card1} alt='card' className='lg:h-full h-auto w-full' />
                     </div>
-                    <div className='grid grid-cols-2 gap-4'>
+                    <div className='grid grid-cols-2 gap-4 md:items-center md:place-items-center'>
                         <img src={card2} alt='card' className='w-[312px] lg:h-[312px] h-auto' />
                         <img src={card3} alt='card' className='w-[312px] lg:h-[312px] h-auto' />
                         <img src={card4} alt='card' className='w-[312px] lg:h-[312px] h-auto' />
@@ -49,18 +49,18 @@ const Gallery = () => {
                 </div>
 
                 <div className='mt-16 flex lg:ml-[80px] flex-col  items-center justify-center lg:w-[1320px] w-full h-full lg:h-[985px]'>
-                    <div className='flex gap-6 lg:flex-row flex-col'>
-                        <img src={product} alt='card' className='w-[312px] h-[400px]' />
-                        <img src={product1} alt='card' className='w-[312px] h-[400px]' />
-                        <img src={product2} alt='card' className='w-[312px] h-[400px]' />
-                        <img src={product3} alt='card' className='w-[312px] h-[400px]' />
+                    <div className='flex gap-6 lg:flex-row flex-col md:flex-row md:flex-wrap md:items-center md:justify-center'>
+                        <img src={product} alt='card' className='w-[312px] h-[400px] md:w-[290]' />
+                        <img src={product1} alt='card' className='w-[312px] h-[400px] md:w-[290]' />
+                        <img src={product2} alt='card' className='w-[312px] h-[400px] md:w-[290]' />
+                        <img src={product3} alt='card' className='w-[312px] h-[400px] md:w-[290]' />
                     </div>
 
-                    <div className='flex gap-6 mt-8 lg:flex-row flex-col'>
-                        <img src={product4} alt='card' className='w-[312px] h-[400px]' />
-                        <img src={product5} alt='card' className='w-[312px] h-[400px]' />
-                        <img src={product6} alt='card' className='w-[312px] h-[400px]' />
-                        <img src={product7} alt='card' className='w-[312px] h-[400px]' />
+                    <div className='flex gap-6 mt-8 lg:flex-row flex-col md:flex-row md:flex-wrap md:items-center md:justify-center'>
+                        <img src={product4} alt='card' className='w-[312px] h-[400px] md:w-[290]' />
+                        <img src={product5} alt='card' className='w-[312px] h-[400px] md:w-[290]' />
+                        <img src={product6} alt='card' className='w-[312px] h-[400px] md:w-[290]' />
+                        <img src={product7} alt='card' className='w-[312px] h-[400px] md:w-[290]' />
                     </div>
                 </div>
             </section>
