@@ -68,11 +68,11 @@ const RegisterModal = ({ onClose }) => {
                             <form className='' onSubmit={(e) => handleSubmit(e)}>
                                 <div className='flex flex-col mb-2'>
                                     <label>Full Name</label>
-                                    <input type='text' name='full_name' placeholder='e.g. John Doe' value={formData.full_name} onChange={(e) => handleChange(e)} required />
+                                    <input type='text' name='full_name' placeholder='e.g. John Doe' value={formData.full_name} onChange={(e) => handleChange(e)} className='text-black' required />
                                 </div>
                                 <div className='mb-2'>
                                     <label>Club Name</label>
-                                    <select id="clubname" name='club_name' value={formData.club_name} onChange={(e) => handleChange(e)} required className="block appearance-none w-full bg-white border border-gray-200 text-gray-700 dark:text-gray-300 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+                                    <select id="clubname" name='club_name' value={formData.club_name} onChange={(e) => handleChange(e)} required className="block appearance-none w-full bg-white border border-gray-200 text-gray-700 dark:text-gray-600 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
                                         <option>Ohene Fun Club</option>
                                         <option>Greatness Club</option>
                                         <option>Stanbic Club</option>
@@ -81,7 +81,7 @@ const RegisterModal = ({ onClose }) => {
                                 </div>
                                 <div className='mb-2'>
                                     <label>T-Shirt Size</label>
-                                    <select id="clubname" name='shirt_size' value={formData.shirt_size} onChange={(e) => handleChange(e)} required className="block appearance-none w-full bg-white border border-gray-200  text-gray-700 dark:text-gray-300 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+                                    <select id="clubname" name='shirt_size' value={formData.shirt_size} onChange={(e) => handleChange(e)} required className="block appearance-none w-full bg-white border border-gray-200  text-gray-700 dark:text-gray-600 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
                                         <option>S</option>
                                         <option>M</option>
                                         <option>L</option>
@@ -90,7 +90,7 @@ const RegisterModal = ({ onClose }) => {
                                 </div>
                                 <div className='mb-2'>
                                     <label>Dietary Need</label>
-                                    <select id="clubname" name='dietary_needs' value={formData.dietary_needs} onChange={(e) => handleChange(e)} required className="block appearance-none w-full bg-white border border-gray-200 text-gray-700 dark:text-gray-300 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+                                    <select id="clubname" name='dietary_needs' value={formData.dietary_needs} onChange={(e) => handleChange(e)} required className="block appearance-none w-full bg-white border border-gray-200 text-gray-700 dark:text-gray-600 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
                                         <option>Achimota</option>
                                         <option>Other</option>
                                     </select>
@@ -98,11 +98,11 @@ const RegisterModal = ({ onClose }) => {
 
                                 <div className='flex flex-col mb-2'>
                                     <label>Golf Handicap</label>
-                                    <input type='text' name='golf_handicap' value={formData.golf_handicap} onChange={(e) => handleChange(e)} placeholder='e.g. golf' required />
+                                    <input type='text' name='golf_handicap' value={formData.golf_handicap} onChange={(e) => handleChange(e)} placeholder='e.g. golf' className='text-black' required />
                                 </div>
                                 <div className='mb-2'>
                                     <label>Preferred Travel Time</label>
-                                    <select id="clubname" name='preferred_travel_time' value={formData.preferred_travel_time} onChange={(e) => handleChange(e)} required className="block appearance-none w-full bg-white border border-gray-200 text-gray-700 dark:text-gray-300 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+                                    <select id="clubname" name='preferred_travel_time' value={formData.preferred_travel_time} onChange={(e) => handleChange(e)} required className="block appearance-none w-full bg-white border border-gray-200 text-gray-700 dark:text-gray-600 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
                                         <option>Achimota</option>
                                         <option>Other</option>
                                     </select>
@@ -110,7 +110,7 @@ const RegisterModal = ({ onClose }) => {
 
                                 <div className='flex flex-col mb-2'>
                                     <label>Emergency Contact</label>
-                                    <input type='tel' name='emergency_contact' required value={formData.emergency_contact} onChange={(e) => handleChange(e)} placeholder='e.g. +233' />
+                                    <input type='tel' name='emergency_contact' required value={formData.emergency_contact} onChange={(e) => handleChange(e)} placeholder='e.g. +233' className='text-black' />
                                 </div>
                                 <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                                     Register
