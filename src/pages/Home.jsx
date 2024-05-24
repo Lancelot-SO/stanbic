@@ -5,12 +5,11 @@ import ball from "../assets/golfball.png";
 import rectangle from "../assets/rectangle.png";
 import cloud from "../assets/cloud.png";
 import degree from "../assets/degree.png";
-import coinbase from "../assets/coinbase.png";
-import spotify from "../assets/spotify.png";
-import slack from "../assets/slack.png";
-import adobe from "../assets/adobe.png";
-import webflow from "../assets/webflow.png";
-import zoom from "../assets/zoom.png";
+
+import stanbic from "../assets/stanbic.png";
+import stanbicIL from "../assets/stanbicIL.png";
+import stanbicIM from "../assets/stanbicIM.png";
+import royal from "../assets/royal.png";
 import ballhole from "../assets/ballhole.png";
 import golfrack from "../assets/golfrack.png";
 import golfers from "../assets/bgGolfers.png";
@@ -20,9 +19,9 @@ import clearsky from "../assets/clearsky.png";
 import rainy from "../assets/rainy.png";
 import night_storm from "../assets/night_storm.png";
 
-import Slider1 from "../assets/slider1.png";
-import Slider2 from "../assets/slider2.png";
-import Slider3 from "../assets/slider3.png";
+import Slider1 from "../assets/golfer4.png";
+import Slider2 from "../assets/golfer5.png";
+import Slider3 from "../assets/golfer6.png";
 
 import { BiSearch } from "react-icons/bi";
 import { BsFacebook, BsTwitter, BsInstagram } from "react-icons/bs";
@@ -121,7 +120,7 @@ const Home = () => {
                     </div>
                 </div>
 
-                <div className='absolute bottom-[20px] md:bottom-[10px] lg:bottom-[5px] right-[20px] sm:right-[60px] md:right-[100px] lg:right-[180px] text-white lg:flex hidden md:hidden flex-col md:flex-row'>
+                <div className='absolute bottom-[20px] md:bottom-[10px] lg:bottom-[5px] right-[20px] sm:right-[60px] md:right-[100px] lg:right-[180px] text-white hidden md:hidden flex-col md:flex-row'>
                     <div className='flex flex-col mb-2 md:mb-0'>
                         <div className='flex items-center gap-2 mt-4'>
                             <span className='text-sm sm:text-base md:text-lg lg:text-xl font-semibold leading-tight sm:leading-[16px] md:leading-[16px] lg:leading-[16px]'>Stockholm, Sweden</span>
@@ -146,17 +145,15 @@ const Home = () => {
             </div>
 
             <section>
-                <div className="w-full lg:h-[141px] top-[657px] px-0 lg:px-[160px] pt-[22px] lg:pt-[42px] gap-8 bg-custom-blue">
+                <div className="w-full lg:h-[151px] top-[657px] px-0 lg:px-[160px] pt-[20px] lg:pt-[22px] gap-8 bg-custom-blue">
                     <div className='flex flex-col'>
                         <h3 className='lg:items-center md:items-center w-[300px] md:flex md:ml-[200px] lg:w-full flex justify-center ml-8 lg:ml-0 font-semibold mb-4 text-white'>OUR PROUD SPONSORS</h3>
                         <div className="overflow-x-scroll sponsor">
-                            <div className="flex justify-evenly lg:justify-between lg:w-full md:items-center md:w-full w-[55px]">
-                                <img src={coinbase} alt="sponsor" className="small:ml-2 tablet:mr-10 tablet:ml-4 mr-4 lg:mr-0" />
-                                <img src={spotify} alt="sponsor" className="tablet:mr-10 mr-4 lg:mr-0" />
-                                <img src={slack} alt="sponsor" className="tablet:mr-10 mr-4 lg:mr-0" />
-                                <img src={adobe} alt="sponsor" className="tablet:mr-10 mr-4 lg:mr-0" />
-                                <img src={webflow} alt="sponsor" className="tablet:mr-10 mr-4 lg:mr-0" />
-                                <img src={zoom} alt="sponsor" className="" />
+                            <div className="flex justify-evenly lg:justify-between lg:w-full md:items-center md:w-full w-full">
+                                <img src={stanbic} alt="sponsor" className="tablet:mr-10 mr-4 lg:mr-0" />
+                                <img src={stanbicIL} alt="sponsor" className="tablet:mr-10 mr-4 lg:mr-0" />
+                                <img src={stanbicIM} alt="sponsor" className="tablet:mr-10 mr-4 lg:mr-0" />
+                                <img src={royal} alt="sponsor" className="" />
                             </div>
                         </div>
                     </div>
@@ -174,7 +171,7 @@ const Home = () => {
                 <img src={golfrack} alt='rack' className='w-[221px] h-[320px] absolute lg:right-[100px] right-[10px] top-[-140px]' />
 
                 <div className='w-full h-[659px] lg:h-[759px] flex flex-col bg-blue-50 lg:pl-[20px] pl-[20px]'>
-                    <h2 className='text-custom-blue mt-[20px] w-[446px] h-[90px] lg:pl-[70px] pl-4 mb-[150px] lg:text-[32px] md:text-[28px] text-[20px] font-bold'>Our Excellence Event <br />in images </h2>
+                    <h2 className='text-custom-blue mt-[20px] w-[446px] h-[90px] lg:pl-[70px] pl-4 mb-[100px] lg:mb-12 lg:text-[32px] md:text-[28px] text-[20px] font-bold'>Our Excellence Event <br />in images </h2>
                     <Carousel
                         swipeable={true}
                         draggable={true}
@@ -208,20 +205,38 @@ const Home = () => {
 
             <section className="relative">
                 <div className="relative">
-                    <img src={golfers} alt='golfers' className='w-full h-[200px]  md:h-[300px] lg:h-full' />
+                    <img src={golfers} alt="golfers" className="w-full h-[200px] md:h-[300px] lg:h-full" />
                 </div>
-                <div className='absolute lg:top-[150px] top-[40px]  md:top-[80px] right-[10px] md:right-[70px] lg:right-[250px] lg:p-8 text-white'>
-                    <h2 className="lg:text-3xl font-bold lg:mb-8">OTUMFUO</h2>
-                    <p className='lg:mb-8 lg:w-[378px] w-[230px] h-[80px] lg:h-[141px] lg:text-[20px] text-[12px] lg:leading-[30px] font-normal'>Lustrous yet understated. The new evening
-                        wear collection exclusively offered at the
-                        reopened Giorgio Armani boutique in Los
-                        Angeles.</p>
+                <div className="absolute w-[90%] max-w-[900px] top-[20px] md:top-[60px] lg:top-[50px] right-[10px] md:right-[70px] lg:p-4 text-white">
+                    <h2 className="text-[10px] md:text-xl lg:text-3xl font-bold mb-2 md:mb-6 lg:mb-2">
+                        WELCOME TO THE 6TH EDITION
+                        <br />
+                        OF THE OTUMFUO GOLF TOURNAMENT
+                    </h2>
+                    <div className=" p-2 md:p-6 lg:p-0 text-[8px] md:text-sm lg:text-base leading-tight md:leading-normal lg:leading-loose rounded-lg">
+                        <p className=" md:mb-4">
+                            Stanbic Bank is immensely proud to announce its title sponsorship for the upcoming 6th Otumfuor Invitational Golf Tournament Championship 2024. As a brand, we are passionate about growth and great sportsmanship. The sponsorship of this prestigious event is a testament to our commitment.
+                        </p>
+                        <p className=" md:mb-4">
+                            As a brand, we are not just passionate about growth, but we are also focused on fostering relationships within the communities we serve. This tournament is more than a competition; it’s an opportunity to bring people together, to celebrate talent, and to promote the sport of golf within our community.
+                        </p>
+                        <p>
+                            Aside from the championship, the event will also feature various side activities that cater to non-players and families, making it a fun-filled day for everyone. We look forward to seeing you at the championship and joining us in celebrating the spirit of golf, royalty, and community.
+                        </p>
+                    </div>
                     <Link to="/">
-                        <button type='button' onClick={() => setShowCallModal(true)} className='bg-white font-semibold text-blue-900 px-4 py-2 text-[12px] lg:text-[17px] lg:w-[200px] lg:h-[58px] hover:bg-blue-900 hover:text-white transition duration-300'>Register Here</button>
+                        <button
+                            type="button"
+                            onClick={() => setShowCallModal(true)}
+                            className="bg-white hidden lg:block font-semibold text-blue-900 px-4 py-2 mt-2 text-xs md:text-sm lg:text-base lg:w-[200px] lg:h-[58px] hover:bg-blue-900 hover:text-white transition duration-300"
+                        >
+                            Register Here
+                        </button>
                     </Link>
                     {showCallModal && <RegisterModal onClose={() => setShowCallModal(false)} />}
                 </div>
             </section>
+
 
             <section className="relative">
                 <div className="relative">

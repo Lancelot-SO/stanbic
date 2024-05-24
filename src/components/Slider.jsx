@@ -3,9 +3,9 @@ import { IoMdArrowDropright, IoMdArrowDropleft } from "react-icons/io";
 import 'react-multi-carousel/lib/styles.css';
 import "./Swiper.css";
 
-import Slider1 from "../assets/slider1.png";
-import Slider2 from "../assets/slider2.png";
-import Slider3 from "../assets/slider3.png";
+import Slider1 from "../assets/golfer1.png";
+import Slider2 from "../assets/golfer2.png";
+import Slider3 from "../assets/golfer3.png";
 
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
@@ -90,10 +90,10 @@ const Slider = () => {
 
             <div className=''>
                 <div className='absolute font-bold border-r border-t border-b p-5 lg:top-[350px] top-[450px] lg:left-[40%] md:left-[250px] tablet:left-[130px] left-[50px] w-[150px] items-center justify-center'>
-                    20 images
+                    1294 images
                 </div>
                 <div className='absolute font-bold border border-r-0 border-l-0 py-5 pl-10 lg:top-[350px] top-[450px] left-[49%] w-[150px] items-center justify-center'>
-                    50 activities
+                    3594 activities
                 </div>
             </div>
 
