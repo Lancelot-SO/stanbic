@@ -10,7 +10,7 @@ import stanbic from "../assets/stanbic.png";
 import stanbicIL from "../assets/stanbicIL.png";
 import stanbicIM from "../assets/stanbicIM.png";
 import royal from "../assets/royal.png";
-import ballhole from "../assets/ballhole.png";
+import ballhole from "../assets/ballhole.jpg";
 import golfrack from "../assets/golfrack.png";
 import golfers from "../assets/bgGolfers.png";
 import badgegolf from "../assets/badgegolf.png";
@@ -106,7 +106,7 @@ const Home = () => {
 
                 <div className='absolute flex flex-col top-[20%] lg:left-[180px] left-[5px]'>
                     <div className=''>
-                        <img src={logo} alt='logo' className='w-[30px] lg:w-[128px] md:w-[90px] md:h-[80px]  lg:h-[94px] h-[20px]' />
+                        <img src={logo} alt='logo' className='w-[30px] lg:w-[128px] md:w-[90px] md:h-[80px] lg:h-[100px] h-[20px]' />
 
                         <h1 className='md:text-3xl text-[22px] lg:text-[65px] font-extrabold w-full md:w-[600px] lg:w-[812px] text-custom-blue leading-tight sm:leading-[40px] md:leading-[55px] lg:leading-[68px]'>
                             INVITATION <br /> G<img src={ball} alt='ball' className='inline w-[30px] sm:w-[40px] md:w-[50px] lg:w-[63px] h-[30px] sm:h-[40px] md:h-[50px] lg:h-[61px]' />LF TOURNAMENT
@@ -114,7 +114,7 @@ const Home = () => {
                         <h3 className='text-[12px] md:text-lg lg:text-2xl mt-2 mb-4 md:mb-6 lg:mb-6 md:w-[300px] lg:w-[334px] text-custom-blue font-normal leading-tight sm:leading-[24px] md:leading-[28px] lg:leading-[32px]'>STANBIC-ASANTEHENE</h3>
 
                         <Link to="/">
-                            <button type='button' onClick={() => setShowCallModal(true)} className='bg-white font-semibold text-blue-900 px-4 py-1 text-sm sm:text-base md:h-[40px] md:text-lg lg:text-xl lg:w-[200px] w-[150px] h-[30px] lg:h-[58px] hover:bg-blue-900 hover:text-white transition duration-300'>Register Now</button>
+                            <button type='button' onClick={() => setShowCallModal(true)} className='bg-custom-blue font-semibold text-white px-4 py-1 text-sm sm:text-base md:h-[40px] md:text-lg lg:text-xl lg:w-[200px] w-[150px] h-[30px] lg:h-[58px] hover:bg-white hover:text-custom-blue transition duration-300'>Register Now</button>
                         </Link>
                         {showCallModal && <RegisterModal onClose={() => setShowCallModal(false)} />}
                     </div>
@@ -149,7 +149,7 @@ const Home = () => {
                     <div className='flex flex-col'>
                         <h3 className='lg:items-center md:items-center w-[300px] md:flex md:ml-[200px] lg:w-full flex justify-center ml-8 lg:ml-0 font-semibold mb-4 text-white'>OUR PROUD SPONSORS</h3>
                         <div className="overflow-x-scroll sponsor">
-                            <div className="flex justify-evenly lg:justify-between lg:w-full md:items-center md:w-full w-full">
+                            <div className="flex justify-evenly lg:justify-center lg:w-full md:items-center md:w-full w-full">
                                 <img src={stanbic} alt="sponsor" className="tablet:mr-10 mr-4 lg:mr-0" />
                                 <img src={stanbicIL} alt="sponsor" className="tablet:mr-10 mr-4 lg:mr-0" />
                                 <img src={stanbicIM} alt="sponsor" className="tablet:mr-10 mr-4 lg:mr-0" />
