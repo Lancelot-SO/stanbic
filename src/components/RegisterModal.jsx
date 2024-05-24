@@ -101,25 +101,25 @@ const RegisterModal = ({ onClose }) => {
                                         </div>
                                         <div className='mb-2 flex flex-col'>
                                             <label className='text-custom-blue'>Dietary Needs</label>
-                                            <input type='text' name='dietary_needs' placeholder='e.g. Vegetarian' value={formData.dietary_needs} onChange={(e) => handleChange(e)} className='text-black' required />
+                                            <input type='text' name='dietary_needs' placeholder='e.g. Vegetarian' value={formData.dietary_needs} onChange={(e) => handleChange(e)} className='text-black' />
                                         </div>
                                     </div>
                                     <div className='flex flex-col gap-4'>
                                         <div className='flex flex-col mb-4'>
                                             <label className='text-custom-blue'>National GGA Handicap ID</label>
-                                            <input type='text' name='handicap_id' placeholder='e.g. GGA12345' value={formData.handicap_id} onChange={(e) => handleChange(e)} className='text-black' required />
+                                            <input type='text' name='handicap_id' placeholder='e.g. GGA12345' value={formData.handicap_id} onChange={(e) => handleChange(e)} className='text-black' />
                                         </div>
                                         <div className='flex flex-col mb-4'>
                                             <label className='text-custom-blue'>Golf Club</label>
-                                            <input type='text' name='golf_club' placeholder='e.g. Achimota Golf Club' value={formData.golf_club} onChange={(e) => handleChange(e)} className='text-black' required />
+                                            <input type='text' name='golf_club' placeholder='e.g. Achimota Golf Club' value={formData.golf_club} onChange={(e) => handleChange(e)} className='text-black' />
                                         </div>
                                         <div className='flex flex-col mb-4'>
                                             <label className='text-custom-blue'>Handicap Index</label>
-                                            <input type='text' name='handicap_index' placeholder='e.g. 12.5' value={formData.handicap_index} onChange={(e) => handleChange(e)} className='text-black' required />
+                                            <input type='text' name='handicap_index' placeholder='e.g. 12.5' value={formData.handicap_index} onChange={(e) => handleChange(e)} className='text-black' />
                                         </div>
                                         <div className='flex flex-col mb-4'>
                                             <label className='text-custom-blue'>Emergency Contact Name</label>
-                                            <input type='text' name='emergency_contact_name' placeholder='e.g. Jane Doe' value={formData.emergency_contact_name} onChange={(e) => handleChange(e)} className='text-black' required />
+                                            <input type='text' name='emergency_contact_name' placeholder='e.g. Jane Doe' value={formData.emergency_contact_name} onChange={(e) => handleChange(e)} className='text-black' />
                                         </div>
                                         <div className='flex flex-col mb-4'>
                                             <label className='text-custom-blue'>Emergency Contact Number</label>
