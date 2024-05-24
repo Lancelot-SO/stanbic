@@ -19,8 +19,8 @@ import clearsky from "../assets/clearsky.png";
 import rainy from "../assets/rainy.png";
 import night_storm from "../assets/night_storm.png";
 
-import Slider1 from "../assets/golfer4.png";
-import Slider2 from "../assets/golfer5.png";
+import Slider1 from "../assets/3men.png";
+import Slider2 from "../assets/2men.png";
 import Slider3 from "../assets/golfer6.png";
 
 import { BiSearch } from "react-icons/bi";
@@ -170,7 +170,7 @@ const Home = () => {
             <section className='relative'>
                 <img src={golfrack} alt='rack' className='w-[221px] h-[320px] absolute lg:right-[100px] right-[10px] top-[-140px]' />
 
-                <div className='w-full h-[659px] lg:h-[759px] flex flex-col bg-blue-50 lg:pl-[20px] pl-[20px]'>
+                <div className='w-full h-[659px] lg:h-[759px] flex flex-col bg-blue-50 lg:pl-[0] pl-[20px]'>
                     <h2 className='text-custom-blue mt-[20px] w-[446px] h-[90px] lg:pl-[70px] pl-4 mb-[100px] lg:mb-12 lg:text-[32px] md:text-[28px] text-[20px] font-bold'>Our Excellence Event <br />in images </h2>
                     <Carousel
                         swipeable={true}
@@ -187,7 +187,7 @@ const Home = () => {
                                 <img
                                     src={image}
                                     alt='rack'
-                                    className='w-[400px] h-[353px] cursor-pointer transform'
+                                    className='w-[450px] h-[353px] cursor-pointer transform'
                                 />
                             </div>
                         ))}

@@ -13,12 +13,16 @@ const RegisterModal = ({ onClose }) => {
 
     const url = "https://stanbic.interactivedigital.com.gh/api/register"
     const [formData, setFormData] = useState({
-        full_name: '',
-        club_name: 'Achimota',
-        shirt_size: 'M',
+        first_name: '',
+        surname: '',
+        tel: '',
+        email: '',
+        shirt_size: 'S',
         dietary_needs: '',
-        golf_handicap: '',
-        preferred_travel_time: 'Achimota',
+        handicap_id: '',
+        golf_club: '',
+        handicap_index: '',
+        emergency_contact_name: '',
         emergency_contact: '+233'
     });
 
@@ -26,7 +30,7 @@ const RegisterModal = ({ onClose }) => {
         const newdata = { ...formData }
         newdata[e.target.name] = e.target.value
         setFormData(newdata)
-        // console.log(newdata)
+        console.log(newdata)
     };
 
     const handleSubmit = async (e) => {
@@ -77,11 +81,11 @@ const RegisterModal = ({ onClose }) => {
                                     </div>
                                     <div className='flex flex-col mb-2'>
                                         <label className='text-custom-blue'>Telephone Number</label>
-                                        <input type='tel' name='telephone_number' placeholder='e.g. +233123456789' value={formData.telephone_number} onChange={(e) => handleChange(e)} className='text-black' required />
+                                        <input type='tel' name='tel' placeholder='e.g. +233123456789' value={formData.tel} onChange={(e) => handleChange(e)} className='text-black' required />
                                     </div>
                                     <div className='flex flex-col mb-2'>
                                         <label className='text-custom-blue'>Email Address</label>
-                                        <input type='email' name='email_address' placeholder='e.g. john.doe@example.com' value={formData.email_address} onChange={(e) => handleChange(e)} className='text-black' required />
+                                        <input type='email' name='email' placeholder='e.g. john.doe@example.com' value={formData.email} onChange={(e) => handleChange(e)} className='text-black' required />
                                     </div>
                                     <div className='mb-2'>
                                         <label className='text-custom-blue'>T-Shirt Size</label>
@@ -119,7 +123,7 @@ const RegisterModal = ({ onClose }) => {
                                     </div>
                                     <div className='flex flex-col mb-4'>
                                         <label className='text-custom-blue'>Emergency Contact Number</label>
-                                        <input type='tel' name='emergency_contact_number' placeholder='e.g. +233987654321' value={formData.emergency_contact_number} onChange={(e) => handleChange(e)} className='text-black' required />
+                                        <input type='tel' name='emergency_contact' placeholder='e.g. +233987654321' value={formData.emergency_contact} onChange={(e) => handleChange(e)} className='text-black' required />
                                     </div>
                                 </div>
                                 <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
