@@ -87,7 +87,7 @@ const Home = () => {
         },
         desktop: {
             breakpoint: { max: 3000, min: 1024 },
-            items: 4
+            items: 3
         },
         tablet: {
             breakpoint: { max: 1024, min: 464 },
@@ -187,7 +187,7 @@ const Home = () => {
                                 <img
                                     src={image}
                                     alt='rack'
-                                    className='w-[358px] h-[353px] cursor-pointer transform'
+                                    className='w-[400px] h-[353px] cursor-pointer transform'
                                 />
                             </div>
                         ))}
@@ -207,7 +207,7 @@ const Home = () => {
                 <div className="relative">
                     <img src={golfers} alt="golfers" className="w-full h-[200px] md:h-[300px] lg:h-full" />
                 </div>
-                <div className="absolute w-[90%] max-w-[900px] top-[20px] md:top-[60px] lg:top-[50px] right-[10px] md:right-[70px] lg:p-4 text-white">
+                <div className="absolute w-[90%] max-w-[900px] top-[20px] md:top-[60px] lg:top-[80px] right-[10px] md:right-[70px] lg:p-4 text-white">
                     <h2 className="text-[10px] md:text-xl lg:text-3xl font-bold mb-2 md:mb-6 lg:mb-2">
                         WELCOME TO THE 6TH EDITION
                         <br />
