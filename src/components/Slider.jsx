@@ -88,7 +88,7 @@ const Slider = () => {
                 </div>
             </div>
 
-            <div className=''>
+            <div className='hidden'>
                 <div className='absolute font-bold border-r border-t border-b p-5 lg:top-[350px] top-[450px] lg:left-[40%] md:left-[250px] tablet:left-[130px] left-[50px] w-[150px] items-center justify-center'>
                     1294 images
                 </div>

@@ -7,7 +7,7 @@ import cloud from "../assets/cloud.png";
 import degree from "../assets/degree.png";
 
 import stanbic from "../assets/stanbic.png";
-import stanbicIL from "../assets/stanbicIL.png";
+// import stanbicIL from "../assets/stanbicIL.png";
 import stanbicIM from "../assets/stanbicIM.png";
 import royal from "../assets/royal.png";
 import ballhole from "../assets/ballhole.jpg";
@@ -28,6 +28,11 @@ import { BsFacebook, BsTwitter, BsInstagram } from "react-icons/bs";
 
 import "./Home.css";
 
+import { Typewriter } from 'react-simple-typewriter'
+
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Link } from 'react-router-dom';
@@ -37,6 +42,19 @@ import 'react-multi-carousel/lib/styles.css';
 import RegisterModal from '../components/RegisterModal';
 
 const Home = () => {
+
+    const [showMore, setShowMore] = useState(false);
+
+    const handleToggle = () => {
+        setShowMore(!showMore);
+    };
+
+    useEffect(() => {
+        AOS.init({
+            duration: 2000,
+        });
+        AOS.refresh();
+    }, []);
 
     const [selectedImage, setSelectedImage] = useState(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -87,7 +105,7 @@ const Home = () => {
         },
         desktop: {
             breakpoint: { max: 3000, min: 1024 },
-            items: 3
+            items: 4
         },
         tablet: {
             breakpoint: { max: 1024, min: 464 },
@@ -102,16 +120,28 @@ const Home = () => {
     return (
         <div className='overflow-hidden'>
             <div className='relative'>
-                <img src={hero} alt='hero' className='w-full md:h-[400px] lg:h-[657px] h-[200px]' />
+                <img src={hero} alt='hero' className='w-full md:h-[400px] lg:h-[677px] h-[200px]' />
 
-                <div className='absolute flex flex-col top-[20%] lg:left-[180px] left-[5px]'>
+                <div className='absolute flex flex-col top-[30%] lg:left-[180px] left-[5px]'>
                     <div className=''>
-                        <img src={logo} alt='logo' className='w-[30px] lg:w-[128px] md:w-[90px] md:h-[80px] lg:h-[100px] h-[20px]' />
+                        <img src={logo} alt='logo' data-aos="fade-down" className='hidden w-[30px] lg:w-[108px] md:w-[90px] md:h-[80px] lg:h-[100px] h-[30px]' />
 
-                        <h1 className='md:text-3xl text-[22px] lg:text-[65px] font-extrabold w-full md:w-[600px] lg:w-[812px] text-custom-blue leading-tight sm:leading-[40px] md:leading-[55px] lg:leading-[68px]'>
-                            INVITATION <br /> G<img src={ball} alt='ball' className='inline w-[30px] sm:w-[40px] md:w-[50px] lg:w-[63px] h-[30px] sm:h-[40px] md:h-[50px] lg:h-[61px]' />LF TOURNAMENT
+                        <h3 className='text-[12px] md:text-lg lg:text-3xl mt-2 mb-4 md:mb-6 lg:mb-2 md:w-[300px] lg:w-[354px] text-custom-blue font-bold leading-tight sm:leading-[24px] md:leading-[28px] lg:leading-[32px]'>
+
+                            <Typewriter
+                                words={["STANBIC-ASANTEHENE"]}
+                                loop
+                                cursor
+                                cursorStyle='_'
+                                typeSpeed={70}
+                                deleteSpeed={50}
+                                delaySpeed={1000}
+                            />
+                        </h3>
+
+                        <h1 data-aos="fade-right" className='md:text-3xl text-[22px] lg:text-[65px] font-extrabold w-full md:w-[600px] lg:w-[812px] text-custom-blue leading-tight sm:leading-[40px] md:leading-[55px] lg:leading-[68px] mb-2 lg:mb-8'>
+                            INVITATIONAL <br /> G<img src={ball} alt='ball' className='inline w-[30px] sm:w-[40px] md:w-[50px] lg:w-[63px] h-[30px] sm:h-[40px] md:h-[50px] lg:h-[61px]' />LF TOURNAMENT
                         </h1>
-                        <h3 className='text-[12px] md:text-lg lg:text-2xl mt-2 mb-4 md:mb-6 lg:mb-6 md:w-[300px] lg:w-[334px] text-custom-blue font-normal leading-tight sm:leading-[24px] md:leading-[28px] lg:leading-[32px]'>STANBIC-ASANTEHENE</h3>
 
                         <Link to="/">
                             <button type='button' onClick={() => setShowCallModal(true)} className='bg-custom-blue font-semibold text-white px-4 py-1 text-sm sm:text-base md:h-[40px] md:text-lg lg:text-xl lg:w-[200px] w-[150px] h-[30px] lg:h-[58px] hover:bg-white hover:text-custom-blue transition duration-300'>Register Now</button>
@@ -149,10 +179,9 @@ const Home = () => {
                     <div className='flex flex-col'>
                         <h3 className='lg:items-center md:items-center w-[300px] md:flex md:ml-[200px] lg:w-full flex justify-center ml-8 lg:ml-0 font-semibold mb-4 text-white'>OUR PROUD SPONSORS</h3>
                         <div className="overflow-x-scroll sponsor">
-                            <div className="flex justify-evenly lg:justify-center lg:w-full md:items-center md:w-full w-full">
-                                <img src={stanbic} alt="sponsor" className="tablet:mr-10 mr-4 lg:mr-0" />
-                                <img src={stanbicIL} alt="sponsor" className="tablet:mr-10 mr-4 lg:mr-0" />
-                                <img src={stanbicIM} alt="sponsor" className="tablet:mr-10 mr-4 lg:mr-0" />
+                            <div className="flex justify-center lg:justify-evenly lg:w-full md:items-center md:w-full w-full">
+                                <img src={stanbic} alt="sponsor" className="tablet:mr-10 mr-2 md:w-[150px] lg:mr-0 w-[150px]" />
+                                <img src={stanbicIM} alt="sponsor" className="tablet:mr-10 mr-2 md:w-[200px] lg:mr-0 w-[150px]" />
                                 <img src={royal} alt="sponsor" className="" />
                             </div>
                         </div>
@@ -168,16 +197,20 @@ const Home = () => {
             </section>
 
             <section className='relative'>
-                <img src={golfrack} alt='rack' className='w-[221px] h-[320px] absolute lg:right-[100px] right-[10px] top-[-140px]' />
+                <img src={golfrack} alt='rack' data-aos="zoom-in-left" className='w-[221px] h-[320px] absolute lg:right-[100px] right-[10px] top-[-140px]' />
 
                 <div className='w-full h-[659px] lg:h-[759px] flex flex-col bg-blue-50 lg:pl-[0] pl-[20px]'>
-                    <h2 className='text-custom-blue mt-[20px] w-[446px] h-[90px] lg:pl-[70px] pl-4 mb-[100px] lg:mb-12 lg:text-[32px] md:text-[28px] text-[20px] font-bold'>Our Excellence Event <br />in images </h2>
+                    <h2 className='text-custom-blue mt-[20px] w-[446px] h-[90px] lg:pl-[70px] pl-4 mb-[100px] lg:mb-12 lg:text-[32px] md:text-[28px] text-[20px] font-extrabold'>SEE MORE PHOTOS IN <br />OUR GALLERY</h2>
                     <Carousel
                         swipeable={true}
                         draggable={true}
                         showDots={false}
                         className=''
-                        responsive={responsive}>
+                        responsive={responsive}
+                        autoPlay={true}
+                        autoPlaySpeed={3000} // Adjust the speed as needed
+                        infinite={true}
+                    >
                         {images.map((image, index) => (
                             <div
                                 key={index}
@@ -187,7 +220,7 @@ const Home = () => {
                                 <img
                                     src={image}
                                     alt='rack'
-                                    className='w-[450px] h-[353px] cursor-pointer transform'
+                                    className='w-[450px] lg:w-[360px] h-[353px] cursor-pointer transform'
                                 />
                             </div>
                         ))}
@@ -207,34 +240,34 @@ const Home = () => {
                 <div className="relative">
                     <img src={golfers} alt="golfers" className="w-full h-[200px] md:h-[300px] lg:h-full" />
                 </div>
-                <div className="absolute w-[90%] max-w-[900px] top-[20px] md:top-[60px] lg:top-[80px] right-[10px] md:right-[70px] lg:p-4 text-white">
-                    <h2 className="text-[10px] md:text-xl lg:text-3xl font-bold mb-2 md:mb-6 lg:mb-2">
+                <div className="absolute w-[90%] max-w-[900px] top-[30px] lg:top-[80px] right-[-130px] md:right-[70px] lg:p-4 text-white">
+                    <h2 className="text-[10px] small:text-sm tablet:text-lg md:text-[18px] lg:text-3xl font-bold lg:mb-2 ml-2 lg:ml-0">
                         WELCOME TO THE 6TH EDITION
                         <br />
                         OF THE OTUMFUO GOLF TOURNAMENT
                     </h2>
-                    <div className=" p-2 md:p-6 lg:p-0 text-[8px] md:text-sm lg:text-base leading-tight md:leading-normal lg:leading-loose rounded-lg">
-                        <p className=" md:mb-4">
-                            Stanbic Bank is immensely proud to announce its title sponsorship for the upcoming 6th Otumfuor Invitational Golf Tournament Championship 2024. As a brand, we are passionate about growth and great sportsmanship. The sponsorship of this prestigious event is a testament to our commitment.
-                        </p>
-                        <p className=" md:mb-4">
-                            As a brand, we are not just passionate about growth, but we are also focused on fostering relationships within the communities we serve. This tournament is more than a competition; it’s an opportunity to bring people together, to celebrate talent, and to promote the sport of golf within our community.
-                        </p>
-                        <p>
-                            Aside from the championship, the event will also feature various side activities that cater to non-players and families, making it a fun-filled day for everyone. We look forward to seeing you at the championship and joining us in celebrating the spirit of golf, royalty, and community.
-                        </p>
+                    <div className="p-2 tablet:p-4 md:p-6 lg:p-0 text-[8px] small:text-[10px] tablet:text-sm md:text-base lg:text-base leading-tight md:leading-normal lg:leading-loose rounded-lg">
+                        <div className='lg:w-full w-[200px]'>
+                            <p className="">
+                                Stanbic Bank is the title sponsor of the 6th Otumfuor Invitational Golf Tournament Championship 2024, celebrating the 25th anniversary of the Asantehene and the bank. The event aims to connect with clients, and the golfing community, and foster growth opportunities. It also includes side activities for non-players and families, promoting community bonding and the sport of golf.                            </p>
+                            <p className="">
+                                Join us in honouring tradition, building lasting connections, and exemplifying our commitment to exceptional experiences and unparalleled excellence.
+                            </p>
+
+                        </div>
                     </div>
                     <Link to="/">
                         <button
                             type="button"
                             onClick={() => setShowCallModal(true)}
-                            className="bg-white hidden lg:block font-semibold text-blue-900 px-4 py-2 mt-2 text-xs md:text-sm lg:text-base lg:w-[200px] lg:h-[58px] hover:bg-blue-900 hover:text-white transition duration-300"
+                            className="bg-white hidden lg:block font-semibold text-blue-900 px-4 py-2 mt-2 text-xs small:text-sm md:text-base lg:w-[200px] lg:h-[58px] hover:bg-blue-900 hover:text-white transition duration-300"
                         >
                             Register Here
                         </button>
                     </Link>
                     {showCallModal && <RegisterModal onClose={() => setShowCallModal(false)} />}
                 </div>
+
             </section>
 
 
