@@ -43,12 +43,6 @@ import RegisterModal from '../components/RegisterModal';
 
 const Home = () => {
 
-    const [showMore, setShowMore] = useState(false);
-
-    const handleToggle = () => {
-        setShowMore(!showMore);
-    };
-
     useEffect(() => {
         AOS.init({
             duration: 2000,
@@ -126,7 +120,7 @@ const Home = () => {
                     <div className=''>
                         <img src={logo} alt='logo' data-aos="fade-down" className='hidden w-[30px] lg:w-[108px] md:w-[90px] md:h-[80px] lg:h-[100px] h-[30px]' />
 
-                        <h3 className='text-[12px] md:text-lg lg:text-3xl mt-2 mb-4 md:mb-6 lg:mb-2 md:w-[300px] lg:w-[354px] text-custom-blue font-bold leading-tight sm:leading-[24px] md:leading-[28px] lg:leading-[32px]'>
+                        <h3 className='text-[12px] md:text-lg lg:text-3xl mt-2 small:mb-0 md:mb-1 lg:mb-2 md:w-[300px] lg:w-[410px] text-custom-blue font-bold leading-tight sm:leading-[24px] md:leading-[28px] lg:leading-[32px]'>
 
                             <Typewriter
                                 words={["STANBIC-ASANTEHENE"]}
@@ -138,13 +132,12 @@ const Home = () => {
                                 delaySpeed={1000}
                             />
                         </h3>
-
                         <h1 data-aos="fade-right" className='md:text-3xl text-[22px] lg:text-[65px] font-extrabold w-full md:w-[600px] lg:w-[812px] text-custom-blue leading-tight sm:leading-[40px] md:leading-[55px] lg:leading-[68px] mb-2 lg:mb-8'>
                             INVITATIONAL <br /> G<img src={ball} alt='ball' className='inline w-[30px] sm:w-[40px] md:w-[50px] lg:w-[63px] h-[30px] sm:h-[40px] md:h-[50px] lg:h-[61px]' />LF TOURNAMENT
                         </h1>
 
                         <Link to="/">
-                            <button type='button' onClick={() => setShowCallModal(true)} className='bg-custom-blue font-semibold text-white px-4 py-1 text-sm sm:text-base md:h-[40px] md:text-lg lg:text-xl lg:w-[200px] w-[150px] h-[30px] lg:h-[58px] hover:bg-white hover:text-custom-blue transition duration-300'>Register Now</button>
+                            <button type='button' onClick={() => setShowCallModal(true)} className='bg-custom-blue font-semibold text-white px-4 py-1 text-sm sm:text-base rounded-[12px] md:h-[40px] md:text-lg lg:text-xl lg:w-[200px] w-[150px] h-[30px] lg:h-[58px] hover:bg-white hover:text-custom-blue transition duration-300'>Register Now</button>
                         </Link>
                         {showCallModal && <RegisterModal onClose={() => setShowCallModal(false)} />}
                     </div>
@@ -178,13 +171,14 @@ const Home = () => {
                 <div className="w-full lg:h-[151px] top-[657px] px-0 lg:px-[160px] pt-[20px] lg:pt-[22px] gap-8 bg-custom-blue">
                     <div className='flex flex-col'>
                         <h3 className='lg:items-center md:items-center w-[300px] md:flex md:ml-[200px] lg:w-full flex justify-center ml-8 lg:ml-0 font-semibold mb-4 text-white'>OUR PROUD SPONSORS</h3>
-                        <div className="overflow-x-scroll sponsor">
-                            <div className="flex justify-center lg:justify-evenly lg:w-full md:items-center md:w-full w-full">
-                                <img src={stanbic} alt="sponsor" className="tablet:mr-10 mr-2 md:w-[150px] lg:mr-0 w-[150px]" />
-                                <img src={stanbicIM} alt="sponsor" className="tablet:mr-10 mr-2 md:w-[200px] lg:mr-0 w-[150px]" />
-                                <img src={royal} alt="sponsor" className="" />
+                        <div className="overflow-x-scroll sponsor flex items-center justify-center">
+                            <div className="w-[370px] flex justify-center lg:justify-evenly lg:w-full md:items-center md:w-full">
+                                <img src={stanbic} alt="sponsor" className="xsm:w-[120px] xsm:h-[30px] tablet:mr-10 mr-2 small:w-[100px] tablet:w-[120px] md:w-[130px] w-[150px] small:h-[30px] tablet:h-[40px] md:h-[45px] h-[50px] lg:mr-0" />
+                                <img src={stanbicIM} alt="sponsor" className="xsm:w-[150px] xsm:h-[30px] tablet:mr-10 mr-2 small:w-[120px] tablet:w-[140px] md:w-[150px] w-[200px] small:h-[30px] tablet:h-[40px] md:h-[45px] h-[50px] lg:mr-0" />
+                                <img src={royal} alt="sponsor" className="xsm:w-[30px] xsm:h-[30px] small:w-[40px] tablet:w-[120px] md:w-[50px] w-[150px] lg:w-[50px] small:h-[30px] tablet:h-[40px] md:h-[45px] h-[50px]" />
                             </div>
                         </div>
+
                     </div>
                 </div>
             </section>
@@ -240,27 +234,27 @@ const Home = () => {
                 <div className="relative">
                     <img src={golfers} alt="golfers" className="w-full h-[200px] md:h-[300px] lg:h-full" />
                 </div>
-                <div className="absolute w-[90%] max-w-[900px] top-[30px] lg:top-[80px] right-[-130px] md:right-[70px] lg:p-4 text-white">
-                    <h2 className="text-[10px] small:text-sm tablet:text-lg md:text-[18px] lg:text-3xl font-bold lg:mb-2 ml-2 lg:ml-0">
+                <div className="absolute w-[90%] max-w-[900px] small:top-[25px] small:left-[150px] top-[30px] lg:top-[120px] right-[-105px] md:left-[280px] xsm:left-[130px] lg:left-[550px] lg:p-4 text-white">
+                    <h2 className="font-bold lg:text-[32px] md:text-[18px] text-[12px] leading-none lg:mb-2 small:ml-0 small:mb-2 ml-2 lg:ml-0 text-transparent md:ml-6" style={{ WebkitTextStroke: '1px white' }}>
                         WELCOME TO THE 6TH EDITION
                         <br />
                         OF THE OTUMFUO GOLF TOURNAMENT
                     </h2>
-                    <div className="p-2 tablet:p-4 md:p-6 lg:p-0 text-[8px] small:text-[10px] tablet:text-sm md:text-base lg:text-base leading-tight md:leading-normal lg:leading-loose rounded-lg">
-                        <div className='lg:w-full w-[200px]'>
-                            <p className="">
+
+                    <div className="p-2 tablet:p-4 md:p-6 small:p-0 lg:p-0 text-[8px] small:text-[10px] tablet:text-sm md:text-[12px] lg:text-base leading-tight md:leading-normal lg:leading-loose lg:mb-8">
+                        <div className='lg:w-full w-[200px] md:w-full md:h-[180px]'>
+                            <p className="md:w-[400px] lg:w-full small:w-[280px]">
                                 Stanbic Bank is the title sponsor of the 6th Otumfuor Invitational Golf Tournament Championship 2024, celebrating the 25th anniversary of the Asantehene and the bank. The event aims to connect with clients, and the golfing community, and foster growth opportunities. It also includes side activities for non-players and families, promoting community bonding and the sport of golf.                            </p>
-                            <p className="">
+                            <p className="md:w-[400px] lg:w-full small:w-[280px]">
                                 Join us in honouring tradition, building lasting connections, and exemplifying our commitment to exceptional experiences and unparalleled excellence.
                             </p>
-
                         </div>
                     </div>
                     <Link to="/">
                         <button
                             type="button"
                             onClick={() => setShowCallModal(true)}
-                            className="bg-white hidden lg:block font-semibold text-blue-900 px-4 py-2 mt-2 text-xs small:text-sm md:text-base lg:w-[200px] lg:h-[58px] hover:bg-blue-900 hover:text-white transition duration-300"
+                            className="bg-white hidden lg:block font-semibold text-blue-900 px-4 py-2 mt-2 text-xs rounded-[12px] small:text-sm md:text-base lg:w-[200px] lg:h-[58px] hover:bg-blue-900 hover:text-white transition duration-300"
                         >
                             Register Here
                         </button>
@@ -296,7 +290,7 @@ const Home = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className='w-[343px] h-[127px] mt-4 flex flex-row gap-2'>
+                                <div className='w-[343px] h-[127px] mt-4 xsm:mt-2 small:mt-2 md:mt-2 flex flex-row gap-2'>
                                     <div className='backdrop-blur-16 backdrop-saturate-180 bg-custom-bg rounded-xl border border-custom-border w-[78px] items-center justify-center flex-col flex'>
                                         <img src={clearsky} alt='cloud' />
                                         <strong className='font-bold'>{weather.main.temp_min}°C</strong>

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap');
+
 html {
   scroll-behavior: smooth;
 }
@@ -7,6 +9,7 @@ html {
   padding: 0;
   outline: 0;
   box-sizing: border-box;
+  font-family: 'Libre Franklin', sans-serif;
 }
 
 .call-modal {

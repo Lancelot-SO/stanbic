@@ -68,7 +68,7 @@ const RegisterModal = ({ onClose }) => {
                             <span aria-hidden="true">&times;</span>
                         </button>
                         <div className="callmodal">
-                            <p className='text-custom-blue'>Request a call back</p>
+                            <p className='text-custom-blue font-bold'>Register Your Account</p>
                             <form className='overflow-y-scroll lg:overflow-hidden h-[590px]' onSubmit={(e) => handleSubmit(e)}>
                                 <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
                                     <div className='flex flex-col gap-4'>

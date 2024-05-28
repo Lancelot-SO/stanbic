@@ -10,11 +10,13 @@ module.exports = {
         'skybg': '#0f52ba'
       },
       screens: {
+        'xsm': '375px',
         'small': '430px',
         'tablet': '570px',
         'md': '768px',
         'lg': '1024px',
         'xl': '1280px',
+        'large': '1343px',
         '2xl': '1536px',
       },
       backdropBlur: {
