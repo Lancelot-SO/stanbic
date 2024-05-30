@@ -132,7 +132,7 @@ const Home = () => {
                                 delaySpeed={1000}
                             />
                         </h3>
-                        <h1 data-aos="fade-right" className='md:text-3xl text-[22px] lg:text-[50px] font-extrabold w-full md:w-[600px] lg:w-[812px] text-white leading-tight sm:leading-[40px] md:leading-[55px] lg:leading-[68px] mb-2 lg:mb-8'>
+                        <h1 data-aos="fade-right" className='md:text-3xl text-[22px] msm:text-[15px] lg:text-[50px] font-extrabold w-full md:w-[600px] lg:w-[812px] text-white leading-tight sm:leading-[40px] md:leading-[55px] lg:leading-[68px] mb-2 lg:mb-8'>
                             INVITATIONAL <br /> G<img src={ball} alt='ball' className='inline w-[30px] sm:w-[40px] md:w-[50px] lg:w-[63px] h-[30px] sm:h-[40px] md:h-[50px] lg:h-[61px]' />LF TOURNAMENT
                         </h1>
 
