@@ -38,7 +38,7 @@ html {
 }
 
 .call-left {
-  flex: 1;
+  flex: 1.5;
   display: flex;
   align-items: center;
 }

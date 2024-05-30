@@ -10,7 +10,9 @@ module.exports = {
         'skybg': '#0f52ba'
       },
       screens: {
+        'msm': '360px',
         'xsm': '375px',
+        'vsm': '393px',
         'small': '430px',
         'tablet': '570px',
         'md': '768px',
@@ -18,6 +20,7 @@ module.exports = {
         'xl': '1280px',
         'large': '1343px',
         '2xl': '1536px',
+        '3xl': '1800px',
       },
       backdropBlur: {
         '16': '16px',

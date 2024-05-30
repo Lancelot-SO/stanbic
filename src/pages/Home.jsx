@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import hero from "../assets/golfer.png";
+// import hero from "../assets/golfer.png";
 import logo from "../assets/logo.png";
 import ball from "../assets/golfball.png";
 import rectangle from "../assets/rectangle.png";
@@ -11,17 +11,17 @@ import stanbic from "../assets/stanbic.png";
 import stanbicIM from "../assets/stanbicIM.png";
 import royal from "../assets/royal.png";
 import ballhole from "../assets/ballhole.jpg";
-import golfrack from "../assets/golfrack.png";
+// import golfrack from "../assets/golfrack.png";
 import golfers from "../assets/bgGolfers.png";
-import badgegolf from "../assets/badgegolf.png";
+import footerbanner from "../assets/footerbanner.png";
 import sunny from "../assets/sunny.png";
 import clearsky from "../assets/clearsky.png";
 import rainy from "../assets/rainy.png";
 import night_storm from "../assets/night_storm.png";
 
-import Slider1 from "../assets/3men.png";
-import Slider2 from "../assets/2men.png";
-import Slider3 from "../assets/golfer6.png";
+// import Slider1 from "../assets/3men.png";
+// import Slider2 from "../assets/2men.png";
+// import Slider3 from "../assets/golfer6.png";
 
 import { BiSearch } from "react-icons/bi";
 import { BsFacebook, BsTwitter, BsInstagram } from "react-icons/bs";
@@ -37,7 +37,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Link } from 'react-router-dom';
 import Slider from '../components/Slider';
-import Carousel from 'react-multi-carousel';
+// import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import RegisterModal from '../components/RegisterModal';
 
@@ -50,21 +50,21 @@ const Home = () => {
         AOS.refresh();
     }, []);
 
-    const [selectedImage, setSelectedImage] = useState(null);
-    const [isModalOpen, setIsModalOpen] = useState(false);
+    // const [selectedImage, setSelectedImage] = useState(null);
+    // const [isModalOpen, setIsModalOpen] = useState(false);
 
 
-    const handleImageClick = (image) => {
-        setSelectedImage(image);
-        setIsModalOpen(true);
-    };
+    // const handleImageClick = (image) => {
+    //     setSelectedImage(image);
+    //     setIsModalOpen(true);
+    // };
 
-    const closeModal = () => {
-        setIsModalOpen(false);
-        setSelectedImage(null);
-    };
+    // const closeModal = () => {
+    //     setIsModalOpen(false);
+    //     setSelectedImage(null);
+    // };
 
-    const images = [Slider1, Slider2, Slider3, Slider1, Slider3];
+    // const images = [Slider1, Slider2, Slider3, Slider1, Slider3];
 
 
     const api = {
@@ -92,35 +92,35 @@ const Home = () => {
     };
     const [showCallModal, setShowCallModal] = useState(false);
 
-    const responsive = {
-        superLargeDesktop: {
-            breakpoint: { max: 4000, min: 3000 },
-            items: 5
-        },
-        desktop: {
-            breakpoint: { max: 3000, min: 1024 },
-            items: 4
-        },
-        tablet: {
-            breakpoint: { max: 1024, min: 464 },
-            items: 2
-        },
-        mobile: {
-            breakpoint: { max: 464, min: 0 },
-            items: 1
-        }
-    };
+    // const responsive = {
+    //     superLargeDesktop: {
+    //         breakpoint: { max: 4000, min: 3000 },
+    //         items: 5
+    //     },
+    //     desktop: {
+    //         breakpoint: { max: 3000, min: 1024 },
+    //         items: 4
+    //     },
+    //     tablet: {
+    //         breakpoint: { max: 1024, min: 464 },
+    //         items: 2
+    //     },
+    //     mobile: {
+    //         breakpoint: { max: 464, min: 0 },
+    //         items: 1
+    //     }
+    // };
 
     return (
         <div className='overflow-hidden'>
             <div className='relative'>
-                <img src={hero} alt='hero' className='w-full md:h-[400px] lg:h-[677px] h-[200px]' />
+                <img src={footerbanner} alt='hero' className='w-full md:h-[400px] lg:h-full h-[200px] object-cover' />
 
-                <div className='absolute flex flex-col top-[30%] lg:left-[180px] left-[5px]'>
+                <div className='absolute flex flex-col top-[30%] lg:left-[130px] left-[5px]'>
                     <div className=''>
                         <img src={logo} alt='logo' data-aos="fade-down" className='hidden w-[30px] lg:w-[108px] md:w-[90px] md:h-[80px] lg:h-[100px] h-[30px]' />
 
-                        <h3 className='text-[12px] md:text-lg lg:text-3xl mt-2 small:mb-0 md:mb-1 lg:mb-2 md:w-[300px] lg:w-[410px] text-custom-blue font-bold leading-tight sm:leading-[24px] md:leading-[28px] lg:leading-[32px]'>
+                        <h3 className='text-[12px] md:text-lg lg:text-3xl mt-2 small:mb-0 md:mb-1 lg:mb-2 md:w-[300px] lg:w-[410px] text-white font-bold leading-tight sm:leading-[24px] md:leading-[28px] lg:leading-[32px]'>
 
                             <Typewriter
                                 words={["STANBIC-ASANTEHENE"]}
@@ -132,12 +132,13 @@ const Home = () => {
                                 delaySpeed={1000}
                             />
                         </h3>
-                        <h1 data-aos="fade-right" className='md:text-3xl text-[22px] lg:text-[65px] font-extrabold w-full md:w-[600px] lg:w-[812px] text-custom-blue leading-tight sm:leading-[40px] md:leading-[55px] lg:leading-[68px] mb-2 lg:mb-8'>
+                        <h1 data-aos="fade-right" className='md:text-3xl text-[22px] lg:text-[50px] font-extrabold w-full md:w-[600px] lg:w-[812px] text-white leading-tight sm:leading-[40px] md:leading-[55px] lg:leading-[68px] mb-2 lg:mb-8'>
                             INVITATIONAL <br /> G<img src={ball} alt='ball' className='inline w-[30px] sm:w-[40px] md:w-[50px] lg:w-[63px] h-[30px] sm:h-[40px] md:h-[50px] lg:h-[61px]' />LF TOURNAMENT
                         </h1>
 
                         <Link to="/">
-                            <button type='button' onClick={() => setShowCallModal(true)} className='bg-custom-blue font-semibold text-white px-4 py-1 text-sm sm:text-base rounded-[12px] md:h-[40px] md:text-lg lg:text-xl lg:w-[200px] w-[150px] h-[30px] lg:h-[58px] hover:bg-white hover:text-custom-blue transition duration-300'>Register Now</button>
+                            <button type='button' onClick={() => setShowCallModal(true)} className='bg-white font-semibold text-custom-blue px-4 py-1 text-sm sm:text-base rounded-[12px] md:h-[40px] md:text-lg lg:text-xl lg:w-[200px] w-[150px] h-[30px] lg:h-[58px] sm:bg-custom-blue sm:text-white small:text-white small:bg-custom-blue
+                            xsm:bg-custom-blue xsm:text-white msm:bg-custom-blue msm:text-white hover:bg-custom-blue hover:text-white transition duration-300'>Register Now</button>
                         </Link>
                         {showCallModal && <RegisterModal onClose={() => setShowCallModal(false)} />}
                     </div>
@@ -168,14 +169,14 @@ const Home = () => {
             </div>
 
             <section>
-                <div className="w-full lg:h-[151px] top-[657px] px-0 lg:px-[160px] pt-[20px] lg:pt-[22px] gap-8 bg-custom-blue">
+                <div className="w-full lg:h-[151px] h-[100px] top-[657px] px-0 lg:px-[160px] pt-[20px] lg:pt-[22px] gap-8 bg-custom-blue">
                     <div className='flex flex-col'>
-                        <h3 className='lg:items-center md:items-center w-[300px] md:flex md:ml-[200px] lg:w-full flex justify-center ml-8 lg:ml-0 font-semibold mb-4 text-white'>OUR PROUD SPONSORS</h3>
+                        <h3 className='lg:items-center md:items-center w-[300px] md:flex md:ml-[200px] lg:w-full flex justify-center xsm:ml-8 ml-16 lg:ml-0 font-semibold lg:mb-4 mb-2 text-white'>OUR PROUD SPONSORS</h3>
                         <div className="overflow-x-scroll sponsor flex items-center justify-center">
                             <div className="w-[370px] flex justify-center lg:justify-evenly lg:w-full md:items-center md:w-full">
-                                <img src={stanbic} alt="sponsor" className="xsm:w-[120px] xsm:h-[30px] tablet:mr-10 mr-2 small:w-[100px] tablet:w-[120px] md:w-[130px] w-[150px] small:h-[30px] tablet:h-[40px] md:h-[45px] h-[50px] lg:mr-0" />
-                                <img src={stanbicIM} alt="sponsor" className="xsm:w-[150px] xsm:h-[30px] tablet:mr-10 mr-2 small:w-[120px] tablet:w-[140px] md:w-[150px] w-[200px] small:h-[30px] tablet:h-[40px] md:h-[45px] h-[50px] lg:mr-0" />
-                                <img src={royal} alt="sponsor" className="xsm:w-[30px] xsm:h-[30px] small:w-[40px] tablet:w-[120px] md:w-[50px] w-[150px] lg:w-[50px] small:h-[30px] tablet:h-[40px] md:h-[45px] h-[50px]" />
+                                <img src={stanbic} alt="sponsor" className="xsm:w-[120px] xsm:h-[30px] msm:w-[110px] msm:h-[30px] tablet:mr-10 mr-2 small:w-[100px] tablet:w-[120px] md:w-[130px] w-[150px] small:h-[30px] tablet:h-[40px] md:h-[45px] h-[50px] lg:mr-0" />
+                                <img src={stanbicIM} alt="sponsor" className="xsm:w-[150px] xsm:h-[30px] msm:w-[110px] msm:h-[30px] tablet:mr-10 mr-2 small:w-[120px] tablet:w-[140px] md:w-[150px] w-[200px] small:h-[30px] tablet:h-[40px] md:h-[45px] h-[50px] lg:mr-0" />
+                                <img src={royal} alt="sponsor" className="xsm:w-[30px] xsm:h-[30px] small:w-[40px] msm:w-[40px] msm:h-[30px] tablet:w-[120px] md:w-[50px] w-[150px] lg:w-[50px] small:h-[30px] tablet:h-[40px] md:h-[45px] h-[50px]" />
                             </div>
                         </div>
 
@@ -184,13 +185,14 @@ const Home = () => {
             </section>
 
             <section>
-                <div className='lg:h-[873px] h-[773px] mb-[40px] relative'>
-                    <img src={ballhole} alt='sponsor' className='w-full' />
+                <div className='lg:h-[873px] h-[673px] mb-[40px] relative'>
+                    <img src={ballhole} alt='sponsor' className='relative w-full h-[150px] lg:h-[350px]' />
+                    <h2 className='absolute top-0 lg:left-[29%] text-white mt-[20px] lg:mt-0 lg:w-[700px] w-[446px] h-[90px] lg:pl-[70px] pl-1 vsm:pl-2 xsm:pl-1 small:pl-2 md:pl-2 mb-[100px] lg:mb-12 md:w-[600px] md:ml-8 flex items-center justify-center lg:text-[32px] md:text-[28px] text-[20px] font-bold'>SEE MORE PHOTOS IN OUR GALLERY</h2>
                     <Slider />
                 </div>
             </section>
 
-            <section className='relative'>
+            {/*<section className='relative'>
                 <img src={golfrack} alt='rack' data-aos="zoom-in-left" className='w-[221px] h-[320px] absolute lg:right-[100px] right-[10px] top-[-140px]' />
 
                 <div className='w-full h-[659px] lg:h-[759px] flex flex-col bg-blue-50 lg:pl-[0] pl-[20px]'>
@@ -228,14 +230,14 @@ const Home = () => {
                         </div>
                     )}
                 </div>
-            </section>
+                </section>*/}
 
             <section className="relative">
                 <div className="relative">
                     <img src={golfers} alt="golfers" className="w-full h-[200px] md:h-[300px] lg:h-full" />
                 </div>
-                <div className="absolute w-[90%] max-w-[900px] small:top-[25px] small:left-[150px] top-[30px] lg:top-[120px] right-[-105px] md:left-[280px] xsm:left-[130px] lg:left-[550px] lg:p-4 text-white">
-                    <h2 className="font-bold lg:text-[32px] md:text-[18px] text-[12px] leading-none lg:mb-2 small:ml-0 small:mb-2 ml-2 lg:ml-0 text-transparent md:ml-6" style={{ WebkitTextStroke: '1px white' }}>
+                <div className="absolute w-[90%] max-w-[900px] small:top-[15px] small:left-[150px] 3xl:left-[700px] msm:left-[120px] top-[30px] lg:top-[140px] right-[-105px] md:left-[280px] xsm:left-[130px] lg:left-[550px] lg:p-4 text-white">
+                    <h2 className="font-bold lg:text-[32px] md:text-[18px] 2xl:leading-8 3xl:leading-10 small:leading-4 text-[12px] msm:text-[11px] leading-none 3xl:mb-4 lg:mb-2 small:ml-0 small:mb-2 ml-2 lg:ml-0 text-transparent md:ml-6" style={{ WebkitTextStroke: '1px white' }}>
                         WELCOME TO THE 6TH EDITION
                         <br />
                         OF THE OTUMFUO GOLF TOURNAMENT
@@ -250,7 +252,7 @@ const Home = () => {
                             </p>
                         </div>
                     </div>
-                    <Link to="/">
+                    <Link data-aos="zoom-out-up" to="/">
                         <button
                             type="button"
                             onClick={() => setShowCallModal(true)}
@@ -267,9 +269,9 @@ const Home = () => {
 
             <section className="relative">
                 <div className="relative">
-                    <img src={badgegolf} alt='golfers' className='w-full lg:h-[600px] h-[350px]' />
+                    <img src={footerbanner} alt='golfers' className='w-full lg:h-full h-[350px] object-cover' />
                 </div>
-                <div className='absolute lg:top-20 top-[10px] left-[15px] lg:left-40 w-[343px] rounded-md h-[150px] lg:h-[193px] bg-gradient-to-r from-blue-500 to-indigo-500'>
+                <div className='absolute lg:top-[200px] top-[10px] left-[15px] lg:left-40 w-[343px] rounded-md h-[150px] lg:h-[193px] bg-gradient-to-r from-blue-500 to-indigo-500'>
                     <div className='flex gap-2 items-center mt-6 ml-4 mb-2'>
                         <input type='text' placeholder='Enter city/town' onChange={(e) => setSearch(e.target.value)} className='bg-transparent text-white' />
                         <button onClick={searchPressed}><BiSearch size={24} className='text-white' /></button>
@@ -327,6 +329,7 @@ const Home = () => {
                     </div>
                 </div>
             </section>
+
         </div>
     );
 }

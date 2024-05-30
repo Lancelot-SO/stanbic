@@ -46,7 +46,7 @@ const Gallery = () => {
         <div className='overflow-hidden'>
             <img src={gallerybg} alt='head' className='w-full' />
 
-            <div className='absolute flex lg:top-[45%] md:top-[20%] top-[80px] lg:left-[180px] left-4 flex-row'>
+            <div className='absolute flex 2xl:top-[30%] lg:top-[45%] md:top-[20%] top-[80px] lg:left-[180px] left-4 flex-row'>
                 <div className=''>
                     <h1 className='lg:text-4xl text-2xl font-extrabold mt-4 lg:w-[812px] w-full lg:h-[136px] text-custom-blue lg:text-[65px] md:text-[40px] md:leading-[40px] lg:leading-[68px] leading-8'>
                         ENJOY THE<br />
@@ -56,8 +56,11 @@ const Gallery = () => {
                 </div>
             </div>
 
-            <section className='flex justify-center'>
-                <div className='lg:w-[1320px] w-full lg:h-[648px] flex lg:flex-row flex-col gap-8 mt-10 mb-14'>
+            <section className='flex flex-col items-center justify-center'>
+                <div className="flex items-center justify-center mt-6">
+                    <h2 className='text-[32px]  font-bold text-custom-blue'>ALL OUR IMAGES</h2>
+                </div>
+                <div className='lg:w-[1320px] w-full lg:h-[648px] flex lg:flex-row flex-col gap-8 mt-10 mb-8'>
                     <div className='lg:w-[648px] w-full lg:h-[648px]'>
                         <img src={cardmain} alt='card' className='lg:h-full h-auto w-full cursor-pointer' onClick={() => openModal(cardmain)} />
                     </div>
@@ -70,12 +73,9 @@ const Gallery = () => {
                 </div>
             </section>
 
-            <section className='flex flex-col justify-center'>
-                <div className="flex items-center justify-center">
-                    <h2 className='text-[32px] font-bold text-custom-blue'>ALL OUR IMAGES</h2>
-                </div>
+            <section className='flex flex-col items-center justify-center'>
 
-                <div className='mt-16 flex lg:ml-[80px] flex-col  items-center justify-center lg:w-[1320px] w-full h-full'>
+                <div className='mt-16 flex 3xl:ml-0 lg:ml-[10px] flex-col  items-center justify-center lg:w-[1320px] w-full h-full'>
                     <div className='flex gap-6 lg:flex-row flex-col md:flex-row md:flex-wrap md:items-center md:justify-center'>
                         <img src={product1} alt='card' className=' md:w-[290px] cursor-pointer' onClick={() => openModal(product1)} />
                         <img src={product2} alt='card' className=' md:w-[290px] cursor-pointer' onClick={() => openModal(product2)} />

@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { IoMdArrowDropright, IoMdArrowDropleft } from "react-icons/io";
 import 'react-multi-carousel/lib/styles.css';
 import "./Swiper.css";
@@ -11,6 +11,10 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Link } from 'react-router-dom';
+
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const responsive = {
     superLargeDesktop: {
@@ -35,6 +39,13 @@ const responsive = {
 const Slider = () => {
     const carouselRef = useRef(null);
 
+    useEffect(() => {
+        AOS.init({
+            duration: 2000,
+        });
+        AOS.refresh();
+    }, []);
+
     const goToNext = () => {
         if (carouselRef.current) {
             carouselRef.current.next();
@@ -49,7 +60,7 @@ const Slider = () => {
 
     return (
         <div className='relative'>
-            <div className='absolute w-full lg:w-3/4 lg:pl-[50px] h-[435px] lg:top-[-160px] top-[-40px] md:top-[-100px] lg:left-[152px] ml-8 lg:ml-4'>
+            <div className='absolute w-full lg:w-3/4 lg:pl-[50px] h-[435px] lg:top-[-160px] top-[-40px] md:top-[-50px] lg:left-[152px] ml-8 lg:ml-4'>
                 <Carousel
                     ref={carouselRef}
                     swipeable={true}
@@ -58,21 +69,22 @@ const Slider = () => {
                     responsive={responsive}
                     ssr={true} // Server-side rendering
                     infinite={true}
-                    autoPlay={false}
+                    autoPlay={true}
+                    autoPlaySpeed={3000}
                     containerClass="carousel-container"
                     itemClass="carousel-item-padding-40-px"
                     arrows={false} // Disable default arrows to use custom ones
                 >
-                    <div className='clay w-[329px] h-[425px] bg-white flex items-center justify-center'>
+                    <div data-aos="fade-up" className='clay w-[329px] h-[425px] bg-white flex items-center justify-center'>
                         <img src={Slider1} alt='slider1' className="w-[287px] h-[369px]" />
                     </div>
-                    <div className='clay w-[329px] h-[425px] bg-white flex items-center justify-center'>
+                    <div data-aos="fade-up" className='clay w-[329px] h-[425px] bg-white flex items-center justify-center'>
                         <img src={Slider2} alt='slider2' className="w-[287px] h-[369px]" />
                     </div>
-                    <div className='clay w-[329px] h-[425px] bg-white flex items-center justify-center'>
+                    <div data-aos="fade-up" className='clay w-[329px] h-[425px] bg-white flex items-center justify-center'>
                         <img src={Slider3} alt='slider3' className="w-[287px] h-[369px]" />
                     </div>
-                    <div className='clay w-[329px] h-[425px] bg-white flex items-center justify-center'>
+                    <div data-aos="fade-up" className='clay w-[329px] h-[425px] bg-white flex items-center justify-center'>
                         <img src={Slider1} alt='slider1' className="w-[287px] h-[369px]" />
                     </div>
                 </Carousel>
@@ -88,14 +100,14 @@ const Slider = () => {
                 </div>
             </div>
 
-            <div className='hidden'>
-                <div className='absolute font-bold border-r border-t border-b p-5 lg:top-[350px] top-[450px] lg:left-[40%] md:left-[250px] tablet:left-[130px] left-[50px] w-[150px] items-center justify-center'>
-                    1294 images
-                </div>
-                <div className='absolute font-bold border border-r-0 border-l-0 py-5 pl-10 lg:top-[350px] top-[450px] left-[49%] w-[150px] items-center justify-center'>
-                    3594 activities
-                </div>
+
+            <div className=''>
+                <Link to="/gallery" className='absolute font-normal border border-custom-blue p-5 lg:top-[350px] top-[450px] lg:left-[43%] md:left-[250px] md:w-[200px] tablet:left-[130px] flex
+                left-[35%] items-center justify-center bg-custom-blue text-white px-4 py-1 text-sm sm:text-base rounded-[12px] md:h-[40px] md:text-lg lg:text-xl lg:w-[200px] w-[150px] h-[30px] lg:h-[58px] hover:bg-white hover:text-custom-blue transition duration-300'>
+                    <button>Click to see more</button>
+                </Link>
             </div>
+
 
         </div>
     );

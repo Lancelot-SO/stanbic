@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import logo from "../assets/logo.png";
 import { FaTimes } from 'react-icons/fa';
 import { RiMenu4Fill } from 'react-icons/ri';
-import navbg from "../assets/navbg.png"
+// import navbg from "../assets/navbg.png"
 
 const Navbar = () => {
     const [nav, setNav] = useState(false);
@@ -12,13 +12,13 @@ const Navbar = () => {
 
     return (
         <nav
-            className="flex items-center justify-between bg-gradient-to-b from-skybg to-blue-300 px-4 md:px-8 lg:px-20 py-4 text-white"
-            style={{
-                backgroundImage: `url(${navbg})`,
-                backgroundSize: 'cover',
-            }}
+            className="flex items-center justify-between bg-skybg px-4 md:px-8 lg:px-20 py-4 text-white"
+        // style={{
+        //     backgroundImage: `url(${navbg})`,
+        //     backgroundSize: 'cover',
+        // }}
         >
-            <div className="flex items-center lg:opacity-0 md:opacity-0">
+            <div className="flex items-center lg:opacity-0 md:opacity-0 sm:opacity-0 msm:opacity-0">
                 <Link to="/" className="">
                     <img src={logo} alt="Logo" className="h-8" />
                 </Link>
