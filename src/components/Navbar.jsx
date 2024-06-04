@@ -25,12 +25,12 @@ const Navbar = () => {
             </div>
             <ul className="hidden md:flex items-center gap-10 lg:gap-16">
                 <li>
-                    <Link to="/" className={`text-black font-bold hover:underline ${currentPath === '/' ? 'underline' : ''}`}>
+                    <Link to="/" className={`text-white font-bold hover:underline ${currentPath === '/' ? 'underline' : ''}`}>
                         Home
                     </Link>
                 </li>
                 <li>
-                    <Link to="/gallery" className={`text-black font-bold hover:underline ${currentPath === '/gallery' ? 'underline' : ''}`}>
+                    <Link to="/gallery" className={`text-white font-bold hover:underline ${currentPath === '/gallery' ? 'underline' : ''}`}>
                         Gallery
                     </Link>
                 </li>

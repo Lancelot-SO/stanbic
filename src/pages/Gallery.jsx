@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import gallerybg from "../assets/gallerybg.png";
+import gallerybg from "../assets/galleryheader.png";
 import cardmain from "../assets/mainCard.png";
 import card1 from "../assets/card1.png";
 import card2 from "../assets/card2.png";
@@ -44,21 +44,25 @@ const Gallery = () => {
 
     return (
         <div className='overflow-hidden'>
-            <img src={gallerybg} alt='head' className='w-full' />
-
-            <div className='absolute flex 2xl:top-[30%] lg:top-[45%] md:top-[20%] top-[80px] lg:left-[180px] left-4 flex-row'>
-                <div className=''>
-                    <h1 className='lg:text-4xl text-2xl font-extrabold mt-4 lg:w-[812px] w-full lg:h-[136px] text-custom-blue lg:text-[65px] md:text-[40px] md:leading-[40px] lg:leading-[68px] leading-8'>
+            <div className='relative'>
+                <img src={gallerybg} alt='head' className='w-full object-cover' />
+                <div className='absolute bottom-0 w-full h-1/2' style={{ background: 'linear-gradient(to top, black, transparent)' }}></div>
+            </div>
+            <div className='absolute flex 2xl:bottom-0 3xl:bottom-[200px] xsm:top-[170px] small:top-[200px] msm:top-[150px] md:top-[330px]
+            xl:top-[500px]
+            lg:top-[350px] md:bottom-[20%] bottom-[80px] lg:left-[80px] left-4 flex-row'>
+                <div>
+                    <h1 className='lg:text-4xl text-2xl font-extrabold mt-4 3xl:text-[100px] 3xl:leading-[100px] lg:w-[812px] w-full lg:h-[136px] text-white lg:text-[65px] md:text-[40px] md:leading-[40px] lg:leading-[68px] xsm:leading-6 leading-8'>
                         ENJOY THE<br />
-                        highlights of<br />
-                        the day
+                        HIGHLIGHTS OF<br />
+                        THE DAY
                     </h1>
                 </div>
             </div>
 
             <section className='flex flex-col items-center justify-center'>
                 <div className="flex items-center justify-center mt-6">
-                    <h2 className='text-[32px]  font-bold text-custom-blue'>ALL OUR IMAGES</h2>
+                    <h2 className='text-[32px] font-bold text-custom-blue'>ALL OUR IMAGES</h2>
                 </div>
                 <div className='lg:w-[1320px] w-full lg:h-[648px] flex lg:flex-row flex-col gap-8 mt-10 mb-8'>
                     <div className='lg:w-[648px] w-full lg:h-[648px]'>
@@ -74,48 +78,47 @@ const Gallery = () => {
             </section>
 
             <section className='flex flex-col items-center justify-center'>
-
-                <div className='mt-16 flex 3xl:ml-0 lg:ml-[10px] flex-col  items-center justify-center lg:w-[1320px] w-full h-full'>
+                <div className='mt-16 flex 3xl:ml-0 lg:ml-[10px] flex-col items-center justify-center lg:w-[1320px] w-full h-full'>
                     <div className='flex gap-6 lg:flex-row flex-col md:flex-row md:flex-wrap md:items-center md:justify-center'>
-                        <img src={product1} alt='card' className=' md:w-[290px] cursor-pointer' onClick={() => openModal(product1)} />
-                        <img src={product2} alt='card' className=' md:w-[290px] cursor-pointer' onClick={() => openModal(product2)} />
-                        <img src={product3} alt='card' className=' md:w-[290px] cursor-pointer' onClick={() => openModal(product3)} />
-                        <img src={product4} alt='card' className=' md:w-[290px] cursor-pointer' onClick={() => openModal(product4)} />
+                        <img src={product1} alt='card' className='md:w-[290px] cursor-pointer' onClick={() => openModal(product1)} />
+                        <img src={product2} alt='card' className='md:w-[290px] cursor-pointer' onClick={() => openModal(product2)} />
+                        <img src={product3} alt='card' className='md:w-[290px] cursor-pointer' onClick={() => openModal(product3)} />
+                        <img src={product4} alt='card' className='md:w-[290px] cursor-pointer' onClick={() => openModal(product4)} />
                     </div>
 
                     <div className='flex gap-6 mt-8 lg:flex-row flex-col md:flex-row md:flex-wrap md:items-center md:justify-center'>
-                        <img src={product5} alt='card' className=' md:w-[290px] cursor-pointer' onClick={() => openModal(product5)} />
-                        <img src={product21} alt='card' className=' md:w-[290px] cursor-pointer' onClick={() => openModal(product21)} />
-                        <img src={product7} alt='card' className=' md:w-[290px] cursor-pointer' onClick={() => openModal(product7)} />
-                        <img src={product8} alt='card' className=' md:w-[290px] cursor-pointer' onClick={() => openModal(product8)} />
+                        <img src={product5} alt='card' className='md:w-[290px] cursor-pointer' onClick={() => openModal(product5)} />
+                        <img src={product21} alt='card' className='md:w-[290px] cursor-pointer' onClick={() => openModal(product21)} />
+                        <img src={product7} alt='card' className='md:w-[290px] cursor-pointer' onClick={() => openModal(product7)} />
+                        <img src={product8} alt='card' className='md:w-[290px] cursor-pointer' onClick={() => openModal(product8)} />
                     </div>
 
                     <div className='flex gap-6 mt-8 lg:flex-row flex-col md:flex-row md:flex-wrap md:items-center md:justify-center'>
-                        <img src={product9} alt='card' className=' md:w-[290px] cursor-pointer' onClick={() => openModal(product9)} />
-                        <img src={product10} alt='card' className=' md:w-[290px] cursor-pointer' onClick={() => openModal(product10)} />
-                        <img src={product11} alt='card' className=' md:w-[290px] cursor-pointer' onClick={() => openModal(product11)} />
-                        <img src={product12} alt='card' className=' md:w-[290px] cursor-pointer' onClick={() => openModal(product12)} />
+                        <img src={product9} alt='card' className='md:w-[290px] cursor-pointer' onClick={() => openModal(product9)} />
+                        <img src={product10} alt='card' className='md:w-[290px] cursor-pointer' onClick={() => openModal(product10)} />
+                        <img src={product11} alt='card' className='md:w-[290px] cursor-pointer' onClick={() => openModal(product11)} />
+                        <img src={product12} alt='card' className='md:w-[290px] cursor-pointer' onClick={() => openModal(product12)} />
                     </div>
 
                     <div className='flex gap-6 mt-8 lg:flex-row flex-col md:flex-row md:flex-wrap md:items-center md:justify-center'>
-                        <img src={product13} alt='card' className=' md:w-[290px] cursor-pointer' onClick={() => openModal(product13)} />
-                        <img src={product14} alt='card' className=' md:w-[290px] cursor-pointer' onClick={() => openModal(product14)} />
-                        <img src={product3} alt='card' className=' md:w-[290px] cursor-pointer' onClick={() => openModal(product3)} />
-                        <img src={product16} alt='card' className=' md:w-[290px] cursor-pointer' onClick={() => openModal(product16)} />
+                        <img src={product13} alt='card' className='md:w-[290px] cursor-pointer' onClick={() => openModal(product13)} />
+                        <img src={product14} alt='card' className='md:w-[290px] cursor-pointer' onClick={() => openModal(product14)} />
+                        <img src={product3} alt='card' className='md:w-[290px] cursor-pointer' onClick={() => openModal(product3)} />
+                        <img src={product16} alt='card' className='md:w-[290px] cursor-pointer' onClick={() => openModal(product16)} />
                     </div>
 
                     <div className='flex gap-6 mt-8 lg:flex-row flex-col md:flex-row md:flex-wrap md:items-center md:justify-center'>
-                        <img src={product17} alt='card' className=' md:w-[290px] cursor-pointer' onClick={() => openModal(product17)} />
-                        <img src={product18} alt='card' className=' md:w-[290px] cursor-pointer' onClick={() => openModal(product18)} />
-                        <img src={product19} alt='card' className=' md:w-[290px] cursor-pointer' onClick={() => openModal(product19)} />
-                        <img src={product20} alt='card' className=' md:w-[290px] cursor-pointer' onClick={() => openModal(product20)} />
+                        <img src={product17} alt='card' className='md:w-[290px] cursor-pointer' onClick={() => openModal(product17)} />
+                        <img src={product18} alt='card' className='md:w-[290px] cursor-pointer' onClick={() => openModal(product18)} />
+                        <img src={product19} alt='card' className='md:w-[290px] cursor-pointer' onClick={() => openModal(product19)} />
+                        <img src={product20} alt='card' className='md:w-[290px] cursor-pointer' onClick={() => openModal(product20)} />
                     </div>
 
                     <div className='flex gap-6 mt-8 lg:flex-row flex-col md:flex-row md:flex-wrap md:items-center md:justify-center'>
-                        <img src={product21} alt='card' className=' md:w-[290px] cursor-pointer' onClick={() => openModal(product21)} />
-                        <img src={product22} alt='card' className=' md:w-[290px] cursor-pointer' onClick={() => openModal(product22)} />
-                        <img src={product9} alt='card' className=' md:w-[290px] cursor-pointer' onClick={() => openModal(product9)} />
-                        <img src={product4} alt='card' className=' md:w-[290px] cursor-pointer' onClick={() => openModal(product4)} />
+                        <img src={product21} alt='card' className='md:w-[290px] cursor-pointer' onClick={() => openModal(product21)} />
+                        <img src={product22} alt='card' className='md:w-[290px] cursor-pointer' onClick={() => openModal(product22)} />
+                        <img src={product9} alt='card' className='md:w-[290px] cursor-pointer' onClick={() => openModal(product9)} />
+                        <img src={product4} alt='card' className='md:w-[290px] cursor-pointer' onClick={() => openModal(product4)} />
                     </div>
                 </div>
             </section>
@@ -128,8 +131,8 @@ const Gallery = () => {
                     </div>
                 </div>
             )}
-
         </div>
+
     );
 };
 

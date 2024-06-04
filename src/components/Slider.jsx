@@ -6,6 +6,11 @@ import "./Swiper.css";
 import Slider1 from "../assets/golfer1.png";
 import Slider2 from "../assets/golfer2.png";
 import Slider3 from "../assets/golfer3.png";
+import Slider4 from "../assets/product14.png";
+import Slider5 from "../assets/product8.png";
+import Slider6 from "../assets/product2.png";
+import Slider7 from "../assets/product5.png";
+
 
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
@@ -85,7 +90,16 @@ const Slider = () => {
                         <img src={Slider3} alt='slider3' className="w-[287px] h-[369px]" />
                     </div>
                     <div data-aos="fade-up" className='clay w-[329px] h-[425px] bg-white flex items-center justify-center'>
-                        <img src={Slider1} alt='slider1' className="w-[287px] h-[369px]" />
+                        <img src={Slider4} alt='slider4' className="w-[287px] h-[369px]" />
+                    </div>
+                    <div data-aos="fade-up" className='clay w-[329px] h-[425px] bg-white flex items-center justify-center'>
+                        <img src={Slider5} alt='slider5' className="w-[287px] h-[369px]" />
+                    </div>
+                    <div data-aos="fade-up" className='clay w-[329px] h-[425px] bg-white flex items-center justify-center'>
+                        <img src={Slider6} alt='slider6' className="w-[287px] h-[369px]" />
+                    </div>
+                    <div data-aos="fade-up" className='clay w-[329px] h-[425px] bg-white flex items-center justify-center'>
+                        <img src={Slider7} alt='slider7' className="w-[287px] h-[369px]" />
                     </div>
                 </Carousel>
             </div>
