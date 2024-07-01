@@ -237,16 +237,16 @@ const Home = () => {
                 <div className="relative">
                     <img src={golfers} alt="golfers" className="w-full h-[200px] md:h-[300px] lg:h-full" />
                 </div>
-                <img src={badge} alt='badge' className='absolute top-[50px] left-[150px] w-[300px] xsm:w-[120px] xsm:top-[30px] xsm:left-[10px]
+                <img src={badge} alt='badge' className='absolute top-[50px] vl:top-[100px] vl:left-[200px] left-[150px] w-[300px] xsm:w-[120px] xsm:top-[30px] xsm:left-[10px]
                 msm:w-[100px] msm:left-4 md:w-[200px] md:left-[50px] xl:w-[250px] xl:left-[100px]' />
-                <div className="absolute w-[90%] max-w-[900px] small:top-[15px] small:left-[150px] 3xl:left-[700px] msm:left-[120px] top-[30px] lg:top-[5px] right-[-105px] md:left-[280px] xsm:left-[130px] lg:left-[250px] xl:left-[400px] lg:p-4 text-white">
-                    <h2 className="font-bold lg:text-[32px] xl:mb-2 md:text-[18px] 2xl:leading-8 3xl:leading-10 lg:leading-[40px] small:leading-4 text-[12px] msm:text-[11px] leading-none 3xl:mb-4 lg:mb-2 small:ml-0 small:mb-2 ml-2 lg:ml-0 text-transparent md:ml-6" style={{ WebkitTextStroke: '1px white' }}>
+                <div className="absolute w-[90%] max-w-[900px] small:top-[15px] small:left-[150px] vl:left-[600px] vl:top-[80px] 3xl:left-[700px] msm:left-[120px] top-[30px] lg:top-[5px] right-[-105px] md:left-[280px] xsm:left-[130px] lg:left-[250px] xl:left-[400px] lg:p-4 text-white">
+                    <h2 className="font-bold lg:text-[32px] xl:mb-2 md:text-[18px] vl:text-[40px] vl:leading-[40px] 2xl:leading-8 3xl:leading-10 lg:leading-[40px] small:leading-4 text-[12px] msm:text-[11px] leading-none 3xl:mb-4 lg:mb-2 small:ml-0 small:mb-2 ml-2 lg:ml-0 text-transparent md:ml-6" style={{ WebkitTextStroke: '1px white' }}>
                         WELCOME TO THE 6TH EDITION
                         <br />
                         OF THE OTUMFUO GOLF TOURNAMENT
                     </h2>
 
-                    <div className="p-2 tablet:p-4 md:p-6 small:p-0 lg:p-0 text-[8px] small:text-[10px] tablet:text-sm md:text-[12px] lg:text-[14px] leading-tight md:leading-normal lg:leading-loose lg:mb-8 xl:mb-0">
+                    <div className="p-2 tablet:p-4 md:p-6 small:p-0 lg:p-0 text-[8px] small:text-[10px] tablet:text-sm md:text-[12px] vl:text-[14px] lg:text-[14px] leading-tight md:leading-normal lg:leading-loose lg:mb-8 xl:mb-0">
                         <div className='lg:w-full w-[200px] md:w-full md:h-[180px]'>
                             <p className="md:w-[400px] lg:w-full small:w-[280px]">
                                 Stanbic Bank is the title sponsor of the 6th Otumfuor Invitational Golf Tournament Championship 2024, celebrating the 25th anniversary of the Asantehene and the bank. The event aims to connect with clients, and the golfing community, and foster growth opportunities. It also includes side activities for non-players and families, promoting community bonding and the sport of golf.                            </p>

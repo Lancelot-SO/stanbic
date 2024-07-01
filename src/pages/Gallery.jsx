@@ -50,7 +50,7 @@ const Gallery = () => {
             </div>
             <div className='absolute flex 2xl:bottom-0 3xl:bottom-[200px] xsm:top-[170px] small:top-[200px] msm:top-[150px] md:top-[330px]
             xl:top-[500px]
-            lg:top-[350px] md:bottom-[20%] bottom-[80px] lg:left-[80px] left-4 flex-row'>
+            lg:top-[350px] vl:top-[700px] md:bottom-[20%] bottom-[80px] lg:left-[80px] left-4 flex-row'>
                 <div>
                     <h1 className='lg:text-4xl text-2xl font-extrabold mt-4 3xl:text-[100px] 3xl:leading-[100px] lg:w-[812px] w-full lg:h-[136px] text-white lg:text-[65px] md:text-[40px] md:leading-[40px] lg:leading-[68px] xsm:leading-6 leading-8'>
                         ENJOY THE<br />
