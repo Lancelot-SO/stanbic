@@ -3,6 +3,9 @@ import axios from 'axios';
 import "../App.css"
 import ohene from "../assets/ohene.png"
 
+import shield from "../assets/shield.png"
+
+
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -60,7 +63,7 @@ const RegisterModal = ({ onClose }) => {
                 <div className='call__modal-content'>
                     <ToastContainer />
                     <div className='call-left'>
-                        <img src={ohene} alt='caller' loading='lazy' />
+                        <img src={shield} alt='caller' loading='lazy' />
                     </div>
 
                     <div className='call-right'>

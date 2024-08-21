@@ -9,6 +9,7 @@ import kingbg from "../assets/kingbg.png"
 import shield from "../assets/shield.png"
 import img1 from "../assets/img1.png"
 import img2 from "../assets/img2.png"
+import img3 from "../assets/img3.png"
 import ban from "../assets/ban.png"
 
 import gh1 from "../assets/gh1.png"
@@ -32,12 +33,15 @@ import night_storm from "../assets/night_storm.png";
 
 import { BiSearch } from "react-icons/bi";
 import { BsFacebook, BsTwitter, BsInstagram } from "react-icons/bs";
+import RegisterModal from '../components/RegisterModal'
 
 
 
 
 
 const Home = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
 
     const api = {
         key: "e51a99ba5449d1c13ee0227cdc604c58",
@@ -64,73 +68,79 @@ const Home = () => {
     };
 
     return (
-        <div>
+        <div className='overflow-hidden'>
             <div className=''>
                 <div className='relative'>
-                    <img src={bgImg} alt='bg' className='object-cover w-full h-[600px]' />
-                    <div className='absolute top-[20%] left-[10%] w-[558px] h-[427px] flex flex-col justify-center gap-3'>
-                        <h3 className='w-[295px] h-[26px] text-[25px] leading-[26px] font-bold text-white'>
+                    <img src={bgImg} alt='bg' className='object-cover w-full h-[577px] md:h-[600px]' />
+                    <div className='absolute md:top-[20%] top-[50%] left-[10%] md:w-[558px] md:h-[427px] flex flex-col justify-center gap-3'>
+                        <h3 className='w-[295px] h-[26px] text-[20px] leading-[26px] font-bold text-white md:text-[25px]'>
                             STANBIC-ASANTEHENE
                         </h3>
-                        <h1 className='w-[483px] h-[95px] leading-[47px] text-[45px] font-black text-white'>
-                            INVITATIONAL <br /> G<img src={ball} alt='golf ball' className='inline w-[38px] h-[36px]' />LF TOURNAMENT
+                        <h1 className='w-full md:w-[483px] h-auto md:h-[95px] leading-[35px] md:leading-[47px] text-[30px] md:text-[45px] font-black text-white'>
+                            INVITATIONAL <br /> G
+                            <img src={ball} alt='golf ball' className='inline w-[30px] h-[30px] md:w-[38px] md:h-[36px]' />LF TOURNAMENT
                         </h1>
-                        <p className='w-[429px] h-[69px] text-[15px] leading-[23px] font-normal text-white'>
+                        <p className='w-[250px] md:w-[429px] h-auto md:h-[69px] text-[14px] md:text-[15px] leading-[20px] md:leading-[23px] font-normal text-white'>
                             From savings to checking accounts and innovative mobile apps, Stanbic bank helps you build a solid financial future.
                         </p>
-                        <div className='w-[233px] h-[43px] bg-[#0033A1] flex items-center justify-center shadow-md'>
-                            <button className='text-white cursor-pointer'>REGISTER HERE</button>
+                        <div className='w-[200px] h-[40px] md:w-[233px] md:h-[43px] bg-[#0033A1] flex items-center justify-center shadow-md'>
+                            <button onClick={() => setIsModalOpen(true)} className='text-white cursor-pointer'>REGISTER HERE</button>
                         </div>
+                        {isModalOpen && <RegisterModal onClose={() => setIsModalOpen(false)} />}
                     </div>
                 </div>
-
             </div>
 
             <section>
-                <div className='bg-[#00164E] w-full h-[174px] flex flex-col items-center justify-center gap-3'>
-                    <p className='w-[471px] h-[29px] font-bold text-[24px] leading-[32px] text-white text-center'>OUR PROUD SPONSORS</p>
-                    <div className='flex gap-6'>
-                        <img src={sponsor1} alt='sponsor' />
-                        <img src={sponsor2} alt='sponsor' />
-                        <img src={sponsor3} alt='sponsor' />
-                        <img src={sponsor4} alt='sponsor' />
+                <div className='bg-[#00164E] w-full h-[225px] md:h-[174px] flex flex-col items-center justify-center gap-3'>
+                    <p className='w-[471px] h-[29px] font-bold md:text-[24px] text-[22px] leading-[32px] text-white text-center'>
+                        OUR PROUD SPONSORS
+                    </p>
+                    <div className='grid grid-cols-2 gap-4 px-2 md:px-0 md:flex md:gap-6'>
+                        <img src={sponsor1} alt='sponsor' className=' md:max-w-none' />
+                        <img src={sponsor2} alt='sponsor' className=' md:max-w-none' />
+                        <img src={sponsor3} alt='sponsor' className=' md:max-w-none' />
+                        <img src={sponsor4} alt='sponsor' className=' md:max-w-none' />
                     </div>
                 </div>
+
             </section>
 
             <section id='about'>
                 <div>
-                    <div className='relative'>
-                        <img src={kingbg} alt='king' className='object-cover w-full' />
-                        <div className='absolute top-[14%] left-[10%] w-[678px] h-[393px] flex flex-col gap-4'>
-                            <h2 className='w-[555px] h-[82px] font-bold text-[30px] leading-[41px] text-white'>
+                    <div className='relative flex flex-col md:flex-row items-center'>
+                        <img src={kingbg} alt='king' className='object-cover w-full h-[651px] md:h-auto' />
+                        <div className='absolute md:top-[14%] top-[8%] md:left-[10%] w-[400px] h-auto md:h-[240px] flex flex-col gap-4 items-center md:items-start'>
+                            <h2 className='w-[90%] md:w-[555px] h-[48px] md:h-[82px] font-bold text-[22px] md:text-[30px] leading-[24px] md:leading-[41px] text-white text-center md:text-left'>
                                 Welcome to the 6th edition of the Otumfuo Golf Tournament
                             </h2>
-                            <p className='w-[670px] h-[231px] font-normal leading-[29px] text-[17px] text-white'>
+                            <p className='w-[90%] md:mb-10 md:w-[670px] h-[176px] md:h-[231px] font-normal leading-[22px] md:leading-[29px] text-[14px] md:text-[17px] text-white text-left'>
                                 The 6th edition of the Otumfuo Invitational Golf Tournament Championship is back,
                                 marking 25 years of collaboration between Stanbic Bank and His Royal Majesty,
-                                Otumfuo Osei Tutu II. Come Saturday, 31st August, the one day tournament,
-                                presents the perfect opportunity for golfing enthusiasts and their families to tee up,
-                                network, and unwind.The Royal Golf Course boasts 93 acres of greenery, with 72 pars.
+                                Otumfuo Osei Tutu II. Come Saturday, 31st August, the one-day tournament presents the
+                                perfect opportunity for golfing enthusiasts and their families to tee up, network, and
+                                unwind. The Royal Golf Course boasts 93 acres of greenery, with 72 pars.
                             </p>
-                            <div className='w-[198px] h-[43px] bg-transparent border border-white flex items-center justify-center shadow-md'>
-                                <button className='text-white cursor-pointer'>Register</button>
+                            <div className='w-[150px] md:w-[198px] h-[40px] md:p-4 bg-transparent border border-white flex items-center justify-center shadow-md'>
+                                <button onClick={() => setIsModalOpen(true)} className='text-white cursor-pointer'>Register</button>
                             </div>
+                            {isModalOpen && <RegisterModal onClose={() => setIsModalOpen(false)} />}
                         </div>
-                        <img src={shield} alt='shield' className='absolute top-[14%] left-[64%] w-[404px] h-[482px]' />
+                        <img src={shield} alt='shield' className='absolute md:top-[14%] top-[58%] md:left-[64%] w-[200px] h-[240px] md:w-[404px] md:h-[482px] mt-4 md:mt-0' />
                     </div>
+
                 </div>
             </section>
 
 
             <section id='itinerary'>
-                <div className='flex flex-col items-center justify-center '>
-                    <div className='flex flex-col items-center w-[1168px] h-[1745px] bg-[#EBF0FF] gap-6'>
+                <div className='flex flex-col items-center justify-center pt-6 md:pt-0'>
+                    <div className='flex flex-col items-center w-[1168px] md:h-[1745px] h-[2000px] bg-[#EBF0FF] gap-6'>
                         <div className='flex flex-col items-center'>
-                            <p className='w-[499px] h-[89px] text-center font-bold text-[60px] text-[#0033AA]'>
+                            <p className='w-[499px] md:h-[89px] text-center font-bold text-[32px] md:text-[60px] text-[#0033AA]'>
                                 OUR ITINERARY
                             </p>
-                            <p className='w-[760px] h-[130px] text-[14px] leading-[32px] font-bold text-center'>
+                            <p className='w-[361px] md:w-[760px] md:h-[130px] h-[198px] text-[14px] keading-[22px] md:leading-[32px] font-bold text-center'>
                                 Welcome to the Annual Golf Championship, a thrilling three-day event filled with
                                 competition, camaraderie, and unforgettable moments on the green! Join us from
                                 August 30 to September 1, 2024, as we showcase top talent.
@@ -141,87 +151,90 @@ const Home = () => {
                         </div>
 
                         <div className="relative mt-[50px]">
-                            <div className="flex">
-                                <img src={img1} alt="itinerary" className="w-[484px] h-[323px]" />
-                                <div className="relative w-[570px]">
-                                    <div className="absolute top-[20px] left-[-5%] bg-[#0033AA] shadow-md w-[600px] h-[333px] flex flex-col items-center pt-12">
-                                        <div className='w-[386px] h-[75px]'>
-                                            <p className='font-bold text-[20px] leading-[39px] text-white'>
+                            <div className="flex md:flex-row flex-col">
+                                <img src={img1} alt="itinerary" className="md:w-[484px] md:h-[323px] w-[421px] h-[241px]" />
+                                <div className="relative md:w-[570px] w-full">
+                                    <div className="absolute top-[-30px] md:top-[20px] md:left-[-5%] left-[5%] bg-[#0033AA] shadow-md w-[400px] md:w-[600px] h-[250px] md:h-[333px] flex flex-col pl-[20px] md:pl-[60px] md:items-center md:pt-12 pt-6">
+                                        <div className='w-[85%] md:w-[386px] h-auto'>
+                                            <p className='font-bold text-[16px] md:text-[20px] leading-[24px] md:leading-[39px] text-white'>
                                                 FRIDAY,
                                             </p>
-                                            <div className='mb-6'>
-                                                <div className='flex items-center mb-2 h-[20px]'>
-                                                    <h3 className='font-bold text-[39px] leading-[39px] text-white'>30TH</h3>
-                                                    <p className='text-[16px] font-bold pt-4 text-white'>-DEPARTURE TO KUMASI</p>
+                                            <div className='mb-4 md:mb-6'>
+                                                <div className='flex items-center mb-2 h-auto md:h-[20px]'>
+                                                    <h3 className='font-bold text-[30px] md:text-[39px] leading-[30px] md:leading-[39px] text-white'>30TH</h3>
+                                                    <p className='text-[14px] md:text-[16px] font-bold pt-2 md:pt-4 text-white'>-DEPARTURE TO KUMASI</p>
                                                 </div>
                                             </div>
-                                            <ul className="text-white list-disc list-inside mb-8 w-[400px]">
-                                                <li className=' text-[15px] leading-[26px] opacity-65'>FLIGHT FROM ACCRA TO KUMASI</li>
-                                                <li className=' text-[15px] leading-[26px] opacity-65'>TRANSPORTATION TO YOUR HOTEL WILL BE PROVIDED</li>
-                                                <li className=' text-[15px] leading-[26px] opacity-65'>DINNER IS AT YOUR DEPARTURE</li>
+                                            <ul className="text-white list-disc list-inside mb-6 md:mb-8 w-full md:w-[400px]">
+                                                <li className='text-[14px] md:text-[15px] leading-[22px] md:leading-[26px] opacity-65'>FLIGHT FROM ACCRA TO KUMASI</li>
+                                                <li className='text-[14px] md:text-[15px] leading-[22px] md:leading-[26px] opacity-65'>TRANSPORTATION TO YOUR HOTEL WILL BE PROVIDED</li>
+                                                <li className='text-[14px] md:text-[15px] leading-[22px] md:leading-[26px] opacity-65'>DINNER IS AT YOUR DEPARTURE</li>
                                             </ul>
-
-
-                                            <p className='text-white'>Transporting ...</p>
+                                            <p className='text-[14px] md:text-[15px] leading-[22px] md:leading-[26px] text-white'>Transporting ...</p>
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
 
-                        <div className="relative mt-[150px]">
-                            <div className="flex">
-                                <div className="relative w-[570px]">
-                                    <div className="absolute top-[20px] left-0 bg-[#0033AA] shadow-md w-[600px] h-[333px] flex flex-col items-center pt-12">
-                                        <div className='w-[386px] h-[73px]'>
-                                            <div className='font-bold text-[20px] leading-[39px] text-white'>
+                        <div className="relative md:mt-[150px] mt-[250px]">
+                            <div className="flex md:flex-row flex-col-reverse">
+                                <div className="relative md:w-[570px] w-full">
+                                    <div className="absolute md:top-[20px] top-[-30px] left-0 bg-[#0033AA] shadow-md w-[90%] md:w-[600px] h-[270px] md:h-[333px] flex flex-col items-center pt-8 md:pt-12 pl-[50px] md:pl-0">
+                                        <div className='w-[90%] md:w-[386px] h-auto'>
+                                            <div className='font-bold text-[16px] md:text-[20px] leading-[26px] md:leading-[39px] text-white'>
                                                 Saturday,
                                             </div>
-                                            <div className='mb-10'>
-                                                <div className='flex items-center mb-2 h-[30px]'>
-                                                    <h3 className='font-bold text-[39px] leading-[39px] text-white'>31ST</h3>
-                                                    <p className='text-[16px] font-bold pt-8 text-white'>-Ceremonial Tee Off and <br />Tournament Day</p>
+                                            <div className='mb-6 md:mb-10'>
+                                                <div className='flex items-center mb-2 h-auto md:h-[30px]'>
+                                                    <h3 className='font-bold text-[30px] md:text-[39px] leading-[30px] md:leading-[39px] text-white'>31ST</h3>
+                                                    <p className='text-[14px] md:text-[16px] font-bold pt-4 md:pt-8 text-white'>
+                                                        -Ceremonial Tee Off and <br />Tournament Day
+                                                    </p>
                                                 </div>
                                             </div>
-                                            <ul className="text-white list-disc list-inside mb-8 w-[400px]">
-                                                <li className=' text-[15px] leading-[26px] opacity-65'>6:30AM - HOLES ONE AND SEVEN</li>
-                                                <li className=' text-[15px] leading-[26px] opacity-65'>BREAKFAST AND LUNCH WILL BE PROVIDED</li>
-                                                <li className=' text-[15px] leading-[26px] opacity-65'>AWARDS CEREMONY</li>
-                                                <hr className='w-[302px] h-[1px] bg-[#CDCDCD] my-1'></hr>
-                                                <li className=' text-[15px] leading-[26px] opacity-65'>7: 30PM - DINNER(DRESS CODE :SMART CASUAL)</li>
-                                                <li className=' text-[15px] leading-[26px] opacity-65'>LANCASTER HOTEL</li>
+                                            <ul className="text-white list-disc list-inside mb-6 md:mb-8 w-full md:w-[400px]">
+                                                <li className='text-[13px] md:text-[15px] leading-[20px] md:leading-[26px] opacity-65'>6:30AM - HOLES ONE AND SEVEN</li>
+                                                <li className='text-[13px] md:text-[15px] leading-[20px] md:leading-[26px] opacity-65'>BREAKFAST AND LUNCH WILL BE PROVIDED</li>
+                                                <li className='text-[13px] md:text-[15px] leading-[20px] md:leading-[26px] opacity-65'>AWARDS CEREMONY</li>
+                                                <hr className='w-[250px] md:w-[302px] h-[1px] bg-[#CDCDCD] my-1'></hr>
+                                                <li className='text-[13px] md:text-[15px] leading-[20px] md:leading-[26px] opacity-65'>7:30PM - DINNER (DRESS CODE: SMART CASUAL)</li>
+                                                <li className='text-[13px] md:text-[15px] leading-[20px] md:leading-[26px] opacity-65'>LANCASTER HOTEL</li>
                                             </ul>
                                         </div>
                                     </div>
+
                                 </div>
                                 <img src={img2} alt="itinerary" className="w-[484px] h-[323px]" />
 
                             </div>
                         </div>
 
-                        <div className="relative mt-[150px]">
-                            <div className="flex">
-                                <img src={img1} alt="itinerary" className="w-[484px] h-[323px]" />
-                                <div className="relative w-[570px]">
-                                    <div className="absolute top-[20px] left-[-5%] bg-[#0033AA] shadow-md w-[600px] h-[333px] flex flex-col items-center pt-12">
-                                        <div className='w-[386px] h-[75px]'>
-                                            <p className='font-bold text-[20px] leading-[39px] text-white'>
+                        <div className="relative md:mt-[150px] mt-[280px]">
+                            <div className="flex md:flex-row flex-col">
+                                <img src={img3} alt="itinerary" className="md:w-[484px] md:h-[323px] w-[421px] h-[241px]" />
+                                <div className="relative md:w-[570px] w-full">
+                                    <div className="absolute top-[-20px] md:top-[20px] md:left-[-5%] left-[5%] bg-[#0033AA] shadow-md w-[90%] md:w-[600px] h-[270px] md:h-[333px] flex flex-col items-center pt-8 md:pt-12">
+                                        <div className='w-[90%] md:w-[386px] h-auto'>
+                                            <p className='font-bold text-[16px] md:text-[20px] leading-[26px] md:leading-[39px] text-white'>
                                                 SUNDAY,
                                             </p>
-                                            <div className='mb-6'>
-                                                <div className='flex items-center mb-2 h-[20px]'>
-                                                    <h3 className='font-bold text-[39px] leading-[39px] text-white'>1ST</h3>
-                                                    <p className='text-[16px] font-bold pt-4 text-white'>-DEPARTURE TO Accra</p>
+                                            <div className='mb-4 md:mb-6'>
+                                                <div className='flex items-center mb-2 h-auto md:h-[20px]'>
+                                                    <h3 className='font-bold text-[30px] md:text-[39px] leading-[30px] md:leading-[39px] text-white'>1ST</h3>
+                                                    <p className='text-[14px] md:text-[16px] font-bold pt-4 md:pt-4 text-white'>-DEPARTURE TO Accra</p>
                                                 </div>
                                             </div>
-                                            <ul className="text-white list-disc list-inside mb-8 w-[400px]">
-                                                <li className=' text-[15px] leading-[26px] opacity-65'>BASED ON YOUR FLIGHT SCHEDULE,PICKUPS FROM THE HOTEL WILL BE arranged 2.5 before departure</li>
+                                            <ul className="text-white list-disc list-inside mb-6 md:mb-8 w-full md:w-[400px]">
+                                                <li className='text-[13px] md:text-[15px] leading-[20px] md:leading-[26px] opacity-65'>
+                                                    BASED ON YOUR FLIGHT SCHEDULE, PICKUPS FROM THE HOTEL WILL BE ARRANGED 2.5 HOURS BEFORE DEPARTURE
+                                                </li>
                                             </ul>
-
-                                            <p className='text-white'>Transporting ...</p>
-
+                                            <p className='text-white text-[13px] md:text-[15px]'>Transporting ...</p>
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
@@ -232,20 +245,20 @@ const Home = () => {
 
             <section>
                 <div className='relative'>
-                    <img src={ban} alt='banner' className='object-cover w-full' />
+                    <img src={ban} alt='banner' className='object-cover h-[310px] md:h-full w-full' />
                     <div className='w-[344px] h-[94px] absolute top-[50%] left-[12%] text-white'>
-                        <p className='text-[45px] h-[70px] leading-[47px] font-black'>
+                        <p className='md:text-[45px] text-[28px] h-[70px] md:leading-[47px] leading-[30px] font-black'>
                             NOT <br /> C<img src={ball} alt='golf ball' className='inline w-[38px] h-[36px]' />MPETING
                         </p>
-                        <p className='text-[16px] leading-[99px] font-bold'>Come and explore our tourist destinations.</p>
+                        <p className='md:text-[16px] text-[14px] md:leading-[99px] md:font-bold'>Come and explore our tourist destinations.</p>
                     </div>
                 </div>
             </section>
 
 
             <section>
-                <div className="flex flex-wrap gap-8 px-[220px] bg-[#F4F4F4] py-[100px]">
-                    <div className="relative rounded-lg overflow-hidden w-[40%]">
+                <div className="flex flex-col md:flex-row md:flex-wrap gap-8 md:px-[220px] px-0 bg-[#F4F4F4] md:py-[100px] py-4">
+                    <div className="relative  rounded-lg overflow-hidden md:w-[40%]">
                         <img
                             src={gh1}
                             alt="Owabi Wildlife Sanctuary"
@@ -260,12 +273,12 @@ const Home = () => {
                         </div>
                     </div>
 
-                    <div className="w-[55%] grid grid-cols-2 gap-4">
+                    <div className="md:w-[55%] px-4 md:px-0 grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div className="relative rounded-lg overflow-hidden bg-white shadow-lg">
                             <img
                                 src={gh2}
                                 alt="Zoological Gardens"
-                                className="w-[304px] h-[202px] object-cover"
+                                className="md:w-[304px] w-full h-[202px] object-cover"
                             />
                             <div className="p-4">
                                 <h3 className="text-lg font-bold">Zoological Gardens</h3>
@@ -276,7 +289,7 @@ const Home = () => {
                             <img
                                 src={gh3}
                                 alt="Okomfo Anokye Sword"
-                                className="w-[304px] h-[202px] object-cover"
+                                className="md:w-[304px] w-full h-[202px] object-cover"
                             />
                             <div className="p-4">
                                 <h3 className="text-lg font-bold">Okomfo Anokye Sword</h3>
@@ -287,7 +300,7 @@ const Home = () => {
                             <img
                                 src={gh4}
                                 alt="Kejetia Market"
-                                className="w-[304px] h-[202px] object-cover"
+                                className="md:w-[304px] w-full h-[202px] object-cover"
                             />
                             <div className="p-4">
                                 <h3 className="text-lg font-bold">Kejetia Market</h3>
@@ -298,7 +311,7 @@ const Home = () => {
                             <img
                                 src={gh5}
                                 alt="Bonwire Kente"
-                                className="w-[304px] h-[202px] object-cover"
+                                className="md:w-[304px] w-full h-[202px] object-cover"
                             />
                             <div className="p-4">
                                 <h3 className="text-lg font-bold">Bonwire Kente</h3>
@@ -311,14 +324,14 @@ const Home = () => {
 
             <section>
                 <div className='flex items-center justify-center'>
-                    <div className='w-[1168px] h-[1130px]'>
-                        <div className='py-[100px]'>
+                    <div className='w-[1168px] md:h-[1130px]'>
+                        <div className='md:py-[100px] py-[50px]'>
                             <img src={line} alt='line' />
                         </div>
                         <div>
-                            <div className='flex gap-10 items-center'>
-                                <img src={side1} alt='side' />
-                                <div>
+                            <div className='flex md:flex-row flex-col gap-10 items-center'>
+                                <img src={side1} alt='side' className='w-[361px] md:w-full mx-4 md:mx-0 rounded-lg' />
+                                <div className='pl-[200px] md:pl-0'>
                                     <h2 className='w-[241px] h-[82px] font-bold leading-[41px] text-[34px] mb-2'>Don't forget the Essentials</h2>
                                     <ul className='text-[#666C89] list-decimal w-[477px] h-[126px] font-medium leading-[21px] text-[14px] pl-3'>
                                         <li>Sun protection - hats, shades, fans</li>
@@ -333,34 +346,34 @@ const Home = () => {
                         </div>
 
                         <div>
-                            <div className='flex gap-10 items-center mt-10'>
-                                <div>
+                            <div className='flex md:flex-row flex-col-reverse gap-10 items-center md:mt-10 mb-4 md:mb-0'>
+                                <div className='pl-[130px] md:pl-0'>
                                     <h2 className='w-[241px] h-[82px] font-bold leading-[41px] text-[34px] mb-2'>6 Fun Facts</h2>
-                                    <ul className='text-[#1C1F35] w-[477px] h-[126px] font-medium leading-[21px] text-[14px]'>
-                                        <li className='mb-2 flex items-center gap-2'>
+                                    <ul className='text-[#1C1F35] w-[477px] md:h-[126px] font-medium leading-[21px] md:text-[14px]'>
+                                        <li className='mb-2 w-[294px] md:w-full text-[12px] md:text-[14px] flex items-center gap-2'>
                                             <BsArrowRight size={20} />
                                             Golf courses used to have anywhere from 5 to 22 holes
                                             per game!
                                         </li>
-                                        <li className='mb-2 flex items-center gap-2'>
+                                        <li className='mb-2 w-[294px] md:w-full text-[12px] md:text-[14px] flex items-center gap-2'>
                                             <BsArrowRight size={40} />
                                             Golf is largely believed to have originated in Scotland, but some
                                             historians believe it takes influence from similar ancient Roman and
                                             Chinese games
                                         </li>
-                                        <li className='mb-2 flex items-center gap-2'>
+                                        <li className='mb-2 w-[294px] md:w-full text-[12px] md:text-[14px] flex items-center gap-2'>
                                             <BsArrowRight size={40} />
                                             The word golf originated from the Dutch word “kolf” or “kolve”, which
                                             then became the Scottish word “gouff” and “goff”
                                         </li>
-                                        <li className='mb-2 flex items-center gap-2'>
+                                        <li className='mb-2 w-[294px] md:w-full text-[12px] md:text-[14px] flex items-center gap-2'>
                                             <BsArrowRight size={20} />
                                             Golf was originally played by shepherds to pass the time.</li>
-                                        <li className='mb-2 flex items-center gap-2'>
+                                        <li className='mb-2 w-[294px] md:w-full text-[12px] md:text-[14px] flex items-center gap-2'>
                                             <BsArrowRight size={36} />
                                             Golf holes do not stay in one place. But are moved regularly to keep
                                             the greens in good condition.</li>
-                                        <li className='flex items-center gap-2'>
+                                        <li className='w-[294px] md:w-full text-[12px] md:text-[14px] flex items-center gap-2'>
                                             <BsArrowRight size={20} />
                                             The chances of an average golfer to sink a hole-in-one are 1 in 12,000.</li>
                                     </ul>

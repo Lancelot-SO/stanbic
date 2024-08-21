@@ -1,0 +1,19 @@
+.glass__effect {
+    background: rgba(255, 255, 255, 0.1);
+    /* White with some transparency */
+    backdrop-filter: blur(10px);
+    /* Adjust the blur value as needed */
+    border-radius: 10px;
+    /* Rounded corners */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    /* Slightly transparent border */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Soft shadow */
+    padding: 20px;
+    /* Adjust padding as needed */
+    width: 1168px;
+    /* Adjust width as needed */
+    height: 700px;
+    /* Adjust height as needed */
+
+}
