@@ -48,12 +48,12 @@ const Gallery = () => {
     };
 
     return (
-        <div>
+        <div className='overflow-hidden'>
             <div>
                 <div className='relative'>
-                    <img src={galleryhero} alt='hero' className='object-cover w-full' />
+                    <img src={galleryhero} alt='hero' className='object-cover h-[497px] md:h-full w-full' />
                     <div>
-                        <p className='absolute top-[40%] left-[10%] w-[559px] h-[165px] font-bold text-[45px] leading-[55px] text-white'>
+                        <p className='absolute top-[70%] left-[5%] md:top-[40%] md:left-[10%] w-[559px] h-[165px] font-bold md:text-[45px] text-[27px] leading-[28px] md:leading-[55px] text-white'>
                             ENJOY THE <br />HIGHLIGHTS OF <br />THE DAY
                         </p>
                     </div>
@@ -63,10 +63,10 @@ const Gallery = () => {
             <section>
                 <div className='bg-[#F4F4F4] h-[900px] w-full relative'>
                     <img src={ghana} alt='ghana' />
-                    <div className='absolute top-[50px] left-[11%]'>
+                    <div className='absolute top-[50px] md:left-[11%] px-4 md:px-0'>
 
-                        <div className="flex flex-wrap gap-8 w-[1168px] h-[600px] ">
-                            <div className="relative rounded-lg overflow-hidden w-[40%]">
+                        <div className="flex flex-col md:flex-row flex-wrap gap-8 w-full md:w-[1168px] h-auto md:h-[600px]">
+                            <div className="relative rounded-lg overflow-hidden md:w-[40%]">
                                 <img
                                     src={gh1}
                                     alt="Owabi Wildlife Sanctuary"
@@ -74,14 +74,13 @@ const Gallery = () => {
                                 />
                             </div>
 
-                            <div className="w-[55%] grid grid-cols-2 gap-4">
+                            <div className="md:w-[55%] grid grid-cols-2 gap-4">
                                 <div className="relative rounded-lg overflow-hidden bg-white shadow-lg">
                                     <img
                                         src={gh2}
                                         alt="Zoological Gardens"
                                         className="w-full h-full object-cover"
                                     />
-
                                 </div>
 
                                 <div className="relative rounded-lg overflow-hidden bg-white shadow-lg">
@@ -90,7 +89,6 @@ const Gallery = () => {
                                         alt="Okomfo Anokye Sword"
                                         className="w-full h-full object-cover"
                                     />
-
                                 </div>
 
                                 <div className="relative rounded-lg overflow-hidden bg-white shadow-lg">
@@ -99,7 +97,6 @@ const Gallery = () => {
                                         alt="Kejetia Market"
                                         className="w-full h-full object-cover"
                                     />
-
                                 </div>
 
                                 <div className="relative rounded-lg overflow-hidden bg-white shadow-lg">
@@ -108,10 +105,10 @@ const Gallery = () => {
                                         alt="Bonwire Kente"
                                         className="w-full h-full object-cover"
                                     />
-
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
 

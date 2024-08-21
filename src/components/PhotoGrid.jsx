@@ -51,12 +51,12 @@ const PhotoGrid = () => {
     const displayedImages = showMore ? data : data.slice(0, 9);
 
     return (
-        <div>
+        <div className='overflow-hidden'>
             <div className={modal ? "modal open" : "modal"}>
                 <img src={tempImgSrc} alt='foto' />
                 <FaTimes onClick={() => setModal(false)} />
             </div>
-            <div className='px-[170px] flex flex-col items-center mb-8'>
+            <div className='md:px-[170px] px-4 flex flex-col items-center mb-8'>
                 <div className='gallery'>
                     {
                         displayedImages.map((item, index) => (

@@ -19,6 +19,7 @@
 @media (max-width: 991px) {
     .gallery {
         column-count: 2;
+        column-width: 100%;
     }
 }
 
