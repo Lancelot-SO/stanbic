@@ -1,139 +1,192 @@
-import React, { useState } from 'react';
-import gallerybg from "../assets/galleryheader.png";
-import cardmain from "../assets/mainCard.png";
-import card1 from "../assets/card1.png";
-import card2 from "../assets/card2.png";
-import card3 from "../assets/card3.png";
-import card4 from "../assets/card4.png";
-import product1 from "../assets/product1.png";
-import product2 from "../assets/product2.png";
-import product3 from "../assets/product3.png";
-import product4 from "../assets/product4.png";
-import product5 from "../assets/product5.png";
-// import product6 from "../assets/product6.jpg";
-import product7 from "../assets/product7.png";
-import product8 from "../assets/product8.png";
-import product9 from "../assets/product9.png";
-import product10 from "../assets/product10.png";
-import product11 from "../assets/product11.png";
-import product12 from "../assets/product12.png";
-import product13 from "../assets/product13.png";
-import product14 from "../assets/product14.png";
-// import product15 from "../assets/product15.jpg";
-import product16 from "../assets/product16.png";
-import product17 from "../assets/product17.png";
-import product18 from "../assets/product18.png";
-import product19 from "../assets/product19.png";
-import product20 from "../assets/product20.png";
-import product21 from "../assets/product21.png";
-import product22 from "../assets/product22.png";
-// import product23 from "../assets/product23.jpg";
-// import product24 from "../assets/product24.jpg";
+import React, { useCallback, useEffect, useState } from 'react'
 
+import galleryhero from "../assets/galleryhero.png"
+
+import ghana from "../assets/ghana.png"
+
+
+import gh1 from "../assets/card3.png"
+import gh2 from "../assets/mainCard.png"
+import gh3 from "../assets/product2.png"
+import gh4 from "../assets/golfer2.png"
+import gh5 from "../assets/product5.png"
+import PhotoGrid from '../components/PhotoGrid'
+
+import footerbanner from "../assets/footerbanner.png"
+import sunny from "../assets/sunny.png";
+import clearsky from "../assets/clearsky.png";
+import rainy from "../assets/rainy.png";
+import night_storm from "../assets/night_storm.png";
+
+import { BiSearch } from "react-icons/bi";
+import { BsFacebook, BsTwitter, BsInstagram } from "react-icons/bs";
 
 const Gallery = () => {
-    const [selectedImage, setSelectedImage] = useState(null);
 
-    const openModal = (image) => {
-        setSelectedImage(image);
+    const api = {
+        key: "e51a99ba5449d1c13ee0227cdc604c58",
+        baseUrl: "https://api.openweathermap.org/data/2.5/",
     };
 
-    const closeModal = () => {
-        setSelectedImage(null);
+    const [search, setSearch] = useState('');
+    const [weather, setWeather] = useState({});
+
+    const fetchWeather = useCallback((city) => {
+        fetch(`${api.baseUrl}weather?q=${city}&units=metric&APPID=${api.key}`)
+            .then((res) => res.json())
+            .then((result) => {
+                setWeather(result);
+            });
+    }, [api.baseUrl, api.key]);
+
+    useEffect(() => {
+        fetchWeather('Kumasi');
+    }, [fetchWeather]);
+
+    const searchPressed = () => {
+        fetchWeather(search);
     };
 
     return (
-        <div className='overflow-hidden'>
-            <div className='relative'>
-                <img src={gallerybg} alt='head' className='w-full object-cover' />
-                <div className='absolute bottom-0 w-full h-1/2' style={{ background: 'linear-gradient(to top, black, transparent)' }}></div>
+        <div>
+            <div>
+                <div className='relative'>
+                    <img src={galleryhero} alt='hero' className='object-cover w-full' />
+                    <div>
+                        <p className='absolute top-[40%] left-[10%] w-[559px] h-[165px] font-bold text-[45px] leading-[55px] text-white'>
+                            ENJOY THE <br />HIGHLIGHTS OF <br />THE DAY
+                        </p>
+                    </div>
+                </div>
             </div>
-            <div className='absolute flex 2xl:bottom-0 3xl:bottom-[200px] xsm:top-[170px] small:top-[200px] msm:top-[150px] md:top-[330px]
-            xl:top-[500px]
-            lg:top-[350px] vl:top-[700px] md:bottom-[20%] bottom-[80px] lg:left-[80px] left-4 flex-row'>
+
+            <section>
+                <div className='bg-[#F4F4F4] h-[900px] w-full relative'>
+                    <img src={ghana} alt='ghana' />
+                    <div className='absolute top-[50px] left-[11%]'>
+
+                        <div className="flex flex-wrap gap-8 w-[1168px] h-[600px] ">
+                            <div className="relative rounded-lg overflow-hidden w-[40%]">
+                                <img
+                                    src={gh1}
+                                    alt="Owabi Wildlife Sanctuary"
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
+
+                            <div className="w-[55%] grid grid-cols-2 gap-4">
+                                <div className="relative rounded-lg overflow-hidden bg-white shadow-lg">
+                                    <img
+                                        src={gh2}
+                                        alt="Zoological Gardens"
+                                        className="w-full h-full object-cover"
+                                    />
+
+                                </div>
+
+                                <div className="relative rounded-lg overflow-hidden bg-white shadow-lg">
+                                    <img
+                                        src={gh3}
+                                        alt="Okomfo Anokye Sword"
+                                        className="w-full h-full object-cover"
+                                    />
+
+                                </div>
+
+                                <div className="relative rounded-lg overflow-hidden bg-white shadow-lg">
+                                    <img
+                                        src={gh4}
+                                        alt="Kejetia Market"
+                                        className="w-full h-full object-cover"
+                                    />
+
+                                </div>
+
+                                <div className="relative rounded-lg overflow-hidden bg-white shadow-lg">
+                                    <img
+                                        src={gh5}
+                                        alt="Bonwire Kente"
+                                        className="w-full h-full object-cover"
+                                    />
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <section>
                 <div>
-                    <h1 className='lg:text-4xl text-2xl font-extrabold mt-4 3xl:text-[100px] 3xl:leading-[100px] lg:w-[812px] w-full lg:h-[136px] text-white lg:text-[65px] md:text-[40px] md:leading-[40px] lg:leading-[68px] xsm:leading-6 leading-8'>
-                        ENJOY THE<br />
-                        HIGHLIGHTS OF<br />
-                        THE DAY
-                    </h1>
-                </div>
-            </div>
-
-            <section className='flex flex-col items-center justify-center'>
-                <div className="flex items-center justify-center mt-6">
-                    <h2 className='text-[32px] font-bold text-custom-blue'>ALL OUR IMAGES</h2>
-                </div>
-                <div className='lg:w-[1320px] w-full lg:h-[648px] flex lg:flex-row flex-col gap-8 mt-10 mb-8'>
-                    <div className='lg:w-[648px] w-full lg:h-[648px]'>
-                        <img src={cardmain} alt='card' className='lg:h-full h-auto w-full cursor-pointer' onClick={() => openModal(cardmain)} />
-                    </div>
-                    <div className='grid grid-cols-2 gap-4 md:items-center md:place-items-center'>
-                        <img src={card1} alt='card' className='w-[312px] lg:h-[312px] h-auto cursor-pointer' onClick={() => openModal(card1)} />
-                        <img src={card2} alt='card' className='w-[312px] lg:h-[312px] h-auto cursor-pointer' onClick={() => openModal(card2)} />
-                        <img src={card3} alt='card' className='w-[312px] lg:h-[312px] h-auto cursor-pointer' onClick={() => openModal(card3)} />
-                        <img src={card4} alt='card' className='w-[312px] lg:h-[312px] h-auto cursor-pointer' onClick={() => openModal(card4)} />
-                    </div>
+                    <PhotoGrid />
                 </div>
             </section>
 
-            <section className='flex flex-col items-center justify-center'>
-                <div className='mt-16 flex 3xl:ml-0 lg:ml-[10px] flex-col items-center justify-center lg:w-[1320px] w-full h-full'>
-                    <div className='flex gap-6 lg:flex-row flex-col md:flex-row md:flex-wrap md:items-center md:justify-center'>
-                        <img src={product1} alt='card' className='md:w-[290px] cursor-pointer' onClick={() => openModal(product1)} />
-                        <img src={product2} alt='card' className='md:w-[290px] cursor-pointer' onClick={() => openModal(product2)} />
-                        <img src={product3} alt='card' className='md:w-[290px] cursor-pointer' onClick={() => openModal(product3)} />
-                        <img src={product4} alt='card' className='md:w-[290px] cursor-pointer' onClick={() => openModal(product4)} />
+            <section className="relative">
+                <div className="relative">
+                    <img src={footerbanner} alt='golfers' className='w-full lg:h-full h-[350px] object-cover' />
+                </div>
+                <div className='absolute lg:top-[200px] top-[10px] left-[15px] lg:left-40 w-[343px] rounded-md h-[150px] lg:h-[193px] bg-gradient-to-r from-blue-500 to-indigo-500'>
+                    <div className='flex gap-2 items-center mt-6 ml-4 mb-2'>
+                        <input type='text' placeholder='Enter city/town' onChange={(e) => setSearch(e.target.value)} className='bg-transparent text-white' />
+                        <button onClick={searchPressed}><BiSearch size={24} className='text-white' /></button>
                     </div>
-
-                    <div className='flex gap-6 mt-8 lg:flex-row flex-col md:flex-row md:flex-wrap md:items-center md:justify-center'>
-                        <img src={product5} alt='card' className='md:w-[290px] cursor-pointer' onClick={() => openModal(product5)} />
-                        <img src={product21} alt='card' className='md:w-[290px] cursor-pointer' onClick={() => openModal(product21)} />
-                        <img src={product7} alt='card' className='md:w-[290px] cursor-pointer' onClick={() => openModal(product7)} />
-                        <img src={product8} alt='card' className='md:w-[290px] cursor-pointer' onClick={() => openModal(product8)} />
-                    </div>
-
-                    <div className='flex gap-6 mt-8 lg:flex-row flex-col md:flex-row md:flex-wrap md:items-center md:justify-center'>
-                        <img src={product9} alt='card' className='md:w-[290px] cursor-pointer' onClick={() => openModal(product9)} />
-                        <img src={product10} alt='card' className='md:w-[290px] cursor-pointer' onClick={() => openModal(product10)} />
-                        <img src={product11} alt='card' className='md:w-[290px] cursor-pointer' onClick={() => openModal(product11)} />
-                        <img src={product12} alt='card' className='md:w-[290px] cursor-pointer' onClick={() => openModal(product12)} />
-                    </div>
-
-                    <div className='flex gap-6 mt-8 lg:flex-row flex-col md:flex-row md:flex-wrap md:items-center md:justify-center'>
-                        <img src={product13} alt='card' className='md:w-[290px] cursor-pointer' onClick={() => openModal(product13)} />
-                        <img src={product14} alt='card' className='md:w-[290px] cursor-pointer' onClick={() => openModal(product14)} />
-                        <img src={product3} alt='card' className='md:w-[290px] cursor-pointer' onClick={() => openModal(product3)} />
-                        <img src={product16} alt='card' className='md:w-[290px] cursor-pointer' onClick={() => openModal(product16)} />
-                    </div>
-
-                    <div className='flex gap-6 mt-8 lg:flex-row flex-col md:flex-row md:flex-wrap md:items-center md:justify-center'>
-                        <img src={product17} alt='card' className='md:w-[290px] cursor-pointer' onClick={() => openModal(product17)} />
-                        <img src={product18} alt='card' className='md:w-[290px] cursor-pointer' onClick={() => openModal(product18)} />
-                        <img src={product19} alt='card' className='md:w-[290px] cursor-pointer' onClick={() => openModal(product19)} />
-                        <img src={product20} alt='card' className='md:w-[290px] cursor-pointer' onClick={() => openModal(product20)} />
-                    </div>
-
-                    <div className='flex gap-6 mt-8 lg:flex-row flex-col md:flex-row md:flex-wrap md:items-center md:justify-center'>
-                        <img src={product21} alt='card' className='md:w-[290px] cursor-pointer' onClick={() => openModal(product21)} />
-                        <img src={product22} alt='card' className='md:w-[290px] cursor-pointer' onClick={() => openModal(product22)} />
-                        <img src={product9} alt='card' className='md:w-[290px] cursor-pointer' onClick={() => openModal(product9)} />
-                        <img src={product4} alt='card' className='md:w-[290px] cursor-pointer' onClick={() => openModal(product4)} />
+                    {
+                        typeof weather.main !== "undefined" ? (
+                            <div>
+                                <div className='flex flex-col justify-center h-full px-4'>
+                                    <div className='mb-2 flex justify-between'>
+                                        <h4 className="text-white font-bold">{weather.name}</h4>
+                                        <h4 className="text-white">{weather.timezone}</h4>
+                                    </div>
+                                    <div className='flex items-center mb-2'>
+                                        <img src={sunny} alt='sunny' className="mr-2" />
+                                        <div>
+                                            <h4 className="text-white">{weather.main.temp}°C</h4>
+                                            <h4 className="text-white">{weather.weather[0].description}</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='w-[343px] h-[127px] mt-4 xsm:mt-2 small:mt-2 md:mt-2 flex flex-row gap-2'>
+                                    <div className='backdrop-blur-16 backdrop-saturate-180 bg-custom-bg rounded-xl border border-custom-border w-[78px] items-center justify-center flex-col flex'>
+                                        <img src={clearsky} alt='cloud' />
+                                        <strong className='font-bold'>{weather.main.temp_min}°C</strong>
+                                        <small className='text-[12px] text-zinc-700'>Temp Min</small>
+                                    </div>
+                                    <div className='backdrop-blur-16 backdrop-saturate-180 bg-custom-bg rounded-xl border border-custom-border w-[78px] items-center justify-center flex-col flex'>
+                                        <img src={rainy} alt='cloud' />
+                                        <strong className='font-bold'>{weather.main.temp_max}°C</strong>
+                                        <small className='text-[12px] text-zinc-700'>Temp Max</small>
+                                    </div>
+                                    <div className='backdrop-blur-16 backdrop-saturate-180 bg-custom-bg rounded-xl border border-custom-border w-[78px] items-center justify-center flex-col flex'>
+                                        <img src={night_storm} alt='cloud' />
+                                        <strong className='font-bold'>{weather.main.pressure} hPa</strong>
+                                        <small className='text-[12px] text-zinc-700'>Pressure</small>
+                                    </div>
+                                    <div className='backdrop-blur-16 backdrop-saturate-180 bg-custom-bg rounded-xl border border-custom-border w-[78px] items-center justify-center flex-col flex'>
+                                        <img src={clearsky} alt='cloud' />
+                                        <strong className='font-bold'>{weather.main.humidity}%</strong>
+                                        <small className='text-[12px] text-zinc-700'>Humidity</small>
+                                    </div>
+                                </div>
+                            </div>
+                        ) : (
+                            <div className='flex gap-2 items-center mt-6 ml-4'>
+                                <input type='text' placeholder='Enter city/town' onChange={(e) => setSearch(e.target.value)} className='text-white' />
+                                <button onClick={searchPressed}><BiSearch size={24} className='text-white' /></button>
+                            </div>
+                        )
+                    }
+                    <div className='w-[160px] h-[32px] flex mt-4 justify-evenly'>
+                        <BsFacebook size={24} className='text-[#5D50C6]' />
+                        <BsTwitter size={24} className='text-[#5D50C6]' />
+                        <BsInstagram size={24} className='text-[#5D50C6]' />
                     </div>
                 </div>
             </section>
-
-            {selectedImage && (
-                <div className='fixed inset-0 flex items-center justify-center bg-black bg-opacity-70 z-50' onClick={closeModal}>
-                    <div className='relative bg-white h-[550px] p-4 rounded-lg'>
-                        <img src={selectedImage} alt='Selected' className='h-[520px] max-h-screen max-w-full' />
-                        <button className='absolute top-0 right-5 rounded-full m-4 text-white text-2xl font-bold w-[30px] h-[30px] pb-1 bg-custom-blue flex items-center justify-center' onClick={closeModal}>×</button>
-                    </div>
-                </div>
-            )}
         </div>
+    )
+}
 
-    );
-};
-
-export default Gallery;
+export default Gallery

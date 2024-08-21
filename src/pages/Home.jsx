@@ -1,72 +1,43 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import hero from "../assets/footerbanner.png";
-import logo from "../assets/logo.png";
-import ball from "../assets/golfball.png";
-import rectangle from "../assets/rectangle.png";
-import cloud from "../assets/cloud.png";
-import degree from "../assets/degree.png";
+import React, { useCallback, useEffect, useState } from 'react'
+import bgImg from "../assets/herobg.png"
+import ball from "../assets/golfball.png"
+import sponsor1 from "../assets/stanbic.png"
+import sponsor2 from "../assets/stanbicIL.png"
+import sponsor3 from "../assets/stanbicIM.png"
+import sponsor4 from "../assets/royal.png"
+import kingbg from "../assets/kingbg.png"
+import shield from "../assets/shield.png"
+import img1 from "../assets/img1.png"
+import img2 from "../assets/img2.png"
+import ban from "../assets/ban.png"
 
-import stanbic from "../assets/stanbic.png";
-// import stanbicIL from "../assets/stanbicIL.png";
-import stanbicIM from "../assets/stanbicIM.png";
-import royal from "../assets/royal.png";
-import ballhole from "../assets/ballhole.jpg";
-// import golfrack from "../assets/golfrack.png";
-import golfers from "../assets/middlebannerbg.png";
-import badge from "../assets/middlebadge.png"
-import footerbanner from "../assets/stanbicfooter.png";
+import gh1 from "../assets/gh1.png"
+import gh2 from "../assets/gh2.png"
+import gh3 from "../assets/gh3.png"
+import gh4 from "../assets/gh4.png"
+import gh5 from "../assets/gh5.png"
+
+import line from "../assets/line.png"
+import side1 from "../assets/side1.png"
+import side2 from "../assets/side2.png"
+
+
+import { BsArrowRight } from "react-icons/bs";
+
+import footerbanner from "../assets/footerbanner.png"
 import sunny from "../assets/sunny.png";
 import clearsky from "../assets/clearsky.png";
 import rainy from "../assets/rainy.png";
 import night_storm from "../assets/night_storm.png";
 
-// import Slider1 from "../assets/3men.png";
-// import Slider2 from "../assets/2men.png";
-// import Slider3 from "../assets/golfer6.png";
-
 import { BiSearch } from "react-icons/bi";
 import { BsFacebook, BsTwitter, BsInstagram } from "react-icons/bs";
 
-import "./Home.css";
 
-import { Typewriter } from 'react-simple-typewriter'
 
-import AOS from "aos";
-import "aos/dist/aos.css";
 
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import { Link } from 'react-router-dom';
-import Slider from '../components/Slider';
-// import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
-import RegisterModal from '../components/RegisterModal';
 
 const Home = () => {
-
-    useEffect(() => {
-        AOS.init({
-            duration: 2000,
-        });
-        AOS.refresh();
-    }, []);
-
-    // const [selectedImage, setSelectedImage] = useState(null);
-    // const [isModalOpen, setIsModalOpen] = useState(false);
-
-
-    // const handleImageClick = (image) => {
-    //     setSelectedImage(image);
-    //     setIsModalOpen(true);
-    // };
-
-    // const closeModal = () => {
-    //     setIsModalOpen(false);
-    //     setSelectedImage(null);
-    // };
-
-    // const images = [Slider1, Slider2, Slider3, Slider1, Slider3];
-
 
     const api = {
         key: "e51a99ba5449d1c13ee0227cdc604c58",
@@ -91,93 +62,167 @@ const Home = () => {
     const searchPressed = () => {
         fetchWeather(search);
     };
-    const [showCallModal, setShowCallModal] = useState(false);
-
-    // const responsive = {
-    //     superLargeDesktop: {
-    //         breakpoint: { max: 4000, min: 3000 },
-    //         items: 5
-    //     },
-    //     desktop: {
-    //         breakpoint: { max: 3000, min: 1024 },
-    //         items: 4
-    //     },
-    //     tablet: {
-    //         breakpoint: { max: 1024, min: 464 },
-    //         items: 2
-    //     },
-    //     mobile: {
-    //         breakpoint: { max: 464, min: 0 },
-    //         items: 1
-    //     }
-    // };
 
     return (
-        <div className='overflow-hidden'>
-            <div className='relative'>
-                <img src={hero} alt='hero' className='w-full md:h-[400px] lg:h-full h-[200px] object-cover' />
-
-                <div className='absolute flex flex-col top-[30%] lg:left-[130px] left-[5px]'>
-                    <div className=''>
-                        <img src={logo} alt='logo' data-aos="fade-down" className='hidden w-[30px] lg:w-[108px] md:w-[90px] md:h-[80px] lg:h-[100px] h-[30px]' />
-
-                        <h3 className='text-[12px] md:text-lg lg:text-3xl mt-2 small:mb-0 md:mb-1 lg:mb-2 md:w-[300px] lg:w-[410px] text-white font-bold leading-tight sm:leading-[24px] md:leading-[28px] lg:leading-[32px]'>
-
-                            <Typewriter
-                                words={["STANBIC-ASANTEHENE"]}
-                                loop
-                                cursor
-                                cursorStyle='_'
-                                typeSpeed={70}
-                                deleteSpeed={50}
-                                delaySpeed={1000}
-                            />
+        <div>
+            <div className=''>
+                <div className='relative'>
+                    <img src={bgImg} alt='bg' className='object-cover w-full h-[600px]' />
+                    <div className='absolute top-[20%] left-[10%] w-[558px] h-[427px] flex flex-col justify-center gap-3'>
+                        <h3 className='w-[295px] h-[26px] text-[25px] leading-[26px] font-bold text-white'>
+                            STANBIC-ASANTEHENE
                         </h3>
-                        <h1 data-aos="fade-right" className='md:text-3xl text-[22px] msm:text-[15px] lg:text-[50px] font-extrabold w-full md:w-[600px] lg:w-[812px] text-white leading-tight sm:leading-[40px] md:leading-[55px] lg:leading-[68px] mb-2 lg:mb-8'>
-                            INVITATIONAL <br /> G<img src={ball} alt='ball' className='inline w-[30px] sm:w-[40px] md:w-[50px] lg:w-[63px] h-[30px] sm:h-[40px] md:h-[50px] lg:h-[61px]' />LF TOURNAMENT
+                        <h1 className='w-[483px] h-[95px] leading-[47px] text-[45px] font-black text-white'>
+                            INVITATIONAL <br /> G<img src={ball} alt='golf ball' className='inline w-[38px] h-[36px]' />LF TOURNAMENT
                         </h1>
-
-                        <Link to="/">
-                            <button type='button' onClick={() => setShowCallModal(true)} className='bg-white font-semibold text-custom-blue px-4 py-1 text-sm sm:text-base rounded-[12px] md:h-[40px] md:text-lg lg:text-xl lg:w-[200px] w-[150px] h-[30px] lg:h-[58px] sm:bg-custom-blue sm:text-white small:text-white small:bg-custom-blue
-                            xsm:bg-custom-blue xsm:text-white msm:bg-custom-blue msm:text-white hover:bg-custom-blue hover:text-white transition duration-300'>Register Now</button>
-                        </Link>
-                        {showCallModal && <RegisterModal onClose={() => setShowCallModal(false)} />}
-                    </div>
-                </div>
-
-                <div className='absolute bottom-[20px] md:bottom-[10px] lg:bottom-[5px] right-[20px] sm:right-[60px] md:right-[100px] lg:right-[180px] text-white hidden md:hidden flex-col md:flex-row'>
-                    <div className='flex flex-col mb-2 md:mb-0'>
-                        <div className='flex items-center gap-2 mt-4'>
-                            <span className='text-sm sm:text-base md:text-lg lg:text-xl font-semibold leading-tight sm:leading-[16px] md:leading-[16px] lg:leading-[16px]'>Stockholm, Sweden</span>
-                            <img src={rectangle} alt='rect' className='hidden md:block' />
-                        </div>
-                        <div className='flex items-center gap-2'>
-                            <small className='text-xs sm:text-sm md:text-base lg:text-lg'>Tue, Jun 30, 2024</small>
-                            <img src={rectangle} alt='rect' className='hidden md:block' />
-                        </div>
-                    </div>
-                    <div className='flex items-center'>
-                        <img src={cloud} alt='rect' className='w-[30px] sm:w-[40px] md:w-[50px] lg:w-[60px]' />
-                        <div className='flex flex-col pt-4 md:pt-0'>
-                            <div className='flex items-baseline'>
-                                <span className='text-custom-blue text-2xl sm:text-3xl md:text-[35px] lg:text-[40px] font-semibold'>19</span>
-                                <img src={degree} alt='rect' className='w-[4px] sm:w-[5px] md:w-[6px] lg:w-[7px] h-[4px] sm:h-[5px] md:h-[6px] lg:h-[7px]' />
-                            </div>
-                            <small className='text-xs sm:text-sm md:text-base lg:text-lg'>Rainy</small>
+                        <p className='w-[429px] h-[69px] text-[15px] leading-[23px] font-normal text-white'>
+                            From savings to checking accounts and innovative mobile apps, Stanbic bank helps you build a solid financial future.
+                        </p>
+                        <div className='w-[233px] h-[43px] bg-[#0033A1] flex items-center justify-center shadow-md'>
+                            <button className='text-white cursor-pointer'>REGISTER HERE</button>
                         </div>
                     </div>
                 </div>
+
             </div>
 
             <section>
-                <div className="w-full lg:h-[151px] h-[100px] top-[657px] px-0 lg:px-[160px] pt-[20px] lg:pt-[22px] gap-8 bg-custom-blue">
-                    <div className='flex flex-col'>
-                        <h3 className='lg:items-center md:items-center w-[300px] md:flex md:ml-[200px] lg:w-full flex justify-center xsm:ml-8 ml-16 lg:ml-0 font-semibold lg:mb-4 mb-2 text-white'>OUR PROUD SPONSORS</h3>
-                        <div className="overflow-x-scroll sponsor flex items-center justify-center">
-                            <div className="w-[370px] flex justify-center lg:justify-evenly lg:w-full md:items-center md:w-full">
-                                <img src={stanbic} alt="sponsor" className="xsm:w-[120px] xsm:h-[30px] msm:w-[110px] msm:h-[30px] tablet:mr-10 mr-2 small:w-[100px] tablet:w-[120px] md:w-[130px] w-[150px] small:h-[30px] tablet:h-[40px] md:h-[45px] h-[50px] lg:mr-0" />
-                                <img src={stanbicIM} alt="sponsor" className="xsm:w-[150px] xsm:h-[30px] msm:w-[110px] msm:h-[30px] tablet:mr-10 mr-2 small:w-[120px] tablet:w-[140px] md:w-[150px] w-[200px] small:h-[30px] tablet:h-[40px] md:h-[45px] h-[50px] lg:mr-0" />
-                                <img src={royal} alt="sponsor" className="xsm:w-[30px] xsm:h-[30px] small:w-[40px] msm:w-[40px] msm:h-[30px] tablet:w-[120px] md:w-[50px] w-[150px] lg:w-[50px] small:h-[30px] tablet:h-[40px] md:h-[45px] h-[50px]" />
+                <div className='bg-[#00164E] w-full h-[174px] flex flex-col items-center justify-center gap-3'>
+                    <p className='w-[471px] h-[29px] font-bold text-[24px] leading-[32px] text-white text-center'>OUR PROUD SPONSORS</p>
+                    <div className='flex gap-6'>
+                        <img src={sponsor1} alt='sponsor' />
+                        <img src={sponsor2} alt='sponsor' />
+                        <img src={sponsor3} alt='sponsor' />
+                        <img src={sponsor4} alt='sponsor' />
+                    </div>
+                </div>
+            </section>
+
+            <section id='about'>
+                <div>
+                    <div className='relative'>
+                        <img src={kingbg} alt='king' className='object-cover w-full' />
+                        <div className='absolute top-[14%] left-[10%] w-[678px] h-[393px] flex flex-col gap-4'>
+                            <h2 className='w-[555px] h-[82px] font-bold text-[30px] leading-[41px] text-white'>
+                                Welcome to the 6th edition of the Otumfuo Golf Tournament
+                            </h2>
+                            <p className='w-[670px] h-[231px] font-normal leading-[29px] text-[17px] text-white'>
+                                The 6th edition of the Otumfuo Invitational Golf Tournament Championship is back,
+                                marking 25 years of collaboration between Stanbic Bank and His Royal Majesty,
+                                Otumfuo Osei Tutu II. Come Saturday, 31st August, the one day tournament,
+                                presents the perfect opportunity for golfing enthusiasts and their families to tee up,
+                                network, and unwind.The Royal Golf Course boasts 93 acres of greenery, with 72 pars.
+                            </p>
+                            <div className='w-[198px] h-[43px] bg-transparent border border-white flex items-center justify-center shadow-md'>
+                                <button className='text-white cursor-pointer'>Register</button>
+                            </div>
+                        </div>
+                        <img src={shield} alt='shield' className='absolute top-[14%] left-[64%] w-[404px] h-[482px]' />
+                    </div>
+                </div>
+            </section>
+
+
+            <section id='itinerary'>
+                <div className='flex flex-col items-center justify-center '>
+                    <div className='flex flex-col items-center w-[1168px] h-[1745px] bg-[#EBF0FF] gap-6'>
+                        <div className='flex flex-col items-center'>
+                            <p className='w-[499px] h-[89px] text-center font-bold text-[60px] text-[#0033AA]'>
+                                OUR ITINERARY
+                            </p>
+                            <p className='w-[760px] h-[130px] text-[14px] leading-[32px] font-bold text-center'>
+                                Welcome to the Annual Golf Championship, a thrilling three-day event filled with
+                                competition, camaraderie, and unforgettable moments on the green! Join us from
+                                August 30 to September 1, 2024, as we showcase top talent.
+                                Each day will feature exciting rounds of play, networking opportunities,
+                                and evening festivities. Prepare for an exhilarating experience that combines skill,
+                                strategy, and sportsmanship. Let the games begin!.
+                            </p>
+                        </div>
+
+                        <div className="relative mt-[50px]">
+                            <div className="flex">
+                                <img src={img1} alt="itinerary" className="w-[484px] h-[323px]" />
+                                <div className="relative w-[570px]">
+                                    <div className="absolute top-[20px] left-[-5%] bg-[#0033AA] shadow-md w-[600px] h-[333px] flex flex-col items-center pt-12">
+                                        <div className='w-[386px] h-[75px]'>
+                                            <p className='font-bold text-[20px] leading-[39px] text-white'>
+                                                FRIDAY,
+                                            </p>
+                                            <div className='mb-6'>
+                                                <div className='flex items-center mb-2 h-[20px]'>
+                                                    <h3 className='font-bold text-[39px] leading-[39px] text-white'>30TH</h3>
+                                                    <p className='text-[16px] font-bold pt-4 text-white'>-DEPARTURE TO KUMASI</p>
+                                                </div>
+                                            </div>
+                                            <ul className="text-white list-disc list-inside mb-8 w-[400px]">
+                                                <li className=' text-[15px] leading-[26px] opacity-65'>FLIGHT FROM ACCRA TO KUMASI</li>
+                                                <li className=' text-[15px] leading-[26px] opacity-65'>TRANSPORTATION TO YOUR HOTEL WILL BE PROVIDED</li>
+                                                <li className=' text-[15px] leading-[26px] opacity-65'>DINNER IS AT YOUR DEPARTURE</li>
+                                            </ul>
+
+
+                                            <p className='text-white'>Transporting ...</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="relative mt-[150px]">
+                            <div className="flex">
+                                <div className="relative w-[570px]">
+                                    <div className="absolute top-[20px] left-0 bg-[#0033AA] shadow-md w-[600px] h-[333px] flex flex-col items-center pt-12">
+                                        <div className='w-[386px] h-[73px]'>
+                                            <div className='font-bold text-[20px] leading-[39px] text-white'>
+                                                Saturday,
+                                            </div>
+                                            <div className='mb-10'>
+                                                <div className='flex items-center mb-2 h-[30px]'>
+                                                    <h3 className='font-bold text-[39px] leading-[39px] text-white'>31ST</h3>
+                                                    <p className='text-[16px] font-bold pt-8 text-white'>-Ceremonial Tee Off and <br />Tournament Day</p>
+                                                </div>
+                                            </div>
+                                            <ul className="text-white list-disc list-inside mb-8 w-[400px]">
+                                                <li className=' text-[15px] leading-[26px] opacity-65'>6:30AM - HOLES ONE AND SEVEN</li>
+                                                <li className=' text-[15px] leading-[26px] opacity-65'>BREAKFAST AND LUNCH WILL BE PROVIDED</li>
+                                                <li className=' text-[15px] leading-[26px] opacity-65'>AWARDS CEREMONY</li>
+                                                <hr className='w-[302px] h-[1px] bg-[#CDCDCD] my-1'></hr>
+                                                <li className=' text-[15px] leading-[26px] opacity-65'>7: 30PM - DINNER(DRESS CODE :SMART CASUAL)</li>
+                                                <li className=' text-[15px] leading-[26px] opacity-65'>LANCASTER HOTEL</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <img src={img2} alt="itinerary" className="w-[484px] h-[323px]" />
+
+                            </div>
+                        </div>
+
+                        <div className="relative mt-[150px]">
+                            <div className="flex">
+                                <img src={img1} alt="itinerary" className="w-[484px] h-[323px]" />
+                                <div className="relative w-[570px]">
+                                    <div className="absolute top-[20px] left-[-5%] bg-[#0033AA] shadow-md w-[600px] h-[333px] flex flex-col items-center pt-12">
+                                        <div className='w-[386px] h-[75px]'>
+                                            <p className='font-bold text-[20px] leading-[39px] text-white'>
+                                                SUNDAY,
+                                            </p>
+                                            <div className='mb-6'>
+                                                <div className='flex items-center mb-2 h-[20px]'>
+                                                    <h3 className='font-bold text-[39px] leading-[39px] text-white'>1ST</h3>
+                                                    <p className='text-[16px] font-bold pt-4 text-white'>-DEPARTURE TO Accra</p>
+                                                </div>
+                                            </div>
+                                            <ul className="text-white list-disc list-inside mb-8 w-[400px]">
+                                                <li className=' text-[15px] leading-[26px] opacity-65'>BASED ON YOUR FLIGHT SCHEDULE,PICKUPS FROM THE HOTEL WILL BE arranged 2.5 before departure</li>
+                                            </ul>
+
+                                            <p className='text-white'>Transporting ...</p>
+
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -186,89 +231,148 @@ const Home = () => {
             </section>
 
             <section>
-                <div className='lg:h-[873px] h-[673px] mb-[40px] relative'>
-                    <img src={ballhole} alt='sponsor' className='relative w-full h-[150px] lg:h-[350px]' />
-                    <h2 className='absolute top-0 lg:left-[29%] text-white mt-[20px] lg:mt-0 lg:w-[700px] w-[446px] h-[90px] lg:pl-[70px] pl-1 vsm:pl-2 xsm:pl-1 small:pl-2 md:pl-2 mb-[100px] lg:mb-12 md:w-[600px] md:ml-8 flex items-center justify-center lg:text-[32px] md:text-[28px] text-[20px] font-bold'>SEE MORE PHOTOS IN OUR GALLERY</h2>
-                    <Slider />
+                <div className='relative'>
+                    <img src={ban} alt='banner' className='object-cover w-full' />
+                    <div className='w-[344px] h-[94px] absolute top-[50%] left-[12%] text-white'>
+                        <p className='text-[45px] h-[70px] leading-[47px] font-black'>
+                            NOT <br /> C<img src={ball} alt='golf ball' className='inline w-[38px] h-[36px]' />MPETING
+                        </p>
+                        <p className='text-[16px] leading-[99px] font-bold'>Come and explore our tourist destinations.</p>
+                    </div>
                 </div>
             </section>
 
-            {/*<section className='relative'>
-                <img src={golfrack} alt='rack' data-aos="zoom-in-left" className='w-[221px] h-[320px] absolute lg:right-[100px] right-[10px] top-[-140px]' />
 
-                <div className='w-full h-[659px] lg:h-[759px] flex flex-col bg-blue-50 lg:pl-[0] pl-[20px]'>
-                    <h2 className='text-custom-blue mt-[20px] w-[446px] h-[90px] lg:pl-[70px] pl-4 mb-[100px] lg:mb-12 lg:text-[32px] md:text-[28px] text-[20px] font-extrabold'>SEE MORE PHOTOS IN <br />OUR GALLERY</h2>
-                    <Carousel
-                        swipeable={true}
-                        draggable={true}
-                        showDots={false}
-                        className=''
-                        responsive={responsive}
-                        autoPlay={true}
-                        autoPlaySpeed={3000} // Adjust the speed as needed
-                        infinite={true}
-                    >
-                        {images.map((image, index) => (
-                            <div
-                                key={index}
-                                className='relative transition-transform duration-300 h-[500px] flex items-center'
-                                onClick={() => handleImageClick(image)}
-                            >
-                                <img
-                                    src={image}
-                                    alt='rack'
-                                    className='w-[450px] lg:w-[360px] h-[353px] cursor-pointer transform'
-                                />
-                            </div>
-                        ))}
-                    </Carousel>
-                    {isModalOpen && (
-                        <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
-                            <div className="relative bg-white w-[550px] h-[550px] p-4 rounded-lg">
-                                <button onClick={closeModal} className="absolute mb-4 text-custom-blue font-bold bg-white bg-opacity-50 right-5 top-5 text-[20px] w-[30px] h-[30px] pb-1 flex mt-1 rounded-full items-center justify-center">x</button>
-                                <img src={selectedImage} alt="Selected" className="w-full h-[520px] max-h-screen max-w-full" />
-                            </div>
-                        </div>
-                    )}
-                </div>
-                </section>*/}
-
-            <section className="relative">
-                <div className="relative">
-                    <img src={golfers} alt="golfers" className="w-full h-[200px] md:h-[300px] lg:h-full" />
-                </div>
-                <img src={badge} alt='badge' className='absolute top-[50px] vl:top-[100px] vl:left-[200px] left-[150px] w-[300px] xsm:w-[120px] xsm:top-[30px] xsm:left-[10px]
-                msm:w-[100px] msm:left-4 md:w-[200px] md:left-[50px] xl:w-[250px] xl:left-[100px]' />
-                <div className="absolute w-[90%] max-w-[900px] small:top-[15px] small:left-[150px] vl:left-[600px] vl:top-[80px] 3xl:left-[700px] msm:left-[120px] top-[30px] lg:top-[5px] right-[-105px] md:left-[280px] xsm:left-[130px] lg:left-[250px] xl:left-[400px] lg:p-4 text-white">
-                    <h2 className="font-bold lg:text-[32px] xl:mb-2 md:text-[18px] vl:text-[40px] vl:leading-[40px] 2xl:leading-8 3xl:leading-10 lg:leading-[40px] small:leading-4 text-[12px] msm:text-[11px] leading-none 3xl:mb-4 lg:mb-2 small:ml-0 small:mb-2 ml-2 lg:ml-0 text-transparent md:ml-6" style={{ WebkitTextStroke: '1px white' }}>
-                        WELCOME TO THE 6TH EDITION
-                        <br />
-                        OF THE OTUMFUO GOLF TOURNAMENT
-                    </h2>
-
-                    <div className="p-2 tablet:p-4 md:p-6 small:p-0 lg:p-0 text-[8px] small:text-[10px] tablet:text-sm md:text-[12px] vl:text-[14px] lg:text-[14px] leading-tight md:leading-normal lg:leading-loose lg:mb-8 xl:mb-0">
-                        <div className='lg:w-full w-[200px] md:w-full md:h-[180px]'>
-                            <p className="md:w-[400px] lg:w-full small:w-[280px]">
-                                Stanbic Bank is the title sponsor of the 6th Otumfuor Invitational Golf Tournament Championship 2024, celebrating the 25th anniversary of the Asantehene and the bank. The event aims to connect with clients, and the golfing community, and foster growth opportunities. It also includes side activities for non-players and families, promoting community bonding and the sport of golf.                            </p>
-                            <p className="md:w-[400px] lg:w-full small:w-[280px]">
-                                Join us in honouring tradition, building lasting connections, and exemplifying our commitment to exceptional experiences and unparalleled excellence.
+            <section>
+                <div className="flex flex-wrap gap-8 px-[220px] bg-[#F4F4F4] py-[100px]">
+                    <div className="relative rounded-lg overflow-hidden w-[40%]">
+                        <img
+                            src={gh1}
+                            alt="Owabi Wildlife Sanctuary"
+                            className="w-full h-[500px] object-cover"
+                        />
+                        <div className="absolute bottom-0 left-0 p-4 bg-gradient-to-t from-black via-black to-transparent bg-opacity-50 text-white">
+                            <h2 className="text-2xl font-bold">Owabi Wildlife Sanctuary</h2>
+                            <p className="text-lg">
+                                Its unique 47 holes layout, comprising of a trio of testing nine hole
+                                circuit
                             </p>
                         </div>
                     </div>
-                    <Link data-aos="zoom-out-up" to="/">
-                        <button
-                            type="button"
-                            onClick={() => setShowCallModal(true)}
-                            className="bg-white hidden lg:block font-semibold text-blue-900 px-4 py-2 mt-2 xl:mt-0 text-xs rounded-[12px] small:text-sm md:text-base lg:w-[200px] lg:h-[58px] hover:bg-blue-900 hover:text-white transition duration-300"
-                        >
-                            Register Here
-                        </button>
-                    </Link>
-                    {showCallModal && <RegisterModal onClose={() => setShowCallModal(false)} />}
+
+                    <div className="w-[55%] grid grid-cols-2 gap-4">
+                        <div className="relative rounded-lg overflow-hidden bg-white shadow-lg">
+                            <img
+                                src={gh2}
+                                alt="Zoological Gardens"
+                                className="w-[304px] h-[202px] object-cover"
+                            />
+                            <div className="p-4">
+                                <h3 className="text-lg font-bold">Zoological Gardens</h3>
+                            </div>
+                        </div>
+
+                        <div className="relative rounded-lg overflow-hidden bg-white shadow-lg">
+                            <img
+                                src={gh3}
+                                alt="Okomfo Anokye Sword"
+                                className="w-[304px] h-[202px] object-cover"
+                            />
+                            <div className="p-4">
+                                <h3 className="text-lg font-bold">Okomfo Anokye Sword</h3>
+                            </div>
+                        </div>
+
+                        <div className="relative rounded-lg overflow-hidden bg-white shadow-lg">
+                            <img
+                                src={gh4}
+                                alt="Kejetia Market"
+                                className="w-[304px] h-[202px] object-cover"
+                            />
+                            <div className="p-4">
+                                <h3 className="text-lg font-bold">Kejetia Market</h3>
+                            </div>
+                        </div>
+
+                        <div className="relative rounded-lg overflow-hidden bg-white shadow-lg">
+                            <img
+                                src={gh5}
+                                alt="Bonwire Kente"
+                                className="w-[304px] h-[202px] object-cover"
+                            />
+                            <div className="p-4">
+                                <h3 className="text-lg font-bold">Bonwire Kente</h3>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
             </section>
 
+            <section>
+                <div className='flex items-center justify-center'>
+                    <div className='w-[1168px] h-[1130px]'>
+                        <div className='py-[100px]'>
+                            <img src={line} alt='line' />
+                        </div>
+                        <div>
+                            <div className='flex gap-10 items-center'>
+                                <img src={side1} alt='side' />
+                                <div>
+                                    <h2 className='w-[241px] h-[82px] font-bold leading-[41px] text-[34px] mb-2'>Don't forget the Essentials</h2>
+                                    <ul className='text-[#666C89] list-decimal w-[477px] h-[126px] font-medium leading-[21px] text-[14px] pl-3'>
+                                        <li>Sun protection - hats, shades, fans</li>
+                                        <li>Power bank/Charger</li>
+                                        <li>Healthy Snacks - granola, trail mix, etc</li>
+                                        <li>First Aid Materials</li>
+                                        <li>Comfortable shoes (for non-players)</li>
+                                        <li>Golf equipment - clubs, balls, tees.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div className='flex gap-10 items-center mt-10'>
+                                <div>
+                                    <h2 className='w-[241px] h-[82px] font-bold leading-[41px] text-[34px] mb-2'>6 Fun Facts</h2>
+                                    <ul className='text-[#1C1F35] w-[477px] h-[126px] font-medium leading-[21px] text-[14px]'>
+                                        <li className='mb-2 flex items-center gap-2'>
+                                            <BsArrowRight size={20} />
+                                            Golf courses used to have anywhere from 5 to 22 holes
+                                            per game!
+                                        </li>
+                                        <li className='mb-2 flex items-center gap-2'>
+                                            <BsArrowRight size={40} />
+                                            Golf is largely believed to have originated in Scotland, but some
+                                            historians believe it takes influence from similar ancient Roman and
+                                            Chinese games
+                                        </li>
+                                        <li className='mb-2 flex items-center gap-2'>
+                                            <BsArrowRight size={40} />
+                                            The word golf originated from the Dutch word “kolf” or “kolve”, which
+                                            then became the Scottish word “gouff” and “goff”
+                                        </li>
+                                        <li className='mb-2 flex items-center gap-2'>
+                                            <BsArrowRight size={20} />
+                                            Golf was originally played by shepherds to pass the time.</li>
+                                        <li className='mb-2 flex items-center gap-2'>
+                                            <BsArrowRight size={36} />
+                                            Golf holes do not stay in one place. But are moved regularly to keep
+                                            the greens in good condition.</li>
+                                        <li className='flex items-center gap-2'>
+                                            <BsArrowRight size={20} />
+                                            The chances of an average golfer to sink a hole-in-one are 1 in 12,000.</li>
+                                    </ul>
+                                </div>
+
+                                <img src={side2} alt='side' className='mt-[115px]' />
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             <section className="relative">
                 <div className="relative">
@@ -326,15 +430,14 @@ const Home = () => {
                         )
                     }
                     <div className='w-[160px] h-[32px] flex mt-4 justify-evenly'>
-                        <BsFacebook size={24} className='text-white' />
-                        <BsTwitter size={24} className='text-white' />
-                        <BsInstagram size={24} className='text-white' />
+                        <BsFacebook size={24} className='text-[#5D50C6]' />
+                        <BsTwitter size={24} className='text-[#5D50C6]' />
+                        <BsInstagram size={24} className='text-[#5D50C6]' />
                     </div>
                 </div>
             </section>
-
         </div>
-    );
+    )
 }
 
-export default Home;
+export default Home
