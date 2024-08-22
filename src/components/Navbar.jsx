@@ -16,7 +16,7 @@ const Navbar = () => {
                     <img src={logo} alt='logo' className='md:w-[216px] w-[190px] h-[51px] md:h-[61px] pl-2 md:pl-0' />
                 </Link>
                 <div className='hidden md:flex'>
-                    <ul className='flex w-[555px] justify-between pr-4'>
+                    <ul className='flex w-[455px] justify-between pr-4'>
                         <li>
                             <NavLink
                                 to="/"

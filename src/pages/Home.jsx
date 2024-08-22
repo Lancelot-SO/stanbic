@@ -1,10 +1,11 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import bgImg from "../assets/herobg.png"
+import heromobile from "../assets/heromobile.png"
 import ball from "../assets/golfball.png"
-import sponsor1 from "../assets/stanbic.png"
-import sponsor2 from "../assets/stanbicIL.png"
-import sponsor3 from "../assets/stanbicIM.png"
-import sponsor4 from "../assets/royal.png"
+// import sponsor1 from "../assets/stanbic.png"
+// import sponsor2 from "../assets/stanbicIL.png"
+// import sponsor3 from "../assets/stanbicIM.png"
+// import sponsor4 from "../assets/royal.png"
 import kingbg from "../assets/kingbg.png"
 import shield from "../assets/shield.png"
 import img1 from "../assets/img1.png"
@@ -35,6 +36,10 @@ import { BiSearch } from "react-icons/bi";
 import { BsFacebook, BsTwitter, BsInstagram } from "react-icons/bs";
 import RegisterModal from '../components/RegisterModal'
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+import { Typewriter } from 'react-simple-typewriter'
 
 
 
@@ -67,22 +72,40 @@ const Home = () => {
         fetchWeather(search);
     };
 
+    useEffect(() => {
+        AOS.init({
+            duration: 2000,
+        });
+        AOS.refresh();
+    }, []);
+
     return (
         <div className='overflow-hidden'>
             <div className=''>
                 <div className='relative'>
-                    <img src={bgImg} alt='bg' className='object-cover w-full h-[577px] md:h-[600px]' />
-                    <div className='absolute md:top-[20%] top-[50%] left-[10%] md:w-[558px] md:h-[427px] flex flex-col justify-center gap-3'>
-                        <h3 className='w-[295px] h-[26px] text-[20px] leading-[26px] font-bold text-white md:text-[25px]'>
-                            STANBIC-ASANTEHENE
+                    <img src={bgImg} alt='bg' className='object-cover w-full h-[577px] md:h-[600px] hidden md:flex' />
+                    <img src={heromobile} alt='hero' className='object-cover w-full h-[576px] md:hidden flex' />
+                    <div className='absolute md:top-[20%] top-[55%] left-4 md:left-[10%] md:w-[558px] md:h-[427px] flex flex-col justify-center gap-1'>
+                        <h3 className='w-[330px] h-[26px] text-[16px] leading-[26px] font-bold text-white md:text-[25px]'>
+                            <Typewriter
+                                words={["STANBIC-ASANTEHENE"]}
+                                loop
+                                cursor
+                                cursorStyle='_'
+                                typeSpeed={70}
+                                deleteSpeed={50}
+                                delaySpeed={1000}
+                            />
                         </h3>
-                        <h1 className='w-full md:w-[483px] h-auto md:h-[95px] leading-[35px] md:leading-[47px] text-[30px] md:text-[45px] font-black text-white'>
+                        <h1 data-aos="fade-right" className='w-full md:w-[483px] h-auto md:h-[95px] leading-[25px] md:leading-[47px] text-[20px] md:text-[45px] font-black text-white'>
                             INVITATIONAL <br /> G
-                            <img src={ball} alt='golf ball' className='inline w-[30px] h-[30px] md:w-[38px] md:h-[36px]' />LF TOURNAMENT
+                            <img src={ball} alt='golf ball' className='inline w-[25px] h-[25px] md:w-[38px] md:h-[36px]' />LF TOURNAMENT
                         </h1>
-                        <p className='w-[250px] md:w-[429px] h-auto md:h-[69px] text-[14px] md:text-[15px] leading-[20px] md:leading-[23px] font-normal text-white'>
-                            From savings to checking accounts and innovative mobile apps, Stanbic bank helps you build a solid financial future.
+                        <p data-aos="fade-right" className='w-[290px] md:w-[429px] h-auto md:h-[69px] text-[12px] md:text-[15px] leading-[20px] md:leading-[23px] font-normal text-white'>
+                            Honouring tradition, building connections and <br />exemplifying excellence.<br />
+                            <b>The Royal Golf Course, Kumasi</b>
                         </p>
+                        <span className='text-white font-bold'>Saturday, August 31st, 2024</span>
                         <div className='w-[200px] h-[40px] md:w-[233px] md:h-[43px] bg-[#0033A1] flex items-center justify-center shadow-md'>
                             <button onClick={() => setIsModalOpen(true)} className='text-white cursor-pointer'>REGISTER HERE</button>
                         </div>
@@ -91,7 +114,7 @@ const Home = () => {
                 </div>
             </div>
 
-            <section>
+            {/* <section>
                 <div className='bg-[#00164E] w-full h-[225px] md:h-[174px] flex flex-col items-center justify-center gap-3'>
                     <p className='w-[471px] h-[29px] font-bold md:text-[24px] text-[22px] leading-[32px] text-white text-center'>
                         OUR PROUD SPONSORS
@@ -104,14 +127,14 @@ const Home = () => {
                     </div>
                 </div>
 
-            </section>
+            </section> */}
 
             <section id='about'>
                 <div>
                     <div className='relative flex flex-col md:flex-row items-center'>
                         <img src={kingbg} alt='king' className='object-cover w-full h-[651px] md:h-auto' />
-                        <div className='absolute md:top-[14%] top-[8%] md:left-[10%] w-[400px] h-auto md:h-[240px] flex flex-col gap-4 items-center md:items-start'>
-                            <h2 className='w-[90%] md:w-[555px] h-[48px] md:h-[82px] font-bold text-[22px] md:text-[30px] leading-[24px] md:leading-[41px] text-white text-center md:text-left'>
+                        <div data-aos="zoom-out-down" className='absolute md:top-[14%] top-[8%] md:left-[10%] w-[400px] h-auto md:h-[240px] flex flex-col gap-4 items-center md:items-start'>
+                            <h2 className='w-[90%] md:w-[555px] h-[48px] md:h-[82px] font-bold text-[22px] md:text-[30px] leading-[24px] md:leading-[41px] text-white text-left'>
                                 Welcome to the 6th edition of the Otumfuo Golf Tournament
                             </h2>
                             <p className='w-[90%] md:mb-10 md:w-[670px] h-[176px] md:h-[231px] font-normal leading-[22px] md:leading-[29px] text-[14px] md:text-[17px] text-white text-left'>
@@ -126,7 +149,7 @@ const Home = () => {
                             </div>
                             {isModalOpen && <RegisterModal onClose={() => setIsModalOpen(false)} />}
                         </div>
-                        <img src={shield} alt='shield' className='absolute md:top-[14%] top-[58%] md:left-[64%] w-[200px] h-[240px] md:w-[404px] md:h-[482px] mt-4 md:mt-0' />
+                        <img src={shield} alt='shield' data-aos="zoom-in" className='absolute md:top-[14%] top-[58%] md:left-[64%] w-[200px] h-[240px] md:w-[404px] md:h-[482px] mt-4 md:mt-0' />
                     </div>
 
                 </div>
@@ -135,7 +158,7 @@ const Home = () => {
 
             <section id='itinerary'>
                 <div className='flex flex-col items-center justify-center pt-6 md:pt-0'>
-                    <div className='flex flex-col items-center w-[1168px] md:h-[1745px] h-[2000px] bg-[#EBF0FF] gap-6'>
+                    <div className='flex flex-col items-center w-[1168px] md:h-[1745px] h-[1900px] bg-[#EBF0FF] gap-6'>
                         <div className='flex flex-col items-center'>
                             <p className='w-[499px] md:h-[89px] text-center font-bold text-[32px] md:text-[60px] text-[#0033AA]'>
                                 OUR ITINERARY
@@ -152,86 +175,87 @@ const Home = () => {
 
                         <div className="relative mt-[50px]">
                             <div className="flex md:flex-row flex-col">
-                                <img src={img1} alt="itinerary" className="md:w-[484px] md:h-[323px] w-[421px] h-[241px]" />
-                                <div className="relative md:w-[570px] w-full">
-                                    <div className="absolute top-[-30px] md:top-[20px] md:left-[-5%] left-[5%] bg-[#0033AA] shadow-md w-[400px] md:w-[600px] h-[250px] md:h-[333px] flex flex-col pl-[20px] md:pl-[60px] md:items-center md:pt-12 pt-6">
+                                <img src={img1} alt="itinerary" className="md:w-[484px] rounded-lg md:rounded-none md:h-[323px] w-[321px] h-[241px]" />
+                                <div className="relative md:w-[570px]">
+                                    <div className="absolute top-[-30px] md:top-[20px] rounded-lg md:rounded-none md:left-[-5%] left-[10%] bg-[#0033AA] shadow-md w-[260px] md:w-[600px] h-[200px] md:h-[333px] flex flex-col pl-[20px] md:pl-[60px] md:items-center md:pt-12 pt-6">
                                         <div className='w-[85%] md:w-[386px] h-auto'>
-                                            <p className='font-bold text-[16px] md:text-[20px] leading-[24px] md:leading-[39px] text-white'>
+                                            <p className='font-bold text-[12px] md:text-[20px] leading-[24px] md:leading-[39px] text-white'>
                                                 FRIDAY,
                                             </p>
                                             <div className='mb-4 md:mb-6'>
                                                 <div className='flex items-center mb-2 h-auto md:h-[20px]'>
-                                                    <h3 className='font-bold text-[30px] md:text-[39px] leading-[30px] md:leading-[39px] text-white'>30TH</h3>
-                                                    <p className='text-[14px] md:text-[16px] font-bold pt-2 md:pt-4 text-white'>-DEPARTURE TO KUMASI</p>
+                                                    <h3 className='font-bold text-[20px] md:text-[39px] leading-[30px] md:leading-[39px] text-white'>30TH</h3>
+                                                    <p className='text-[12px] md:text-[16px] font-bold pt-2 md:pt-4 text-white'>-DEPARTURE TO KUMASI</p>
                                                 </div>
                                             </div>
-                                            <ul className="text-white list-disc list-inside mb-6 md:mb-8 w-full md:w-[400px]">
-                                                <li className='text-[14px] md:text-[15px] leading-[22px] md:leading-[26px] opacity-65'>FLIGHT FROM ACCRA TO KUMASI</li>
-                                                <li className='text-[14px] md:text-[15px] leading-[22px] md:leading-[26px] opacity-65'>TRANSPORTATION TO YOUR HOTEL WILL BE PROVIDED</li>
-                                                <li className='text-[14px] md:text-[15px] leading-[22px] md:leading-[26px] opacity-65'>DINNER IS AT YOUR DEPARTURE</li>
+                                            <ul className="text-white list-disc list-inside mb-2 md:mb-8 w-full md:w-[400px]">
+                                                <li className='text-[10px] md:text-[15px] leading-[22px] md:leading-[26px] opacity-65'>FLIGHT TO KUMASI</li>
+                                                <li className='text-[10px] md:text-[15px] leading-[22px] md:leading-[26px] opacity-65'>HOTEL TRANSPORTATION PROVIDED</li>
+                                                <li className='text-[10px] md:text-[15px] leading-[22px] md:leading-[26px] opacity-65'>DINNER AT DEPARTURE</li>
                                             </ul>
-                                            <p className='text-[14px] md:text-[15px] leading-[22px] md:leading-[26px] text-white'>Transporting ...</p>
+                                            <p className='text-[10px] md:text-[15px] leading-[22px] md:leading-[26px] text-white'>Transporting...</p>
                                         </div>
                                     </div>
+
 
                                 </div>
                             </div>
                         </div>
 
-                        <div className="relative md:mt-[150px] mt-[250px]">
+                        <div className="relative md:mt-[150px] mt-[200px]">
                             <div className="flex md:flex-row flex-col-reverse">
-                                <div className="relative md:w-[570px] w-full">
-                                    <div className="absolute md:top-[20px] top-[-30px] left-0 bg-[#0033AA] shadow-md w-[90%] md:w-[600px] h-[270px] md:h-[333px] flex flex-col items-center pt-8 md:pt-12 pl-[50px] md:pl-0">
+                                <div className="relative md:w-[570px]">
+                                    <div className="absolute top-[-30px] md:top-[20px] rounded-lg md:rounded-none md:left-[-5%] left-[5%] bg-[#0033AA] shadow-md w-[90%] md:w-[600px] h-auto md:h-[333px] flex flex-col items-center pt-8 md:pt-12 pl-[30px] md:pl-0">
                                         <div className='w-[90%] md:w-[386px] h-auto'>
-                                            <div className='font-bold text-[16px] md:text-[20px] leading-[26px] md:leading-[39px] text-white'>
+                                            <div className='font-bold text-[14px] md:text-[20px] leading-[16px] md:leading-[39px] text-white'>
                                                 Saturday,
                                             </div>
                                             <div className='mb-6 md:mb-10'>
                                                 <div className='flex items-center mb-2 h-auto md:h-[30px]'>
-                                                    <h3 className='font-bold text-[30px] md:text-[39px] leading-[30px] md:leading-[39px] text-white'>31ST</h3>
-                                                    <p className='text-[14px] md:text-[16px] font-bold pt-4 md:pt-8 text-white'>
+                                                    <h3 className='font-bold text-[20px] md:text-[39px] leading-[30px] md:leading-[39px] text-white'>31ST</h3>
+                                                    <p className='text-[12px] md:text-[16px] font-bold pt-4 md:pt-8 text-white'>
                                                         -Ceremonial Tee Off and <br />Tournament Day
                                                     </p>
                                                 </div>
                                             </div>
                                             <ul className="text-white list-disc list-inside mb-6 md:mb-8 w-full md:w-[400px]">
-                                                <li className='text-[13px] md:text-[15px] leading-[20px] md:leading-[26px] opacity-65'>6:30AM - HOLES ONE AND SEVEN</li>
-                                                <li className='text-[13px] md:text-[15px] leading-[20px] md:leading-[26px] opacity-65'>BREAKFAST AND LUNCH WILL BE PROVIDED</li>
-                                                <li className='text-[13px] md:text-[15px] leading-[20px] md:leading-[26px] opacity-65'>AWARDS CEREMONY</li>
-                                                <hr className='w-[250px] md:w-[302px] h-[1px] bg-[#CDCDCD] my-1'></hr>
-                                                <li className='text-[13px] md:text-[15px] leading-[20px] md:leading-[26px] opacity-65'>7:30PM - DINNER (DRESS CODE: SMART CASUAL)</li>
-                                                <li className='text-[13px] md:text-[15px] leading-[20px] md:leading-[26px] opacity-65'>LANCASTER HOTEL</li>
+                                                <li className='text-[10px] md:text-[15px] leading-[20px] md:leading-[26px] opacity-65'>6:30AM - HOLES ONE AND SEVEN</li>
+                                                <li className='text-[10px] md:text-[15px] leading-[20px] md:leading-[26px] opacity-65'>BREAKFAST AND LUNCH WILL BE PROVIDED</li>
+                                                <li className='text-[10px] md:text-[15px] leading-[20px] md:leading-[26px] opacity-65'>AWARDS CEREMONY</li>
+                                                <hr className='w-[200px] md:w-[302px] h-[1px] bg-[#CDCDCD] my-1'></hr>
+                                                <li className='text-[10px] md:text-[15px] leading-[20px] md:leading-[26px] opacity-65'>7:30PM - DINNER (DRESS CODE: SMART CASUAL)</li>
+                                                <li className='text-[10px] md:text-[15px] leading-[20px] md:leading-[26px] opacity-65'>LANCASTER HOTEL</li>
                                             </ul>
                                         </div>
                                     </div>
 
                                 </div>
-                                <img src={img2} alt="itinerary" className="w-[484px] h-[323px]" />
+                                <img src={img2} alt="itinerary" className="md:w-[484px] rounded-lg md:rounded-none md:h-[323px] w-[321px] h-[241px]" />
 
                             </div>
                         </div>
 
                         <div className="relative md:mt-[150px] mt-[280px]">
                             <div className="flex md:flex-row flex-col">
-                                <img src={img3} alt="itinerary" className="md:w-[484px] md:h-[323px] w-[421px] h-[241px]" />
-                                <div className="relative md:w-[570px] w-full">
-                                    <div className="absolute top-[-20px] md:top-[20px] md:left-[-5%] left-[5%] bg-[#0033AA] shadow-md w-[90%] md:w-[600px] h-[270px] md:h-[333px] flex flex-col items-center pt-8 md:pt-12">
+                                <img src={img3} alt="itinerary" className="md:w-[484px] rounded-lg md:rounded-none md:h-[323px] w-[321px] h-[241px]" />
+                                <div className="relative md:w-[570px]">
+                                    <div className="absolute top-[-20px] md:top-[20px] rounded-lg md:rounded-none md:left-[-5%] left-[5%] bg-[#0033AA] shadow-md w-[90%] md:w-[600px] h-auto md:h-[333px] flex flex-col items-center pt-8 md:pt-12 pb-2 md:pb-0">
                                         <div className='w-[90%] md:w-[386px] h-auto'>
-                                            <p className='font-bold text-[16px] md:text-[20px] leading-[26px] md:leading-[39px] text-white'>
+                                            <p className='font-bold text-[14px] md:text-[20px] leading-[26px] md:leading-[39px] text-white'>
                                                 SUNDAY,
                                             </p>
                                             <div className='mb-4 md:mb-6'>
                                                 <div className='flex items-center mb-2 h-auto md:h-[20px]'>
-                                                    <h3 className='font-bold text-[30px] md:text-[39px] leading-[30px] md:leading-[39px] text-white'>1ST</h3>
-                                                    <p className='text-[14px] md:text-[16px] font-bold pt-4 md:pt-4 text-white'>-DEPARTURE TO Accra</p>
+                                                    <h3 className='font-bold text-[20px] md:text-[39px] leading-[30px] md:leading-[39px] text-white'>1ST</h3>
+                                                    <p className='text-[12px] md:text-[16px] font-bold pt-4 md:pt-4 text-white'>-DEPARTURE TO Accra</p>
                                                 </div>
                                             </div>
                                             <ul className="text-white list-disc list-inside mb-6 md:mb-8 w-full md:w-[400px]">
-                                                <li className='text-[13px] md:text-[15px] leading-[20px] md:leading-[26px] opacity-65'>
+                                                <li className='text-[10px] md:text-[15px] leading-[20px] md:leading-[26px] opacity-65'>
                                                     BASED ON YOUR FLIGHT SCHEDULE, PICKUPS FROM THE HOTEL WILL BE ARRANGED 2.5 HOURS BEFORE DEPARTURE
                                                 </li>
                                             </ul>
-                                            <p className='text-white text-[13px] md:text-[15px]'>Transporting ...</p>
+                                            <p className='text-white text-[10px] md:text-[15px]'>Transporting ...</p>
                                         </div>
                                     </div>
 

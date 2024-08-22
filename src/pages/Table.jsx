@@ -152,7 +152,7 @@ const Table = () => {
         {
             id: 4,
             position: 4,
-            player: "Legolas",
+            player: "Legolas Shu",
             par: 4,
             thru: 2,
             today: 3,
@@ -165,7 +165,7 @@ const Table = () => {
         {
             id: 5,
             position: 5,
-            player: "Player 1",
+            player: "Jack Nicklaus",
             par: 4,
             thru: 2,
             today: 3,
@@ -178,7 +178,7 @@ const Table = () => {
         {
             id: 6,
             position: 6,
-            player: "Player 1",
+            player: "Arnold Palmer",
             par: 4,
             thru: 2,
             today: 3,
@@ -191,7 +191,7 @@ const Table = () => {
         {
             id: 7,
             position: 7,
-            player: "Player 1",
+            player: "Rory McIlroy",
             par: 4,
             thru: 2,
             today: 3,
@@ -204,7 +204,7 @@ const Table = () => {
         {
             id: 8,
             position: 8,
-            player: "Player 1",
+            player: "Jon Rahm",
             par: 4,
             thru: 2,
             today: 3,
@@ -217,7 +217,7 @@ const Table = () => {
         {
             id: 9,
             position: 9,
-            player: "Player 1",
+            player: "Jordan Spieth",
             par: 4,
             thru: 2,
             today: 3,
@@ -230,7 +230,7 @@ const Table = () => {
         {
             id: 10,
             position: 10,
-            player: "Player 1",
+            player: "Tiger Woods",
             par: 4,
             thru: 2,
             today: 3,
@@ -243,7 +243,7 @@ const Table = () => {
         {
             id: 11,
             position: 11,
-            player: "Player 1",
+            player: "Brooks Koepka",
             par: 4,
             thru: 2,
             today: 3,
@@ -256,7 +256,7 @@ const Table = () => {
         {
             id: 12,
             position: 12,
-            player: "Player 1",
+            player: "Yoomo Korku",
             par: 4,
             thru: 2,
             today: 3,
@@ -283,7 +283,7 @@ const Table = () => {
                     <img src={tablebanner} alt='hero' className='object-cover h-[497px] md:h-full w-full' />
                     <div>
                         <p className='absolute top-[70%] left-[5%] md:top-[40%] md:left-[10%] w-[559px] h-[165px] font-bold text-[45px] leading-[55px] text-white'>
-                            Our Table
+                            OUR TABLE
                         </p>
                     </div>
                 </div>
@@ -309,13 +309,13 @@ const Table = () => {
                                     <div className='w-[746px] h-[42px] flex items-center px-2 gap-2'>
                                         <BsFillPersonFill size={24} className='text-[#2F5491]' />
                                         <span>
-                                            PGA TOUR FedEx St. Jude Championship (USA)
+                                            STANBIC ASANTEHENE GOLF TOURNAMENT
                                         </span>
                                         <GiPin size={24} className='text-[#2F5491]' />
 
                                     </div>
                                     <div>
-                                        <span>Round 4</span>
+                                        <span>Latest Edition</span>
                                     </div>
                                 </div>
                                 <div className='hidden md:flex bg-[#eee] items-center justify-between w-full h-[44px] rounded-3xl px-10'>
@@ -356,7 +356,7 @@ const Table = () => {
 
             </section>
 
-            <section className="relative mt-[50px] md:mt-0">
+            <section className="relative mt-[150px] md:mt-0">
                 <div className="relative">
                     <img src={footerbanner} alt='golfers' className='w-full lg:h-full h-[350px] object-cover' />
                 </div>
