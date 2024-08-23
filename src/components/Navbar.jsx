@@ -59,6 +59,14 @@ const Navbar = () => {
                                 Table
                             </NavLink>
                         </li>
+                        <li>
+                            <NavLink
+                                to="/spinner"
+                                className={({ isActive }) => isActive ? "border-b-2 border-blue-700" : ""}
+                            >
+                                Spinner
+                            </NavLink>
+                        </li>
                     </ul>
                 </div>
                 <div className='md:hidden flex items-center pr-4'>
@@ -116,6 +124,15 @@ const Navbar = () => {
                                 className={({ isActive }) => isActive ? "border-b-2 border-white" : ""}
                             >
                                 Table
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink
+                                to="/spinner"
+                                onClick={toggleMenu}
+                                className={({ isActive }) => isActive ? "border-b-2 border-white" : ""}
+                            >
+                                Spinner
                             </NavLink>
                         </li>
                     </ul>
