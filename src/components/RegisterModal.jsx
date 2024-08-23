@@ -1,20 +1,19 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState } from 'react';
 import axios from 'axios';
-import "../App.css"
-import ohene from "../assets/ohene.png"
+import "../App.css";
 
-import shield from "../assets/shield.png"
-
+import shield from "../assets/shield.png";
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-
+import emailjs from '@emailjs/browser';
 
 const RegisterModal = ({ onClose }) => {
     const modalRef = useRef();
+    const form = useRef();
 
-    const url = "https://stanbic.interactivedigital.com.gh/api/register"
+    const url = "https://stanbic.interactivedigital.com.gh/api/register";
     const [formData, setFormData] = useState({
         first_name: '',
         surname: '',
@@ -30,10 +29,9 @@ const RegisterModal = ({ onClose }) => {
     });
 
     const handleChange = (e) => {
-        const newdata = { ...formData }
-        newdata[e.target.name] = e.target.value
-        setFormData(newdata)
-        console.log(newdata)
+        const newdata = { ...formData };
+        newdata[e.target.name] = e.target.value;
+        setFormData(newdata);
     };
 
     const handleSubmit = async (e) => {
@@ -42,9 +40,13 @@ const RegisterModal = ({ onClose }) => {
             const response = await axios.post(url, formData);
             if (response.status === 200) {
                 toast('Submitted successfully');
+
+                // Sending email notification with first name and surname
+                sendEmail();
+
                 setTimeout(() => {
                     window.location.reload();
-                }, 5000);
+                }, 1000);
             }
         } catch (error) {
             console.error('There was an error!', error);
@@ -52,11 +54,23 @@ const RegisterModal = ({ onClose }) => {
         }
     };
 
+    const sendEmail = () => {
+        emailjs.send('service_zfoj3qg', 'template_at214sq', {
+        }, 'od2vIhbdFel9_otjO')
+            .then(() => {
+                console.log('Email successfully sent!');
+            })
+            .catch((error) => {
+                console.error('Failed to send email:', error);
+            });
+    };
+
     const closeModal = (e) => {
         if (modalRef.current === e.target) {
             onClose();
         }
-    }
+    };
+
     return (
         <div>
             <div ref={modalRef} onClick={closeModal} className='call-modal'>
@@ -72,7 +86,7 @@ const RegisterModal = ({ onClose }) => {
                         </button>
                         <div className="callmodal">
                             <p className='text-custom-blue font-bold'>Register Your Account</p>
-                            <form className='overflow-y-scroll lg:overflow-hidden h-[590px]' onSubmit={(e) => handleSubmit(e)}>
+                            <form ref={form} className='overflow-y-scroll lg:overflow-hidden h-[590px]' onSubmit={(e) => handleSubmit(e)}>
                                 <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
                                     <div className='flex flex-col gap-4'>
                                         <div className='flex flex-col mb-2'>
@@ -136,14 +150,12 @@ const RegisterModal = ({ onClose }) => {
                                     </button>
                                 </div>
                             </form>
-
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default RegisterModal
+export default RegisterModal;

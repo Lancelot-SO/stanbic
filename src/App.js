@@ -4,6 +4,7 @@ import Home from "./pages/Home"
 import Navbar from './components/Navbar'
 import Gallery from './pages/Gallery'
 import Table from './pages/Table'
+import Spinner from './components/Spinner'
 
 
 const App = () => {
@@ -15,6 +16,8 @@ const App = () => {
           <Route path='/' element={<Home />} />
           <Route path='/gallery' element={<Gallery />} />
           <Route path='/table' element={<Table />} />
+          <Route path='/spinner' element={<Spinner />} />
+
         </Routes>
       </BrowserRouter>
     </div>
