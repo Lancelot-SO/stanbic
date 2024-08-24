@@ -59,14 +59,14 @@ const Navbar = () => {
                                 Table
                             </NavLink>
                         </li>
-                        <li>
+                        {/* <li>
                             <NavLink
                                 to="/spinner"
                                 className={({ isActive }) => isActive ? "border-b-2 border-blue-700" : ""}
                             >
                                 Spinner
                             </NavLink>
-                        </li>
+                        </li> */}
                     </ul>
                 </div>
                 <div className='md:hidden flex items-center pr-4'>
@@ -126,7 +126,7 @@ const Navbar = () => {
                                 Table
                             </NavLink>
                         </li>
-                        <li>
+                        {/* <li>
                             <NavLink
                                 to="/spinner"
                                 onClick={toggleMenu}
@@ -134,7 +134,7 @@ const Navbar = () => {
                             >
                                 Spinner
                             </NavLink>
-                        </li>
+                        </li> */}
                     </ul>
                 </div>
             )}
