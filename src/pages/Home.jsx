@@ -135,10 +135,10 @@ const Home = () => {
                         <img src={kingbg} alt='king' className='object-cover w-full h-[651px] md:h-auto' />
                         <div data-aos="zoom-out-down" className='absolute md:top-[14%] top-[8%] md:left-[10%] w-[400px] h-auto md:h-[240px] flex flex-col gap-4 items-center md:items-start'>
                             <h2 className='w-[90%] md:w-[555px] h-[48px] md:h-[82px] font-bold text-[22px] md:text-[30px] leading-[24px] md:leading-[41px] text-white text-left'>
-                                Welcome to the 6th edition of the Otumfuo Golf Tournament
+                                Welcome to the 2nd edition of the Otumfuo Golf Tournament
                             </h2>
                             <p className='w-[90%] md:mb-10 md:w-[670px] h-[176px] md:h-[231px] font-normal leading-[22px] md:leading-[29px] text-[14px] md:text-[17px] text-white text-left'>
-                                The 6th edition of the Otumfuo Invitational Golf Tournament Championship is back,
+                                The 2nd edition of the Otumfuo Invitational Golf Tournament Championship is back,
                                 marking 25 years of collaboration between Stanbic Bank and His Royal Majesty,
                                 Otumfuo Osei Tutu II. Come Saturday, 31st August, the one-day tournament presents the
                                 perfect opportunity for golfing enthusiasts and their families to tee up, network, and
@@ -164,8 +164,7 @@ const Home = () => {
                                 OUR ITINERARY
                             </p>
                             <p className='w-[361px] md:w-[760px] md:h-[130px] h-[198px] text-[14px] keading-[22px] md:leading-[32px] font-bold text-center'>
-                                Welcome to the Annual Golf Championship, a thrilling three-day event filled with
-                                competition, camaraderie, and unforgettable moments on the green! Join us from
+                                Join us from
                                 August 30 to September 1, 2024, as we showcase top talent.
                                 Each day will feature exciting rounds of play, networking opportunities,
                                 and evening festivities. Prepare for an exhilarating experience that combines skill,
@@ -177,7 +176,7 @@ const Home = () => {
                             <div className="flex md:flex-row flex-col">
                                 <img src={img1} alt="itinerary" className="md:w-[484px] rounded-lg md:rounded-none md:h-[323px] w-[321px] h-[241px]" />
                                 <div className="relative md:w-[570px]">
-                                    <div className="absolute top-[-30px] md:top-[20px] rounded-lg md:rounded-none md:left-[-5%] left-[10%] bg-[#0033AA] shadow-md w-[260px] md:w-[600px] h-[200px] md:h-[333px] flex flex-col pl-[20px] md:pl-[60px] md:items-center md:pt-12 pt-6">
+                                    <div className="absolute top-[-30px] md:top-[20px] rounded-lg md:rounded-none md:left-[-5%] left-[10%] bg-[#0033AA] shadow-md w-[260px] md:w-[600px] h-[200px] md:h-[333px] flex flex-col pl-[20px] md:pl-[60px] md:items-center md:pt-20 pt-6">
                                         <div className='w-[85%] md:w-[386px] h-auto'>
                                             <p className='font-bold text-[12px] md:text-[20px] leading-[24px] md:leading-[39px] text-white'>
                                                 FRIDAY,
@@ -191,9 +190,9 @@ const Home = () => {
                                             <ul className="text-white list-disc list-inside mb-2 md:mb-8 w-full md:w-[400px]">
                                                 <li className='text-[10px] md:text-[15px] leading-[22px] md:leading-[26px] opacity-65'>FLIGHT TO KUMASI</li>
                                                 <li className='text-[10px] md:text-[15px] leading-[22px] md:leading-[26px] opacity-65'>HOTEL TRANSPORTATION PROVIDED</li>
-                                                <li className='text-[10px] md:text-[15px] leading-[22px] md:leading-[26px] opacity-65'>DINNER AT DEPARTURE</li>
+                                                {/* <li className='text-[10px] md:text-[15px] leading-[22px] md:leading-[26px] opacity-65'>DINNER AT DEPARTURE</li> */}
                                             </ul>
-                                            <p className='text-[10px] md:text-[15px] leading-[22px] md:leading-[26px] text-white'>Transporting...</p>
+                                            {/* <p className='text-[10px] md:text-[15px] leading-[22px] md:leading-[26px] text-white'>Transporting...</p> */}
                                         </div>
                                     </div>
 
@@ -239,7 +238,7 @@ const Home = () => {
                             <div className="flex md:flex-row flex-col">
                                 <img src={img3} alt="itinerary" className="md:w-[484px] rounded-lg md:rounded-none md:h-[323px] w-[321px] h-[241px]" />
                                 <div className="relative md:w-[570px]">
-                                    <div className="absolute top-[-20px] md:top-[20px] rounded-lg md:rounded-none md:left-[-5%] left-[5%] bg-[#0033AA] shadow-md w-[90%] md:w-[600px] h-auto md:h-[333px] flex flex-col items-center pt-8 md:pt-12 pb-2 md:pb-0">
+                                    <div className="absolute top-[-20px] md:top-[20px] rounded-lg md:rounded-none md:left-[-5%] left-[5%] bg-[#0033AA] shadow-md w-[90%] md:w-[600px] h-auto md:h-[333px] flex flex-col items-center pt-8 md:pt-20 pb-2 md:pb-0">
                                         <div className='w-[90%] md:w-[386px] h-auto'>
                                             <p className='font-bold text-[14px] md:text-[20px] leading-[26px] md:leading-[39px] text-white'>
                                                 SUNDAY,
@@ -255,7 +254,7 @@ const Home = () => {
                                                     BASED ON YOUR FLIGHT SCHEDULE, PICKUPS FROM THE HOTEL WILL BE ARRANGED 2.5 HOURS BEFORE DEPARTURE
                                                 </li>
                                             </ul>
-                                            <p className='text-white text-[10px] md:text-[15px]'>Transporting ...</p>
+                                            {/* <p className='text-white text-[10px] md:text-[15px]'>Transporting ...</p> */}
                                         </div>
                                     </div>
 
@@ -272,7 +271,7 @@ const Home = () => {
                     <img src={ban} alt='banner' className='object-cover h-[310px] md:h-full w-full' />
                     <div className='w-[344px] h-[94px] absolute top-[50%] left-[12%] text-white'>
                         <p className='md:text-[45px] text-[28px] h-[70px] md:leading-[47px] leading-[30px] font-black'>
-                            NOT <br /> C<img src={ball} alt='golf ball' className='inline w-[38px] h-[36px]' />MPETING
+                            NOT <br /> C<img src={ball} alt='golf ball' className='inline w-[38px] h-[36px]' />MPETING?
                         </p>
                         <p className='md:text-[16px] text-[14px] md:leading-[99px] md:font-bold'>Come and explore our tourist destinations.</p>
                     </div>
@@ -282,7 +281,7 @@ const Home = () => {
 
             <section>
                 <div className="flex flex-col md:flex-row md:flex-wrap gap-8 md:px-[220px] px-0 bg-[#F4F4F4] md:py-[100px] py-4">
-                    <div className="relative  rounded-lg overflow-hidden md:w-[40%]">
+                    <div className="relative  rounded-lg overflow-hidden md:w-[100%]">
                         <img
                             src={gh1}
                             alt="Owabi Wildlife Sanctuary"
@@ -297,12 +296,12 @@ const Home = () => {
                         </div>
                     </div>
 
-                    <div className="md:w-[55%] px-4 md:px-0 grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div className="relative rounded-lg overflow-hidden bg-white shadow-lg">
+                    <div className="px-4 md:px-0 grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div className="relative rounded-lg overflow-hidden bg-white shadow-lg md:w-[100%]">
                             <img
                                 src={gh2}
                                 alt="Zoological Gardens"
-                                className="md:w-[304px] w-full h-[202px] object-cover"
+                                className=" w-full h-[202px] object-cover"
                             />
                             <div className="p-4">
                                 <h3 className="text-lg font-bold">Zoological Gardens</h3>
@@ -313,7 +312,7 @@ const Home = () => {
                             <img
                                 src={gh3}
                                 alt="Okomfo Anokye Sword"
-                                className="md:w-[304px] w-full h-[202px] object-cover"
+                                className=" w-full h-[202px] object-cover"
                             />
                             <div className="p-4">
                                 <h3 className="text-lg font-bold">Okomfo Anokye Sword</h3>
@@ -324,7 +323,7 @@ const Home = () => {
                             <img
                                 src={gh4}
                                 alt="Kejetia Market"
-                                className="md:w-[304px] w-full h-[202px] object-cover"
+                                className=" w-full h-[202px] object-cover"
                             />
                             <div className="p-4">
                                 <h3 className="text-lg font-bold">Kejetia Market</h3>
@@ -335,7 +334,7 @@ const Home = () => {
                             <img
                                 src={gh5}
                                 alt="Bonwire Kente"
-                                className="md:w-[304px] w-full h-[202px] object-cover"
+                                className=" w-full h-[202px] object-cover"
                             />
                             <div className="p-4">
                                 <h3 className="text-lg font-bold">Bonwire Kente</h3>

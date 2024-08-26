@@ -4,9 +4,8 @@ import "../App.css";
 
 import shield from "../assets/shield.png";
 
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-
+// import { ToastContainer, toast } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
 import emailjs from '@emailjs/browser';
 
 const RegisterModal = ({ onClose }) => {
@@ -62,10 +61,10 @@ const RegisterModal = ({ onClose }) => {
             })
             .then(
                 () => {
-                    toast.success('Message sent successfully!');
+                    alert('Message sent successfully!');
                 },
                 (error) => {
-                    toast.error('Failed to send message. Please try again.');
+                    alert('Failed to send message. Please try again.');
                 },
             );
         e.target.reset();
@@ -88,9 +87,11 @@ const RegisterModal = ({ onClose }) => {
         <div>
             <div ref={modalRef} onClick={closeModal} className='call-modal'>
                 <div className='call__modal-content'>
-                    <ToastContainer />
                     <div className='call-left'>
                         <img src={shield} alt='caller' loading='lazy' />
+                        <div>
+                            <h2 className='md:text-[20px] text-red-500'>**This is an Invitational tournament only**</h2>
+                        </div>
                     </div>
 
                     <div className='call-right'>
@@ -98,7 +99,8 @@ const RegisterModal = ({ onClose }) => {
                             <span aria-hidden="true">&times;</span>
                         </button>
                         <div className="callmodal">
-                            <p className='text-custom-blue font-bold'>Register Your Account</p>
+                            <p className='text-custom-blue font-bold'>Register To Participate</p>
+                            <small className='text-red-500 md:hidden flex'>**This is an Invitational tournament only**</small>
                             <form ref={form} className='overflow-y-scroll lg:overflow-hidden h-[590px]' onSubmit={sendEmail}>
                                 <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
                                     <div className='flex flex-col gap-4'>

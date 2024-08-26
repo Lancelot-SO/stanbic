@@ -43,6 +43,9 @@ html {
   display: flex;
   align-items: center;
   padding-left: 30px;
+  flex-direction: column;
+  gap: 40px;
+  justify-content: center;
 }
 
 .call-left img {
