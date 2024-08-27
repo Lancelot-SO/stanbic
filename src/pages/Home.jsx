@@ -133,8 +133,8 @@ const Home = () => {
                 <div>
                     <div className='relative flex flex-col md:flex-row items-center'>
                         <img src={kingbg} alt='king' className='object-cover w-full h-[651px] md:h-auto' />
-                        <div data-aos="zoom-out-down" className='absolute md:top-[14%] top-[4%] md:left-[10%] w-[400px] h-auto md:h-[240px] flex flex-col gap-4 items-center md:items-start'>
-                            <h2 className='w-full md:w-[580px] h-[70px] md:h-[72px] small:pl-[24px] font-black text-[20px] md:text-[30px] leading-[25px] md:leading-[41px] text-white text-left lg:text-left'>
+                        <div data-aos="zoom-out-down" className='absolute md:top-[4%] lg:top-[14%] top-[4%] md:left-[10%] w-[400px] h-auto md:h-[240px] flex flex-col gap-4 items-center md:items-start'>
+                            <h2 className='w-full md:w-[630px] h-[70px] md:h-[105px] lg:h-[120px] small:pl-[24px] lg:pl-0 md:pl-0 font-black text-[20px] md:text-[30px] leading-[25px] md:leading-[41px] text-white text-left lg:text-left'>
                                 Welcome to the 2nd Stanbic-Asantehene Invitational Golf Tournament
                             </h2>
                             <p className='w-[90%] md:mb-10 md:w-[670px] h-[176px] md:h-[231px] font-normal leading-[22px] md:leading-[29px] text-[14px] md:text-[17px] text-white text-left'>
@@ -160,7 +160,7 @@ const Home = () => {
                 <div className='flex flex-col items-center justify-center pt-6 md:pt-0'>
                     <div className='flex flex-col items-center w-[1168px] md:h-[1745px] h-[1900px] bg-[#EBF0FF] gap-6'>
                         <div className='flex flex-col items-center'>
-                            <p className='w-[499px] md:h-[89px] text-left font-bold text-[20px] md:text-[60px] text-[#0033AA] pl-[70px]'>
+                            <p className='w-[520px] md:h-[89px] text-left font-bold text-[20px] md:text-[60px] text-[#0033AA] pl-[77px] lg:pl-0 md:pl-0'>
                                 OUR ITINERARY
                             </p>
                             <p className='w-[361px] md:w-[760px] md:h-[130px] h-[178px] text-[14px] keading-[22px] md:leading-[32px] text-left'>
@@ -276,7 +276,7 @@ const Home = () => {
                             <div className='flex md:flex-row flex-col gap-10 items-center'>
                                 <img src={side1} alt='side' className='w-[361px] md:w-full mx-4 md:mx-0 rounded-lg' />
                                 <div className='pl-[200px] md:pl-0'>
-                                    <h2 className='w-[241px] h-[82px] font-bold leading-[41px] text-[34px] mb-2'>Don't forget the Essentials</h2>
+                                    <h2 className='w-[241px] lg:h-[82px] md:h-[82px] font-bold lg:leading-[41px] leading-6 md:text-[34px] text-[20px] lg:text-[34px] mb-2'>Don't forget the Essentials</h2>
                                     <ul className='text-[#666C89] list-decimal w-[477px] h-[126px] font-medium leading-[21px] text-[14px] pl-3'>
                                         <li>Golf Kit</li>
                                         <li>⁠Sun glasses</li>
@@ -289,10 +289,10 @@ const Home = () => {
                         </div>
 
                         <div>
-                            <div className='flex md:flex-row flex-col-reverse gap-10 items-center md:mt-10 mb-12'>
-                                <div className='pl-[10px] md:pl-0'>
-                                    <h2 className='w-[241px] h-[72px] font-bold leading-[41px] text-[34px] mb-2'>6 Fun Facts</h2>
-                                    <ul className="text-[#1C1F35] list-disc list-inside lg:w-[477px] w-[400px] md:h-[160px] font-medium leading-[21px] md:text-[14px]">
+                            <div className='flex md:flex-row flex-col-reverse gap-10 items-center mb-12'>
+                                <div className='pl-[10px] md:pl-[20px]'>
+                                    <h2 className='w-[241px] lg:h-[72px] font-bold leading-[41px] lg:text-[34px] text-[20px] mb-2'>6 Fun Facts</h2>
+                                    <ul className="text-[#1C1F35] list-disc list-inside  lg:w-[477px] w-[400px] md:h-[160px] font-medium leading-[21px] md:text-[14px]">
                                         <li className="mb-4">
                                             Ghana has a rich golf history: Golf was introduced to Ghana in 1905, making it one of the oldest golfing countries in Africa.
                                         </li>
@@ -362,7 +362,7 @@ const Home = () => {
                                 className=" w-full h-[202px] object-cover"
                             />
                             <div className="p-4">
-                                <h3 className="text-lg font-bold">Zoological Gardens</h3>
+                                <h3 className="text-lg font-normal lg:font-bold md:font-bold">Zoological Gardens</h3>
                             </div>
                         </div>
 
@@ -373,7 +373,7 @@ const Home = () => {
                                 className=" w-full h-[202px] object-cover"
                             />
                             <div className="p-4">
-                                <h3 className="text-lg font-bold">Okomfo Anokye Sword</h3>
+                                <h3 className="text-lg font-normal lg:font-bold md:font-bold">Okomfo Anokye Sword</h3>
                             </div>
                         </div>
 
@@ -384,7 +384,7 @@ const Home = () => {
                                 className=" w-full h-[202px] object-cover"
                             />
                             <div className="p-4">
-                                <h3 className="text-lg font-bold">Kejetia Market</h3>
+                                <h3 className="text-lg font-normal lg:font-bold md:font-bold">Kejetia Market</h3>
                             </div>
                         </div>
 
@@ -395,7 +395,7 @@ const Home = () => {
                                 className=" w-full h-[202px] object-cover"
                             />
                             <div className="p-4">
-                                <h3 className="text-lg font-bold">Bonwire Kente</h3>
+                                <h3 className="text-lg font-normal lg:font-bold md:font-bold">Bonwire Kente</h3>
                             </div>
                         </div>
                     </div>
