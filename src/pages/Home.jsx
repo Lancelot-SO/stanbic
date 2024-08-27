@@ -160,7 +160,7 @@ const Home = () => {
                 <div className='flex flex-col items-center justify-center pt-6 md:pt-0'>
                     <div className='flex flex-col items-center w-[1168px] md:h-[1745px] h-[1900px] bg-[#EBF0FF] gap-6'>
                         <div className='flex flex-col items-center'>
-                            <p className='w-[520px] md:h-[89px] text-left font-bold text-[20px] md:text-[60px] text-[#0033AA] pl-[77px] lg:pl-0 md:pl-0'>
+                            <p className='w-[520px] text-left font-bold text-[20px] md:text-[20px] lg:text-[60px] text-[#0033AA] pl-[77px] md:text-center lg:pl-0 md:pl-0 md:my-4'>
                                 OUR ITINERARY
                             </p>
                             <p className='w-[361px] md:w-[760px] md:h-[130px] h-[178px] text-[14px] keading-[22px] md:leading-[32px] text-left'>
