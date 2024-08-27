@@ -85,7 +85,7 @@ const Home = () => {
                 <div className='relative'>
                     <img src={bgImg} alt='bg' className='object-cover w-full h-[577px] md:h-[600px] hidden md:flex' />
                     <img src={heromobile} alt='hero' className='object-cover w-full h-[576px] md:hidden flex' />
-                    <div className='absolute md:top-[20%] top-[55%] left-4 small:left-10 md:left-[10%] md:w-[558px] md:h-[427px] flex flex-col justify-center gap-1'>
+                    <div className='absolute md:top-[20%] top-[55%] left-4 small:left-10 md:left-[5%] lg:left-[10%] md:w-[558px] md:h-[427px] flex flex-col justify-center gap-1'>
                         <h3 className='w-[330px] h-[26px] text-[16px] leading-[26px] font-bold text-white md:text-[25px]'>
                             <Typewriter
                                 words={["STANBIC-ASANTEHENE"]}
@@ -133,7 +133,7 @@ const Home = () => {
                 <div>
                     <div className='relative flex flex-col md:flex-row items-center'>
                         <img src={kingbg} alt='king' className='object-cover w-full h-[651px] md:h-auto' />
-                        <div data-aos="zoom-out-down" className='absolute md:top-[4%] lg:top-[14%] top-[4%] md:left-[10%] w-[400px] h-auto md:h-[240px] flex flex-col gap-4 items-center md:items-start'>
+                        <div data-aos="zoom-out-down" className='absolute md:top-[4%] lg:top-[14%] top-[4%] md:left-[5%] lg:left-[10%] w-[400px] h-auto md:h-[240px] flex flex-col gap-4 items-center md:items-start'>
                             <h2 className='w-full md:w-[630px] h-[70px] md:h-[105px] lg:h-[120px] small:pl-[24px] lg:pl-0 md:pl-0 font-black text-[20px] md:text-[30px] leading-[25px] md:leading-[41px] text-white text-left lg:text-left'>
                                 Welcome to the 2nd Stanbic-Asantehene Invitational Golf Tournament
                             </h2>
@@ -158,12 +158,12 @@ const Home = () => {
 
             <section id='itinerary'>
                 <div className='flex flex-col items-center justify-center pt-6 md:pt-0'>
-                    <div className='flex flex-col items-center w-[1168px] md:h-[1745px] h-[1900px] bg-[#EBF0FF] gap-6'>
-                        <div className='flex flex-col items-center'>
-                            <p className='w-[520px] text-left font-bold text-[20px] md:text-[20px] lg:text-[60px] text-[#0033AA] pl-[77px] md:text-center lg:pl-0 md:pl-0 md:my-4'>
+                    <div className='flex flex-col items-center w-[1168px] md:h-[1745px] h-[1900px] bg-[#EBF0FF]'>
+                        <div className='flex flex-col items-center md:items-start lg:items-center'>
+                            <p className='w-[520px] text-left lg:text-center font-black text-[20px] md:text-[20px] lg:text-[60px] text-[#0033AA] pl-[77px] md:text-left md:pl-0 md:my-4'>
                                 OUR ITINERARY
                             </p>
-                            <p className='w-[361px] md:w-[760px] md:h-[130px] h-[178px] text-[14px] keading-[22px] md:leading-[32px] text-left'>
+                            <p className='w-[361px] md:w-[600px] lg:text-center lg:w-[760px] md:h-[130px] h-[178px] text-[14px] leading-[22px] md:leading-[32px] text-left'>
                                 Join us on
                                 31st August 2024, as we showcase top talent.
                                 The day will feature exciting rounds of play, networking opportunities,
@@ -276,7 +276,7 @@ const Home = () => {
                             <div className='flex md:flex-row flex-col gap-10 items-center'>
                                 <img src={side1} alt='side' className='w-[361px] md:w-full mx-4 md:mx-0 rounded-lg' />
                                 <div className='pl-[200px] md:pl-0'>
-                                    <h2 className='w-[241px] lg:h-[82px] md:h-[82px] font-bold lg:leading-[41px] leading-6 md:text-[34px] text-[20px] lg:text-[34px] mb-2'>Don't forget the Essentials</h2>
+                                    <h2 className='w-[241px] lg:h-[82px] md:h-[82px] font-bold lg:leading-[41px] leading-6 md:leading-[30px] md:text-[34px] text-[20px] lg:text-[34px] mb-2'>Don't forget the Essentials</h2>
                                     <ul className='text-[#666C89] list-decimal w-[477px] h-[126px] font-medium leading-[21px] text-[14px] pl-3'>
                                         <li>Golf Kit</li>
                                         <li>⁠Sun glasses</li>
@@ -459,11 +459,11 @@ const Home = () => {
                             </div>
                         )
                     }
-                    <div className='w-[160px] h-[32px] flex mt-4 justify-evenly'>
+                    {/* <div className='w-[160px] h-[32px] flex mt-4 justify-evenly'>
                         <BsFacebook size={24} className='text-[#5D50C6]' />
                         <BsTwitter size={24} className='text-[#5D50C6]' />
                         <BsInstagram size={24} className='text-[#5D50C6]' />
-                    </div>
+                    </div> */}
                 </div>
             </section>
         </div>

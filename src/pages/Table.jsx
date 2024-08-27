@@ -411,11 +411,7 @@ const Table = () => {
                             </div>
                         )
                     }
-                    <div className='w-[160px] h-[32px] flex mt-4 justify-evenly'>
-                        <BsFacebook size={24} className='text-[#5D50C6]' />
-                        <BsTwitter size={24} className='text-[#5D50C6]' />
-                        <BsInstagram size={24} className='text-[#5D50C6]' />
-                    </div>
+
                 </div>
             </section>
 
