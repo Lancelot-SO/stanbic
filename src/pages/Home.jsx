@@ -24,7 +24,7 @@ import side1 from "../assets/side1.png"
 import side2 from "../assets/side2.png"
 
 
-import { BsArrowRight } from "react-icons/bs";
+// import { BsArrowRight } from "react-icons/bs";
 
 import footerbanner from "../assets/footerbanner.png"
 import sunny from "../assets/sunny.png";
@@ -85,7 +85,7 @@ const Home = () => {
                 <div className='relative'>
                     <img src={bgImg} alt='bg' className='object-cover w-full h-[577px] md:h-[600px] hidden md:flex' />
                     <img src={heromobile} alt='hero' className='object-cover w-full h-[576px] md:hidden flex' />
-                    <div className='absolute md:top-[20%] top-[55%] left-4 md:left-[10%] md:w-[558px] md:h-[427px] flex flex-col justify-center gap-1'>
+                    <div className='absolute md:top-[20%] top-[55%] left-4 small:left-10 md:left-[10%] md:w-[558px] md:h-[427px] flex flex-col justify-center gap-1'>
                         <h3 className='w-[330px] h-[26px] text-[16px] leading-[26px] font-bold text-white md:text-[25px]'>
                             <Typewriter
                                 words={["STANBIC-ASANTEHENE"]}
@@ -133,23 +133,23 @@ const Home = () => {
                 <div>
                     <div className='relative flex flex-col md:flex-row items-center'>
                         <img src={kingbg} alt='king' className='object-cover w-full h-[651px] md:h-auto' />
-                        <div data-aos="zoom-out-down" className='absolute md:top-[14%] top-[8%] md:left-[10%] w-[400px] h-auto md:h-[240px] flex flex-col gap-4 items-center md:items-start'>
-                            <h2 className='w-[90%] md:w-[555px] h-[48px] md:h-[82px] font-bold text-[22px] md:text-[30px] leading-[24px] md:leading-[41px] text-white text-left'>
-                                Welcome to the 2nd edition of the Otumfuo Golf Tournament
+                        <div data-aos="zoom-out-down" className='absolute md:top-[14%] top-[4%] md:left-[10%] w-[400px] h-auto md:h-[240px] flex flex-col gap-4 items-center md:items-start'>
+                            <h2 className='w-full md:w-[580px] h-[70px] md:h-[72px] small:pl-[24px] font-black text-[20px] md:text-[30px] leading-[25px] md:leading-[41px] text-white text-left lg:text-left'>
+                                Welcome to the 2nd Stanbic-Asantehene Invitational Golf Tournament
                             </h2>
                             <p className='w-[90%] md:mb-10 md:w-[670px] h-[176px] md:h-[231px] font-normal leading-[22px] md:leading-[29px] text-[14px] md:text-[17px] text-white text-left'>
-                                The 2nd edition of the Otumfuo Invitational Golf Tournament Championship is back,
-                                marking 25 years of collaboration between Stanbic Bank and His Royal Majesty,
+                                The 2nd edition of the Stanbic-Asantehene Invitational Golf Tournament is back,
+                                This event marks 25 years of collaboration between Stanbic Bank and His Royal Majesty,
                                 Otumfuo Osei Tutu II. Come Saturday, 31st August, the one-day tournament presents the
                                 perfect opportunity for golfing enthusiasts and their families to tee up, network, and
                                 unwind. The Royal Golf Course boasts 93 acres of greenery, with 72 pars.
                             </p>
-                            <div className='w-[150px] md:w-[198px] h-[40px] md:p-4 bg-transparent border border-white flex items-center justify-center shadow-md'>
+                            <div className='hidden w-[150px] md:w-[198px] h-[40px] md:p-4 bg-transparent border border-white items-center justify-center shadow-md'>
                                 <button onClick={() => setIsModalOpen(true)} className='text-white cursor-pointer'>Register</button>
                             </div>
                             {isModalOpen && <RegisterModal onClose={() => setIsModalOpen(false)} />}
                         </div>
-                        <img src={shield} alt='shield' data-aos="zoom-in" className='absolute md:top-[14%] top-[58%] md:left-[64%] w-[200px] h-[240px] md:w-[404px] md:h-[482px] mt-4 md:mt-0' />
+                        <img src={shield} alt='shield' data-aos="zoom-in" className='absolute lg:top-[14%] top-[50%] lg:left-[64%] w-[200px] h-[240px] lg:w-[404px] lg:h-[482px] mt-4 lg:mt-0 md:hidden lg:flex' />
                     </div>
 
                 </div>
@@ -160,13 +160,13 @@ const Home = () => {
                 <div className='flex flex-col items-center justify-center pt-6 md:pt-0'>
                     <div className='flex flex-col items-center w-[1168px] md:h-[1745px] h-[1900px] bg-[#EBF0FF] gap-6'>
                         <div className='flex flex-col items-center'>
-                            <p className='w-[499px] md:h-[89px] text-center font-bold text-[32px] md:text-[60px] text-[#0033AA]'>
+                            <p className='w-[499px] md:h-[89px] text-left font-bold text-[20px] md:text-[60px] text-[#0033AA] pl-[70px]'>
                                 OUR ITINERARY
                             </p>
-                            <p className='w-[361px] md:w-[760px] md:h-[130px] h-[198px] text-[14px] keading-[22px] md:leading-[32px] font-bold text-center'>
-                                Join us from
-                                August 30 to September 1, 2024, as we showcase top talent.
-                                Each day will feature exciting rounds of play, networking opportunities,
+                            <p className='w-[361px] md:w-[760px] md:h-[130px] h-[178px] text-[14px] keading-[22px] md:leading-[32px] text-left'>
+                                Join us on
+                                31st August 2024, as we showcase top talent.
+                                The day will feature exciting rounds of play, networking opportunities,
                                 and evening festivities. Prepare for an exhilarating experience that combines skill,
                                 strategy, and sportsmanship. Let the games begin!.
                             </p>
@@ -267,10 +267,68 @@ const Home = () => {
             </section>
 
             <section>
+                <div className='flex items-center justify-center'>
+                    <div className='w-[1168px] md:h-[1130px]'>
+                        <div className='md:py-[100px] py-[50px]'>
+                            <img src={line} alt='line' />
+                        </div>
+                        <div>
+                            <div className='flex md:flex-row flex-col gap-10 items-center'>
+                                <img src={side1} alt='side' className='w-[361px] md:w-full mx-4 md:mx-0 rounded-lg' />
+                                <div className='pl-[200px] md:pl-0'>
+                                    <h2 className='w-[241px] h-[82px] font-bold leading-[41px] text-[34px] mb-2'>Don't forget the Essentials</h2>
+                                    <ul className='text-[#666C89] list-decimal w-[477px] h-[126px] font-medium leading-[21px] text-[14px] pl-3'>
+                                        <li>Golf Kit</li>
+                                        <li>⁠Sun glasses</li>
+                                        <li>Sunscreen</li>
+                                        <li>phone chargers/ power bank</li>
+                                        <li>⁠Smart casual clothing</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div className='flex md:flex-row flex-col-reverse gap-10 items-center md:mt-10 mb-12'>
+                                <div className='pl-[10px] md:pl-0'>
+                                    <h2 className='w-[241px] h-[72px] font-bold leading-[41px] text-[34px] mb-2'>6 Fun Facts</h2>
+                                    <ul className="text-[#1C1F35] list-disc list-inside lg:w-[477px] w-[400px] md:h-[160px] font-medium leading-[21px] md:text-[14px]">
+                                        <li className="mb-4">
+                                            Ghana has a rich golf history: Golf was introduced to Ghana in 1905, making it one of the oldest golfing countries in Africa.
+                                        </li>
+                                        <li className="mb-4">
+                                            Unique hazards: Ghanaian golf courses feature unique hazards like mango trees, tropical flowers, and even monkeys!
+                                        </li>
+                                        <li className="mb-4">
+                                            Ghana has produced talented local golf heroes like Kojo Kyei, who won the 2019 Ghana Open, inspiring a new generation of local golfers.
+                                        </li>
+                                        <li className="mb-4">
+                                            Golf was the first sport played on the moon.
+                                        </li>
+                                        <li className="mb-4">
+                                            Women’s golf began on New Year’s Day of 1811 in Musselburgh, Scotland.
+                                        </li>
+                                        <li className="">
+                                            The golf term "caddie" comes from the word Cadet.
+                                        </li>
+                                    </ul>
+
+
+                                </div>
+
+                                <img src={side2} alt='side' className='mt-[115px]' />
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
                 <div className='relative'>
-                    <img src={ban} alt='banner' className='object-cover h-[310px] md:h-full w-full' />
-                    <div className='w-[344px] h-[94px] absolute top-[50%] left-[12%] text-white'>
-                        <p className='md:text-[45px] text-[28px] h-[70px] md:leading-[47px] leading-[30px] font-black'>
+                    <img src={ban} alt='banner' className='object-cover h-[310px] md:h-full w-full mt-8' />
+                    <div className='w-[344px] h-[94px] absolute top-[45%] left-[12%] text-white'>
+                        <p className='md:text-[45px] text-[28px] h-[65px] md:leading-[47px] leading-[30px] font-black'>
                             NOT <br /> C<img src={ball} alt='golf ball' className='inline w-[38px] h-[36px]' />MPETING?
                         </p>
                         <p className='md:text-[16px] text-[14px] md:leading-[99px] md:font-bold'>Come and explore our tourist destinations.</p>
@@ -280,8 +338,8 @@ const Home = () => {
 
 
             <section>
-                <div className="flex flex-col md:flex-row md:flex-wrap gap-8 md:px-[220px] px-0 bg-[#F4F4F4] md:py-[100px] py-4">
-                    <div className="relative  rounded-lg overflow-hidden md:w-[100%]">
+                <div className="flex flex-col md:flex-row gap-8 lg:px-[220px] px-0 bg-[#F4F4F4] py-4">
+                    <div className="relative rounded-lg overflow-hidden md:w-[100%] lg:w-[50%] lg:flex-row">
                         <img
                             src={gh1}
                             alt="Owabi Wildlife Sanctuary"
@@ -345,70 +403,6 @@ const Home = () => {
 
             </section>
 
-            <section>
-                <div className='flex items-center justify-center'>
-                    <div className='w-[1168px] md:h-[1130px]'>
-                        <div className='md:py-[100px] py-[50px]'>
-                            <img src={line} alt='line' />
-                        </div>
-                        <div>
-                            <div className='flex md:flex-row flex-col gap-10 items-center'>
-                                <img src={side1} alt='side' className='w-[361px] md:w-full mx-4 md:mx-0 rounded-lg' />
-                                <div className='pl-[200px] md:pl-0'>
-                                    <h2 className='w-[241px] h-[82px] font-bold leading-[41px] text-[34px] mb-2'>Don't forget the Essentials</h2>
-                                    <ul className='text-[#666C89] list-decimal w-[477px] h-[126px] font-medium leading-[21px] text-[14px] pl-3'>
-                                        <li>Sun protection - hats, shades, fans</li>
-                                        <li>Power bank/Charger</li>
-                                        <li>Healthy Snacks - granola, trail mix, etc</li>
-                                        <li>First Aid Materials</li>
-                                        <li>Comfortable shoes (for non-players)</li>
-                                        <li>Golf equipment - clubs, balls, tees.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div>
-                            <div className='flex md:flex-row flex-col-reverse gap-10 items-center md:mt-10 mb-4 md:mb-0'>
-                                <div className='pl-[130px] md:pl-0'>
-                                    <h2 className='w-[241px] h-[82px] font-bold leading-[41px] text-[34px] mb-2'>6 Fun Facts</h2>
-                                    <ul className='text-[#1C1F35] w-[477px] md:h-[126px] font-medium leading-[21px] md:text-[14px]'>
-                                        <li className='mb-2 w-[294px] md:w-full text-[12px] md:text-[14px] flex items-center gap-2'>
-                                            <BsArrowRight size={20} />
-                                            Golf courses used to have anywhere from 5 to 22 holes
-                                            per game!
-                                        </li>
-                                        <li className='mb-2 w-[294px] md:w-full text-[12px] md:text-[14px] flex items-center gap-2'>
-                                            <BsArrowRight size={40} />
-                                            Golf is largely believed to have originated in Scotland, but some
-                                            historians believe it takes influence from similar ancient Roman and
-                                            Chinese games
-                                        </li>
-                                        <li className='mb-2 w-[294px] md:w-full text-[12px] md:text-[14px] flex items-center gap-2'>
-                                            <BsArrowRight size={40} />
-                                            The word golf originated from the Dutch word “kolf” or “kolve”, which
-                                            then became the Scottish word “gouff” and “goff”
-                                        </li>
-                                        <li className='mb-2 w-[294px] md:w-full text-[12px] md:text-[14px] flex items-center gap-2'>
-                                            <BsArrowRight size={20} />
-                                            Golf was originally played by shepherds to pass the time.</li>
-                                        <li className='mb-2 w-[294px] md:w-full text-[12px] md:text-[14px] flex items-center gap-2'>
-                                            <BsArrowRight size={36} />
-                                            Golf holes do not stay in one place. But are moved regularly to keep
-                                            the greens in good condition.</li>
-                                        <li className='w-[294px] md:w-full text-[12px] md:text-[14px] flex items-center gap-2'>
-                                            <BsArrowRight size={20} />
-                                            The chances of an average golfer to sink a hole-in-one are 1 in 12,000.</li>
-                                    </ul>
-                                </div>
-
-                                <img src={side2} alt='side' className='mt-[115px]' />
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
 
             <section className="relative">
                 <div className="relative">
