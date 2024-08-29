@@ -20,8 +20,10 @@ module.exports = {
         'xl': '1280px',
         'large': '1343px',
         '2xl': '1536px',
+        'xxl': '1620px',
         'vl': '1728px',
         '3xl': '1800px',
+        '4xl': '1920px',
       },
       backdropBlur: {
         '16': '16px',
