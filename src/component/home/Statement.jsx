@@ -1,0 +1,158 @@
+// eslint-disable-next-line no-unused-vars
+import React from "react";
+import { motion } from "framer-motion";
+import img1 from "../../assets/hero/event1.png";
+import img2 from "../../assets/hero/event2.png";
+import img3 from "../../assets/hero/event3.png";
+
+const fadeUp = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0 }
+};
+
+const Statement = () => {
+    return (
+        <section className="w-full py-16 px-6 md:px-16 bg-white">
+            <div className="max-w-7xl mx-auto">
+
+                {/* SECTION TITLE */}
+                <motion.h2
+                    variants={fadeUp}
+                    initial="hidden"
+                    whileInView="visible"
+                    transition={{ duration: 0.9 }}
+                    viewport={{ once: true }}
+                    className="text-center text-3xl md:text-4xl font-bold text-[#003087] mb-3"
+                >
+                    THE ROYAL GOLF CLASSIC EXPERIENCE
+                </motion.h2>
+
+                <motion.p
+                    variants={fadeUp}
+                    initial="hidden"
+                    whileInView="visible"
+                    transition={{ duration: 0.9, delay: 0.2 }}
+                    viewport={{ once: true }}
+                    className="text-center text-[#003087] max-w-3xl mx-auto mb-10"
+                >
+                    An exclusive tournament hosted by Stanbic Bank in collaboration with His Majesty
+                    Otumfuo Osei Tutu II celebrating excellence, sportsmanship, and lasting partnerships.
+                    Explore the itinerary for this distinguished weekend of golf, fellowship, and ceremony.
+                </motion.p>
+
+                {/* ===================== EVENT BLOCK 1 ===================== */}
+                <motion.div
+                    variants={fadeUp}
+                    initial="hidden"
+                    whileInView="visible"
+                    transition={{ duration: 0.9 }}
+                    viewport={{ once: true }}
+                    className="bg-white overflow-hidden mb-8 flex flex-col md:flex-row h-[290px]"
+                >
+                    {/* LEFT - TEXT */}
+                    <div className="p-6 w-full md:w-1/2">
+                        <p className="text-sm uppercase font-semibold text-[#0637A2]">
+                            Fri Dec
+                        </p>
+                        <h3 className="text-[48px] font-bold text-[#003087]">12TH</h3>
+
+                        <p className="font-semibold text-[24px] leading-[40px] text-[#003087] mt-2">
+                            Event Day 1 – The Friday Night
+                        </p>
+
+                        <p className="text-sm font-semibold mt-1 text-[#003087]">
+                            Start Time: 6:00 PM
+                        </p>
+
+                        <ul className="list-disc ml-5 mt-2 text-[#003087]">
+                            <li>Evening Cocktail</li>
+                        </ul>
+                    </div>
+
+                    {/* RIGHT - IMAGE */}
+                    <img
+                        src={img1}
+                        alt="event"
+                        className="w-full md:w-1/2 h-full object-cover"
+                    />
+                </motion.div>
+
+                {/* ===================== EVENT BLOCK 2 ===================== */}
+                <motion.div
+                    variants={fadeUp}
+                    initial="hidden"
+                    whileInView="visible"
+                    transition={{ duration: 0.9 }}
+                    viewport={{ once: true }}
+                    className="bg-white h-[425px] overflow-hidden mb-8 flex flex-col md:flex-row"
+                >
+                    {/* LEFT - TEXT */}
+                    <div className="p-6 w-full md:w-1/2">
+                        <p className="text-sm uppercase font-semibold text-[#0637A2]">
+                            Sat Dec
+                        </p>
+                        <h3 className="text-[48px] font-bold text-[#003087]">13TH</h3>
+
+                        <p className="font-semibold text-[24px] leading-[40px] text-[#003087] mt-2">
+                            Event Day 2 – Ceremonial Tee & Game Day
+                        </p>
+
+                        <p className="text-sm font-semibold mt-1 text-[#003087]">
+                            Start Time: 6:00 AM
+                        </p>
+
+                        <ul className="list-disc ml-5 mt-2 text-[#003087] space-y-1">
+                            <li>Ceremonial Tee Off</li>
+                            <li>Prize Presentation – 3:00 PM</li>
+                            <li>Dinner with Exco – 7:00 PM</li>
+                        </ul>
+                    </div>
+
+                    {/* RIGHT - IMAGE */}
+                    <img
+                        src={img2}
+                        alt="event"
+                        className="w-full md:w-1/2 h-full object-cover"
+                    />
+                </motion.div>
+
+                {/* ===================== EVENT BLOCK 3 ===================== */}
+                <motion.div
+                    variants={fadeUp}
+                    initial="hidden"
+                    whileInView="visible"
+                    transition={{ duration: 0.9 }}
+                    viewport={{ once: true }}
+                    className="bg-white h-[323px] overflow-hidden flex flex-col md:flex-row"
+                >
+                    {/* LEFT - TEXT */}
+                    <div className="p-6 w-full md:w-1/2">
+                        <p className="text-sm uppercase font-semibold text-[#0637A2]">
+                            Sun Dec
+                        </p>
+                        <h3 className="text-[48px] font-bold text-[#003087]">14TH</h3>
+
+                        <p className="font-semibold text-[24px] leading-[40px] text-[#003087] mt-2">
+                            Day 3 – Departures
+                        </p>
+
+                        <ul className="list-disc ml-5 mt-2 text-[#003087] space-y-1">
+                            <li>Check-Out Support</li>
+                            <li>Airport Check-In Assistance</li>
+                            <li>Thank You Packs & Notes</li>
+                        </ul>
+                    </div>
+
+                    {/* RIGHT - IMAGE */}
+                    <img
+                        src={img3}
+                        alt="event"
+                        className="w-full md:w-1/2 h-full object-cover"
+                    />
+                </motion.div>
+            </div>
+        </section>
+    );
+};
+
+export default Statement;

@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-
 html {
   scroll-behavior: smooth;
 }
@@ -9,224 +7,39 @@ html {
   padding: 0;
   outline: 0;
   box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
+  font-family: "Outfit", sans-serif;
 }
 
-.call-modal {
-  display: flex;
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(5px);
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+/* modal animations */
+.animate-fade-in {
+  animation: fadeIn 0.25s ease forwards;
 }
 
-.call__modal-content {
-  display: flex;
-  width: 1000px;
-  height: 643px;
-  background: #fff;
-  border-radius: 20px;
-  gap: 20px;
+.animate-fade-out {
+  animation: fadeOut 0.25s ease forwards;
 }
 
-.call-left {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  padding-left: 30px;
-  flex-direction: column;
-  gap: 40px;
-  justify-content: center;
-}
-
-.call-left img {
-  height: 300px;
-  width: 422px;
-  /*TL TR BR BL*/
-}
-
-@media (max-width: 767px) {
-  .call-left {
-    display: none;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
   }
 
-  .call-close {
-    font-size: 30px;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-color: #0637A2;
-    color: #fff;
-    cursor: pointer;
-    position: fixed;
-    top: 50px;
-    left: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 99;
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
-.call-right {
-  flex: 2;
-  padding: 10px;
-}
-
-.call-close {
-  font-size: 30px;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background-color: #0637A2;
-  color: #fff;
-  cursor: pointer;
-  position: fixed;
-  top: 50px;
-  right: 280px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 20;
-}
-
-.callmodal {
-  padding-top: 50px;
-}
-
-.callmodal p {
-  font-family: "Inter", sans-serif;
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 35px;
-  letter-spacing: 0px;
-  text-align: left;
-  color: #0637A2;
-  padding-bottom: 15px;
-}
-
-.callmodal span {
-  color: rgba(111, 108, 144, 1);
-  padding-bottom: 20px;
-}
-
-form {
-  margin-top: 20px;
-}
-
-@media (max-width: 767px) {
-
-  .call__modal-content {
-    overflow-y: scroll;
-    height: 113%;
-  }
-}
-
-@media (max-width: 640px) {
-
-  .call__modal-content {
-    overflow-y: scroll;
-    height: 113%;
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
   }
 
-  form {
-    margin-top: 0;
-  }
-
-  .call-close {
-    font-size: 30px;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-color: #0637A2;
-    color: #fff;
-    cursor: pointer;
-    position: fixed;
-    top: 20px;
-    right: 280px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 20;
-    padding-bottom: 4px;
+  to {
+    opacity: 0;
+    transform: scale(0.97);
   }
 }
-
-.form-group {
-  margin-bottom: 20px;
-}
-
-.input-group {
-  display: flex;
-  align-items: center;
-  width: 338px;
-  height: 50px;
-
-}
-
-.call-icon {
-  background: rgba(247, 247, 247, 1);
-  border: none;
-  padding: 2px;
-}
-
-.input-group input {
-  background: rgba(247, 247, 247, 1);
-  border: none;
-}
-
-label {
-  color: rgba(111, 108, 144, 1);
-}
-
-.input-icon {
-  margin-right: 10px;
-}
-
-.input-icon svg {
-  width: 24px;
-  height: 24px;
-}
-
-.time-group {
-  margin-bottom: 20px;
-  display: flex;
-  flex-direction: column;
-}
-
-.time-control {
-  width: 338px;
-  height: 50px;
-  padding: 8px;
-  border-radius: 5px;
-  background: rgba(247, 247, 247, 1);
-  border: none;
-}
-
-.form-control {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.request {
-  width: 100px;
-  height: 39px;
-  padding: 10px, 19.57px, 10px, 19.57px;
-  border-radius: 6.26px;
-  background: linear-gradient(251.21deg, #987C55 0%, #D0B58C 100%);
-  color: #fff;
-}
-
-
-/* home sponsors*/
