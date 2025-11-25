@@ -1,21 +1,38 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import Slider1 from "../../assets/hero/slider1.png"
-import Slider2 from "../../assets/hero/slider2.png"
-import Slider3 from "../../assets/hero/slider3.png"
-import Slider4 from "../../assets/hero/slider4.png"
+
+import Slider1 from "../../assets/hero/slider1.png";
+import Slider2 from "../../assets/hero/slider2.png";
+import Slider3 from "../../assets/hero/slider3.png";
+import Slider4 from "../../assets/hero/slider4.png";
+
+import Slidermobile1 from "../../assets/hero/slidermobile1.png";
+import Slidermobile2 from "../../assets/hero/slidermobile2.png";
+import Slidermobile3 from "../../assets/hero/slidermobile3.png";
+import Slidermobile4 from "../../assets/hero/slidermobile4.png";
 
 export default function Slider() {
     const sliderRef = useRef(null);
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [isMobile, setIsMobile] = useState(false);
 
-    const images = [
-        Slider1,
-        Slider2,
-        Slider3,
-        Slider4,
-    ];
+    // Detect screen width on load and resize
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
+
+        handleResize(); // Check on mount
+        window.addEventListener("resize", handleResize);
+
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
+    const imagesDesktop = [Slider1, Slider2, Slider3, Slider4];
+    const imagesMobile = [Slidermobile1, Slidermobile2, Slidermobile3, Slidermobile4];
+
+    const images = isMobile ? imagesMobile : imagesDesktop;
 
     // Snap to the closest slide after drag ends
     const handleDragEnd = (_, info) => {
@@ -33,7 +50,7 @@ export default function Slider() {
     };
 
     return (
-        <section className="w-full overflow-hidden relative">
+        <section className="w-screen overflow-hidden relative">
             {/* Slider */}
             <motion.div
                 ref={sliderRef}
@@ -48,27 +65,26 @@ export default function Slider() {
                 {images.map((img, index) => (
                     <motion.div
                         key={index}
-                        className="w-full h-full flex-shrink-0 relative"
+                        className="w-screen h-full flex-shrink-0 relative"
                     >
                         <img
                             src={img}
                             alt={`slide-${index}`}
-                            className="w-full h-full object-cover"
+                            className={`w-full h-full ${isMobile ? "object-contain" : "object-cover"}`}
+                            loading="lazy"
                         />
-
-
                     </motion.div>
                 ))}
             </motion.div>
 
-            {/* DOT NAVIGATION — bottom-left corner */}
-            <div className="absolute bottom-16 left-32 flex gap-3">
+            {/* DOT NAVIGATION */}
+            <div className="absolute bottom-16 left-8 md:left-32 flex gap-3 z-20">
                 {images.map((_, i) => (
                     <button
                         key={i}
                         onClick={() => setCurrentIndex(i)}
-                        className={`w-3 h-3 rounded-full transition
-                            ${currentIndex === i ? "bg-white" : " border bg-transparent"}
+                        className={`w-3 h-3 rounded-full border transition
+                            ${currentIndex === i ? "bg-white" : "bg-transparent"}
                         `}
                     />
                 ))}
