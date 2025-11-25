@@ -11,25 +11,49 @@ export default function Socials() {
             <img
                 src={shield}
                 alt="background"
-                className="absolute w-[475px] h-full object-cover opacity-100"
+                className="absolute lg:w-[475px] w-[400px] h-full object-cover opacity-100"
             />
 
 
             {/* Social Icons */}
             <div className="flex gap-6 relative z-10">
-                <div className="w-[36px] h-[36px] bg-[#0637A2] text-white rounded-full flex items-center justify-center">
+                <a
+                    href="https://www.linkedin.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-[36px] h-[36px] bg-[#0637A2] text-white rounded-full flex items-center justify-center"
+                >
                     <FaLinkedinIn />
-                </div>
-                <div className="w-[36px] h-[36px] bg-[#0637A2] text-white rounded-full flex items-center justify-center">
+                </a>
+
+                <a
+                    href="https://www.facebook.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-[36px] h-[36px] bg-[#0637A2] text-white rounded-full flex items-center justify-center"
+                >
                     <FaFacebookF />
-                </div>
-                <div className="w-[36px] h-[36px] bg-[#0637A2] text-white rounded-full flex items-center justify-center">
+                </a>
+
+                <a
+                    href="https://www.instagram.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-[36px] h-[36px] bg-[#0637A2] text-white rounded-full flex items-center justify-center"
+                >
                     <FaInstagram />
-                </div>
-                <div className="w-[36px] h-[36px] bg-[#0637A2] text-white rounded-full flex items-center justify-center">
+                </a>
+
+                <a
+                    href="https://twitter.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-[36px] h-[36px] bg-[#0637A2] text-white rounded-full flex items-center justify-center"
+                >
                     <FaXTwitter />
-                </div>
+                </a>
             </div>
+
         </div>
     );
 }

@@ -7,7 +7,6 @@ import SuccessModal from "./SuccessModal";
 const RegisterModal = ({ open, onClose }) => {
     const [showSuccessModal, setShowSuccessModal] = useState(false);
 
-
     if (!open) return null;
 
     const handleSubmit = (e) => {
@@ -19,27 +18,26 @@ const RegisterModal = ({ open, onClose }) => {
         setShowSuccessModal(true);
     };
 
-
     return (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-            <div className="bg-white w-[80%] max-w-[1100px] rounded-lg p-8 relative animate-fadeIn">
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4 md:p-0">
+            <div className="bg-white mt-10 w-full md:w-[80%] max-w-[1100px] rounded-lg p-6 md:p-8 relative animate-fadeIn overflow-auto max-h-[85vh]">
 
                 {/* Close button */}
                 <button
                     onClick={onClose}
-                    className="absolute top-6 right-6 text-gray-500 hover:text-gray-800 text-xl"
+                    className="absolute top-4 md:top-6 right-4 md:right-6 text-gray-500 hover:text-gray-800 text-xl"
                 >
                     ✕
                 </button>
 
-                <h2 className="text-[#0637A2] text-2xl font-bold mb-6">
+                <h2 className="text-[#0637A2] lg:text-2xl font-bold mb-6 text-center md:text-left">
                     CONFIRM YOUR DETAILS
                 </h2>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-10 h-[545px]">
+                <div className="flex flex-col md:flex-row gap-6 md:gap-10">
 
-                    {/* LEFT IMAGE */}
-                    <div className="flex justify-center items-center">
+                    {/* LEFT IMAGE - hidden on mobile */}
+                    <div className="hidden md:flex justify-center items-center flex-1">
                         <img
                             src={formshield}
                             alt="Golf players"
@@ -48,9 +46,11 @@ const RegisterModal = ({ open, onClose }) => {
                     </div>
 
                     {/* RIGHT FORM */}
-                    <form onSubmit={handleSubmit} className="grid grid-cols-2 gap-6 text-[#2A2A2A]">
-
-                        {/* First Name */}
+                    <form
+                        onSubmit={handleSubmit}
+                        className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 flex-1 text-[#2A2A2A]"
+                    >
+                        {/* Full Name */}
                         <div className="flex flex-col">
                             <label className="text-sm font-medium mb-2 text-custom-blue">
                                 Full Name (As shown on your ID)
@@ -63,8 +63,6 @@ const RegisterModal = ({ open, onClose }) => {
                                 className="border border-gray-300 rounded-lg px-4 py-3 text-sm text-black focus:outline-none focus:ring-2 focus:ring-blue-600"
                             />
                         </div>
-
-
 
                         {/* Telephone */}
                         <div className="flex flex-col">
@@ -193,7 +191,7 @@ const RegisterModal = ({ open, onClose }) => {
                         </div>
 
                         {/* ACTION BUTTONS */}
-                        <div className="col-span-2 flex justify-end gap-3 pt-4">
+                        <div className="col-span-1 md:col-span-2 flex justify-end gap-3 pt-4">
                             <button
                                 type="button"
                                 onClick={onClose}
@@ -213,22 +211,16 @@ const RegisterModal = ({ open, onClose }) => {
                                 <SuccessModal
                                     onClose={() => {
                                         setShowSuccessModal(false); // close success message
-                                        onClose();                  // close registration modal
+                                        onClose(); // close registration modal
                                     }}
                                 />
                             )}
-
                         </div>
-
                     </form>
-
-
-
-
                 </div>
             </div>
         </div>
-    )
+    );
 };
 
 RegisterModal.propTypes = {

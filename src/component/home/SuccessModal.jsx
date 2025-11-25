@@ -25,12 +25,12 @@ const SuccessModal = ({ onClose }) => {
                 </div>
 
                 {/* Heading */}
-                <h2 className="text-[40px] font-bold text-[#0637A2] mb-2">
+                <h2 className="lg:text-[40px] text-[24px] font-bold text-[#0637A2] mb-2">
                     Thank you for registering!
                 </h2>
 
                 {/* Subtext */}
-                <p className="text-[#0637A2] text-[40px] mb-6">
+                <p className="text-[#0637A2] lg:text-[36px] text-[20px] mb-6">
                     Your account has been created successfully.
                 </p>
 

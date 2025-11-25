@@ -7,22 +7,20 @@ import img3 from "../../assets/hero/img3.png";
 import img4 from "../../assets/hero/img4.png";
 
 const Photos = () => {
-    // Lightbox popup state
     const [selectedImage, setSelectedImage] = useState(null);
 
-    // Staggered fade-up animation
     const fadeUp = {
         hidden: { opacity: 0, y: 40 },
         visible: (delay) => ({
             opacity: 1,
             y: 0,
-            transition: { duration: 0.9, delay }
-        })
+            transition: { duration: 0.9, delay },
+        }),
     };
 
     return (
         <>
-            <div className="flex flex-row h-[589px] justify-end">
+            <div className="flex flex-col lg:flex-row h-auto lg:h-[589px] w-full">
 
                 {/* COLUMN 1 */}
                 <motion.div
@@ -31,14 +29,14 @@ const Photos = () => {
                     whileInView="visible"
                     variants={fadeUp}
                     viewport={{ once: true }}
-                    className="cursor-pointer"
+                    className="cursor-pointer flex-1"
                     onClick={() => setSelectedImage(img1)}
                 >
                     <motion.img
                         whileHover={{ scale: 0.9 }}
                         src={img1}
                         alt="image1"
-                        className="object-cover h-full"
+                        className="object-cover w-full h-[200px] lg:h-full"
                         loading="lazy"
                     />
                 </motion.div>
@@ -50,13 +48,13 @@ const Photos = () => {
                     whileInView="visible"
                     variants={fadeUp}
                     viewport={{ once: true }}
-                    className="flex flex-col"
+                    className="flex flex-row lg:flex-col flex-1"
                 >
                     <motion.img
                         whileHover={{ scale: 0.9 }}
                         src={img2}
                         alt="image2"
-                        className="object-cover h-1/2 cursor-pointer"
+                        className="object-cover w-1/2 lg:w-full h-[200px] lg:h-1/2 cursor-pointer"
                         loading="lazy"
                         onClick={() => setSelectedImage(img2)}
                     />
@@ -65,31 +63,30 @@ const Photos = () => {
                         whileHover={{ scale: 0.9 }}
                         src={img3}
                         alt="image3"
-                        className="object-cover h-1/2 cursor-pointer"
+                        className="object-cover w-1/2 lg:w-full h-[200px] lg:h-1/2 cursor-pointer"
                         loading="lazy"
                         onClick={() => setSelectedImage(img3)}
                     />
                 </motion.div>
 
-                {/* COLUMN 3 */}
+                {/* COLUMN 3 (original 4th image) */}
                 <motion.div
                     custom={0.3}
                     initial="hidden"
                     whileInView="visible"
                     variants={fadeUp}
                     viewport={{ once: true }}
-                    className="cursor-pointer"
+                    className="cursor-pointer flex-1"
                     onClick={() => setSelectedImage(img4)}
                 >
                     <motion.img
                         whileHover={{ scale: 0.9 }}
                         src={img4}
                         alt="image4"
-                        className="object-cover h-full"
+                        className="object-cover w-full h-[200px] lg:h-full"
                         loading="lazy"
                     />
                 </motion.div>
-
             </div>
 
             {/* LIGHTBOX POPUP */}

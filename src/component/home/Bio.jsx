@@ -3,7 +3,7 @@ import React from "react";
 import golferImg from "../../assets/hero/golfer.png"
 const Bio = () => {
     return (
-        <section className="w-full py-10 px-4 bg-white">
+        <section className="w-full py-10 px-4 bg-white overflow-hidden">
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10">
 
                 {/* Image */}

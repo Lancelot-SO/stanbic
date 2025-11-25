@@ -41,7 +41,7 @@ const TableHero = () => {
             style={{ backgroundImage: `url(${tablebg})` }}
         >
             {/* Positioned weather container */}
-            <div className="absolute top-[30%] right-[220px] w-[300px] h-[300px] flex items-center justify-center">
+            <div className="absolute top-[30%] lg:right-[220px] 4xl:right-[320px] w-[300px] lg:h-[300px] 4xl:h-[400px] flex items-center justify-center">
 
                 {loading || !weather ? (
                     <p className="text-white">Loading...</p>

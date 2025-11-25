@@ -23,10 +23,10 @@ export default function Grid() {
     ];
 
     return (
-        <section className="w-full py-14 px-6 md:px-12 lg:px-[151px]">
+        <section className="w-full py-14 px-6 md:px-12 lg:px-[151px] h-auto lg:h-[756px]">
             <div
                 className="grid grid-cols-1 lg:grid-cols-4 gap-6"
-                style={{ height: "686px" }}
+
             >
                 {/* LEFT SIDE */}
                 <div className="grid grid-rows-2 gap-6">
@@ -90,7 +90,7 @@ function Card({ img, title, index, height }) {
             viewport={{ once: true, amount: 0.2 }}
             whileHover={{ scale: 1.02 }}
             transition={{ type: "spring", stiffness: 200, damping: 20 }}
-            className="rounded-xl overflow-hidden shadow-lg relative group cursor-pointer"
+            className="rounded-xl overflow-hidden shadow-lg relative group cursor-pointer w-full flex justify-center items-center"
             style={{ height }}
         >
             {/* Image */}

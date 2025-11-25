@@ -47,7 +47,7 @@ const Statement = () => {
                     whileInView="visible"
                     transition={{ duration: 0.9 }}
                     viewport={{ once: true }}
-                    className="bg-white overflow-hidden mb-8 flex flex-col md:flex-row h-[290px]"
+                    className="bg-white overflow-hidden mb-8 flex flex-col md:flex-row lg:h-[290px]"
                 >
                     {/* LEFT - TEXT */}
                     <div className="p-6 w-full md:w-1/2">
@@ -84,7 +84,7 @@ const Statement = () => {
                     whileInView="visible"
                     transition={{ duration: 0.9 }}
                     viewport={{ once: true }}
-                    className="bg-white h-[425px] overflow-hidden mb-8 flex flex-col md:flex-row"
+                    className="bg-white lg:h-[425px] overflow-hidden mb-8 flex flex-col md:flex-row"
                 >
                     {/* LEFT - TEXT */}
                     <div className="p-6 w-full md:w-1/2">
@@ -123,7 +123,7 @@ const Statement = () => {
                     whileInView="visible"
                     transition={{ duration: 0.9 }}
                     viewport={{ once: true }}
-                    className="bg-white h-[323px] overflow-hidden flex flex-col md:flex-row"
+                    className="bg-white lg:h-[323px] overflow-hidden flex flex-col md:flex-row"
                 >
                     {/* LEFT - TEXT */}
                     <div className="p-6 w-full md:w-1/2">
