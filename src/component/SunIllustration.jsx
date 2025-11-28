@@ -12,7 +12,7 @@ export default function SunIllustration() {
             xmlns="http://www.w3.org/2000/svg"
             className="drop-shadow-sm"
         >
-            <circle cx="100" cy="100" r="45" fill="#F4C99A" stroke="#F5A623" strokeWidth="2" />
+            <circle cx="100" cy="100" r="45" fill="#facc15 " stroke="#F5A623" strokeWidth="2" />
 
             <g stroke="#F5A623" strokeWidth="3" strokeLinecap="round">
                 <line x1="100" y1="40" x2="100" y2="20" />

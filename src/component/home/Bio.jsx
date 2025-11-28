@@ -3,7 +3,7 @@ import React from "react";
 import golferImg from "../../assets/hero/golfer.png"
 const Bio = () => {
     return (
-        <section className="w-full py-10 px-4 bg-white overflow-hidden">
+        <section className="w-full py-10 px-8 bg-white overflow-hidden">
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10">
 
                 {/* Image */}
@@ -18,7 +18,7 @@ const Bio = () => {
 
                 {/* Text Content */}
                 <div className="w-full md:w-[692px]">
-                    <h2 className="text-3xl md:text-4xl font-bold text-[#0637A2] mb-5 leading-tight">
+                    <h2 className="text-[20px] md:text-4xl font-bold text-[#0637A2] mb-5 leading-tight">
                         THE STANBIC ASANTEHENE GOLF TOURNAMENT
                     </h2>
 

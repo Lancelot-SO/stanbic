@@ -43,7 +43,7 @@ export default function Facts() {
     };
 
     return (
-        <section className="w-full py-14 px-6 md:px-12 lg:px-[151px]">
+        <section className="w-full py-14 px-8 md:px-12 lg:px-[151px]">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
 
                 {/* LEFT – TEXT CONTENT */}
@@ -57,24 +57,24 @@ export default function Facts() {
                     {/* Title */}
                     <motion.h2
                         variants={fadeUp}
-                        className="text-3xl font-bold text-gray-800"
+                        className="text-3xl font-bold text-[#494949]"
                     >
                         6 Fun Facts
                     </motion.h2>
 
                     {/* Facts List */}
-                    <ul className="space-y-4 text-gray-700 leading-relaxed">
+                    <ul className="space-y-4 text-[#595959] leading-relaxed list-disc pl-5">
                         {facts.map((fact, index) => (
                             <motion.li
                                 key={index}
                                 variants={fadeUp}
-                                className="flex gap-3 items-start"
+                                className="list-item flex gap-3 items-start"
                             >
-                                <span className="mt-2 h-2 w-2 bg-gray-500 rounded-full"></span>
                                 <p>{fact}</p>
                             </motion.li>
                         ))}
                     </ul>
+
                 </motion.div>
 
                 {/* RIGHT – IMAGE */}

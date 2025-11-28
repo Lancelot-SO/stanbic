@@ -1,10 +1,30 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
+import { scrollToSection } from "../utils/scrollToSection";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
+
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const handleScrollItinerary = () => {
+        if (location.pathname !== "/") {
+            navigate("/");
+            scrollToSection("itinerary-section");
+        } else {
+            scrollToSection("itinerary-section");
+        }
+    };
+
+    const handleScrollWeather = () => {
+        // Weather exists everywhere → just scroll
+        scrollToSection("weather-section");
+    };
+
+
 
     return (
         <nav className="fixed top-0 left-0 w-full z-50 bg-black/20 backdrop-blur-sm">
@@ -23,6 +43,14 @@ const Navbar = () => {
                         </NavLink>
                     </li>
                     <li>
+                        <button
+                            onClick={handleScrollItinerary}
+                            className="hover:text-blue-300 pb-1"
+                        >
+                            Itinerary
+                        </button>
+                    </li>
+                    <li>
                         <NavLink
                             to="/gallery"
                             className={({ isActive }) =>
@@ -31,6 +59,14 @@ const Navbar = () => {
                         >
                             Gallery
                         </NavLink>
+                    </li>
+                    <li>
+                        <button
+                            onClick={handleScrollWeather}
+                            className="hover:text-blue-300 pb-1"
+                        >
+                            Weather
+                        </button>
                     </li>
 
                     <li>
@@ -48,10 +84,11 @@ const Navbar = () => {
                 {/* HAMBURGER BUTTON (MOBILE) */}
                 <button
                     onClick={() => setIsOpen(true)}
-                    className="md:hidden text-white text-3xl"
+                    className="md:hidden text-white text-3xl ml-auto"
                 >
                     ☰
                 </button>
+
             </div>
 
             {/* MOBILE SLIDE-IN MENU */}
@@ -62,7 +99,7 @@ const Navbar = () => {
                         animate={{ x: "0%" }}
                         exit={{ x: "100%" }}
                         transition={{ duration: 0.4 }}
-                        className="fixed top-0 right-0 w-full h-screen bg-blue-600 z-50 p-8 text-white flex flex-col"
+                        className="fixed top-0 right-0 w-full h-screen bg-[#0637A2] z-50 p-4 text-white flex flex-col"
                     >
                         {/* CLOSE BUTTON */}
                         <button
@@ -72,7 +109,7 @@ const Navbar = () => {
                             ✕
                         </button>
 
-                        <ul className="flex flex-col gap-6 text-2xl font-medium">
+                        <ul className="flex flex-col gap-6 text-2xl font-medium pl-4">
                             <li>
                                 <NavLink
                                     to="/"
@@ -83,12 +120,28 @@ const Navbar = () => {
                             </li>
 
                             <li>
+                                <button
+                                    onClick={() => { handleScrollItinerary(); setIsOpen(false); }}
+                                >
+                                    Itinerary
+                                </button>
+                            </li>
+
+                            <li>
                                 <NavLink
                                     to="/gallery"
                                     onClick={() => setIsOpen(false)}
                                 >
                                     Gallery
                                 </NavLink>
+                            </li>
+
+                            <li>
+                                <button
+                                    onClick={() => { handleScrollWeather(); setIsOpen(false); }}
+                                >
+                                    Weather
+                                </button>
                             </li>
 
                             <li>

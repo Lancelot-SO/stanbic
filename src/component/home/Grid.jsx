@@ -23,7 +23,7 @@ export default function Grid() {
     ];
 
     return (
-        <section className="w-full py-14 px-6 md:px-12 lg:px-[151px] h-auto lg:h-[756px]">
+        <section className="w-full py-14 px-8 md:px-12 lg:px-[151px] h-auto lg:h-[756px]">
             <div
                 className="grid grid-cols-1 lg:grid-cols-4 gap-6"
 
@@ -42,7 +42,7 @@ export default function Grid() {
                 </div>
 
                 {/* CENTER TALL CARD */}
-                <div className="col-span-2">
+                <div className="md:col-span-2">
                     <Card
                         index={2}
                         title={middle.title}

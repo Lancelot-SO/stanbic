@@ -14,7 +14,7 @@ import Accordion from '../component/home/Accordion'
 import Socials from '../component/home/Socials'
 const Home = () => {
     return (
-        <div>
+        <div className="w-full overflow-x-hidden">
             <Hero />
             <Bio />
             <Statement />

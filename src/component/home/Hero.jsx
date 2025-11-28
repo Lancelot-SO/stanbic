@@ -3,10 +3,10 @@ import React, { useState } from 'react';
 import herobg from '../../assets/hero/stanbichero.png';
 import mobilebg from '../../assets/hero/heromobile.png';
 import shieldhero from '../../assets/hero/shieldhero.png';
-import RegisterModal from './RegisterModal';
+// import RegisterModal from './RegisterModal';
 
 const Hero = () => {
-    const [openModal, setOpenModal] = useState(false);
+    // const [openModal, setOpenModal] = useState(false);
 
     return (
         <section className="relative w-full h-[677px] lg:h-[944px] text-white z-10 overflow-hidden">
@@ -45,7 +45,7 @@ const Hero = () => {
                     <span className="font-bold">Royal Golf Club, Kumasi</span>
                 </p>
 
-                <button
+                {/* <button
                     onClick={() => setOpenModal(true)}
                     className="
             lg:mt-8 mt-4 px-8 py-3
@@ -55,10 +55,10 @@ const Hero = () => {
           "
                 >
                     Confirm Your Details
-                </button>
+                </button> */}
             </div>
 
-            <RegisterModal open={openModal} onClose={() => setOpenModal(false)} />
+            {/* <RegisterModal open={openModal} onClose={() => setOpenModal(false)} /> */}
         </section>
     );
 };

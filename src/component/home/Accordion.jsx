@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import img1 from "../../assets/hero/f1.png";
 import img2 from "../../assets/hero/f2.png";

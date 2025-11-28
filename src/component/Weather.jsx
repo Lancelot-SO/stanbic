@@ -64,45 +64,48 @@ export default function WeatherApp() {
         return <p className="text-center text-gray-500">Loading weather...</p>;
 
     return (
-        <div className="max-w-5xl my-10 mx-auto px-4">
-            <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-10">
+        <div id="weather-section">
+            <div className={`md:max-w-5xl my-10 md:mx-auto mx-8 px-2 py-6 rounded-lg md:shadow-lg 
+        ${weather.temp >= 27 ? "bg-gradient-to-r from-yellow-50 via-yellow-100 to-yellow-400/30" : "bg-gradient-to-r from-gray-50 via-gray-100 to-gray-300"}`}>
+                <div className="flex flex-col md:flex-row items-start lg:items-center justify-between gap-10">
 
-                {/* LEFT SIDE */}
-                <div className="flex-1">
-                    <h1 className="text-7xl font-bold mb-2">{weather.temp}°</h1>
-                    <p className="text-base">{weather.city}, {weather.country}</p>
+                    {/* LEFT SIDE */}
+                    <div className="flex-1">
+                        <h1 className="text-7xl font-bold mb-2">{weather.temp}°</h1>
+                        <p className="text-base">{weather.city}, {weather.country}</p>
 
-                    {/* HOURLY FORECAST */}
-                    <div className="mt-10 flex gap-8 flex-wrap">
-                        {hourly.map((h, index) => (
-                            <div key={index} className="text-center">
-                                <p className="text-sm mb-3">{h.temp}°</p>
-                                <div className="flex justify-center mb-3">
-                                    <WeatherIcon type={h.icon} />
+                        {/* HOURLY FORECAST */}
+                        <div className="mt-10 flex gap-8 flex-wrap">
+                            {hourly.map((h, index) => (
+                                <div key={index} className="text-center">
+                                    <p className="text-sm mb-3">{h.temp}°</p>
+                                    <div className="flex justify-center mb-3">
+                                        <WeatherIcon type={h.icon} />
+                                    </div>
+                                    <p className="text-xs text-gray-500">{h.time}</p>
                                 </div>
-                                <p className="text-xs text-gray-500">{h.time}</p>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
                     </div>
-                </div>
 
-                {/* RIGHT SIDE */}
-                <div className="flex flex-col items-center lg:items-end gap-4">
-                    {/* 🌡 Temperature-based image */}
-                    {weather.temp >= 27 ? (
-                        <SunIllustration />
-                    ) : (
-                        <Cloud size={160} className="text-gray-400 drop-shadow-md" />
-                    )}
+                    {/* RIGHT SIDE */}
+                    <div className="flex flex-col items-center lg:items-end gap-4">
+                        {/* 🌡 Temperature-based image */}
+                        {weather.temp >= 27 ? (
+                            <SunIllustration />
+                        ) : (
+                            <Cloud size={160} className="text-gray-400 drop-shadow-md" />
+                        )}
 
-                    <div className="flex items-center gap-2 text-sm text-gray-500">
-                        <span>Last Updated: {new Date().toLocaleTimeString()}</span>
-                        <button onClick={fetchWeather} className="hover:opacity-70">
-                            <RefreshCw size={16} />
-                        </button>
+                        <div className="flex items-center gap-2 text-sm text-gray-500">
+                            <span>Last Updated: {new Date().toLocaleTimeString()}</span>
+                            <button onClick={fetchWeather} className="hover:opacity-70">
+                                <RefreshCw size={16} />
+                            </button>
+                        </div>
                     </div>
-                </div>
 
+                </div>
             </div>
         </div>
     );

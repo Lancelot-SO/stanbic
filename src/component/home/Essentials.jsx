@@ -28,25 +28,25 @@ export default function Essentials() {
 
     return (
         <motion.section
-            className="w-full py-16 px-4 md:px-12 lg:px-[151px] flex flex-col lg:flex-row gap-10"
+            className="w-full py-16 px-8 md:px-12 lg:px-[151px] flex flex-col lg:flex-row gap-20"
             variants={container}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.2 }}
         >
             {/* Images */}
-            <motion.div className="flex flex-row gap-4 items-center lg:items-start">
+            <motion.div className="flex flex-row gap-5 items-center px-2 lg:items-start">
                 <motion.img
                     src={ess}
                     alt="Sunglasses on wood"
-                    className="lg:max-w-[255px] w-[130px]  lg:h-[395px] h-[230px] object-cover shadow-md rounded-xl"
+                    className="lg:w-[255px] w-[130px] lg:h-[395px] h-[230px] object-cover shadow-md rounded-xl"
                     variants={fadeUp}
                     whileHover={{ scale: 1.03 }}
                 />
                 <motion.img
                     src={ess1}
                     alt="Golf bag outdoors"
-                    className="lg:max-w-[255px] w-[130px]  lg:h-[395px] h-[230px] object-cover shadow-md mt-20 lg:mt-[70px] rounded-xl"
+                    className="lg:w-[255px] w-[130px]  lg:h-[395px] h-[230px] object-cover shadow-md mt-20 lg:mt-[70px] rounded-xl"
                     variants={fadeUp}
                     whileHover={{ scale: 1.03 }}
                 />
@@ -54,7 +54,7 @@ export default function Essentials() {
 
             {/* Text Content */}
             <motion.div variants={fadeUp} className="space-y-4 flex-1">
-                <h2 className="text-3xl md:text-[40px] font-bold text-gray-800 text-center lg:text-left">
+                <h2 className="text-[20px] md:text-[40px] font-bold text-gray-800 text-left">
                     Don’t Forget the Essentials
                 </h2>
 

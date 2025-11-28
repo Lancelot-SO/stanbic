@@ -1,6 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from "react";
 import tablebg from "../../assets/table/tablebg.png";
+import tablemobile from "../../assets/table/bgmobile.png";
 import { Sun, Cloud } from "lucide-react";
 
 const api = {
@@ -36,34 +37,43 @@ const TableHero = () => {
     }, []);
 
     return (
-        <section
-            className="relative w-full h-[685px] bg-cover bg-center"
-            style={{ backgroundImage: `url(${tablebg})` }}
-        >
-            {/* Positioned weather container */}
-            <div className="absolute top-[30%] lg:right-[220px] 4xl:right-[320px] w-[300px] lg:h-[300px] 4xl:h-[400px] flex items-center justify-center">
+        <section className="relative w-full h-[685px] overflow-hidden">
+            {/* Background images */}
+            <img
+                src={tablebg}
+                alt="Desktop Background"
+                className="hidden md:block w-full h-full object-cover"
+            />
+            <img
+                src={tablemobile}
+                alt="Mobile Background"
+                className="block md:hidden w-full h-full object-cover"
+            />
 
+            {/* Positioned weather container */}
+            <div className="absolute md:top-[30%] top-[50%] lg:right-[220px] right-[13%] 4xl:right-[320px] w-[300px] lg:h-[300px] 4xl:h-[400px] flex items-center justify-center">
                 {loading || !weather ? (
                     <p className="text-white">Loading...</p>
                 ) : (
                     <div className="flex flex-col items-center justify-center text-white">
-
                         {/* Temperature */}
-                        <h1 className="text-7xl font-bold mb-1">
-                            {weather.temp}°
-                        </h1>
+                        <h1 className="text-7xl font-bold mb-1">{weather.temp}°</h1>
 
                         {/* City */}
-                        <p className="text-lg">
-                            {weather.city}, Ghana
-                        </p>
+                        <p className="text-lg">{weather.city}, Ghana</p>
 
                         {/* Weather icon */}
                         <div className="mt-6">
                             {weather.temp >= 27 ? (
-                                <Sun size={90} className="text-yellow-300 drop-shadow-lg" />
+                                <Sun
+                                    size={90}
+                                    className="text-yellow-300 drop-shadow-lg"
+                                />
                             ) : (
-                                <Cloud size={90} className="text-gray-200 drop-shadow-lg" />
+                                <Cloud
+                                    size={90}
+                                    className="text-gray-200 drop-shadow-lg"
+                                />
                             )}
                         </div>
                     </div>

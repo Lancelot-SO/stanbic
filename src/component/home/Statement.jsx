@@ -12,7 +12,7 @@ const fadeUp = {
 
 const Statement = () => {
     return (
-        <section className="w-full py-16 px-6 md:px-16 bg-white">
+        <section id="itinerary-section" className="w-full py-16 px-8 md:px-16 bg-white">
             <div className="max-w-7xl mx-auto">
 
                 {/* SECTION TITLE */}
@@ -22,7 +22,7 @@ const Statement = () => {
                     whileInView="visible"
                     transition={{ duration: 0.9 }}
                     viewport={{ once: true }}
-                    className="text-center text-3xl md:text-4xl font-bold text-[#003087] mb-3"
+                    className="md:text-center text-[20px] md:text-4xl font-bold text-[#003087] mb-3"
                 >
                     THE ROYAL GOLF CLASSIC EXPERIENCE
                 </motion.h2>
@@ -33,7 +33,7 @@ const Statement = () => {
                     whileInView="visible"
                     transition={{ duration: 0.9, delay: 0.2 }}
                     viewport={{ once: true }}
-                    className="text-center text-[#003087] max-w-3xl mx-auto mb-10"
+                    className="md:text-center text-[#003087] max-w-3xl mx-auto mb-10"
                 >
                     An exclusive tournament hosted by Stanbic Bank in collaboration with His Majesty
                     Otumfuo Osei Tutu II celebrating excellence, sportsmanship, and lasting partnerships.
@@ -47,7 +47,7 @@ const Statement = () => {
                     whileInView="visible"
                     transition={{ duration: 0.9 }}
                     viewport={{ once: true }}
-                    className="bg-white overflow-hidden mb-8 flex flex-col md:flex-row lg:h-[290px]"
+                    className="bg-[#FCFAFA] overflow-hidden mb-8 flex flex-col md:flex-row lg:h-[290px]"
                 >
                     {/* LEFT - TEXT */}
                     <div className="p-6 w-full md:w-1/2">
@@ -84,7 +84,7 @@ const Statement = () => {
                     whileInView="visible"
                     transition={{ duration: 0.9 }}
                     viewport={{ once: true }}
-                    className="bg-white lg:h-[425px] overflow-hidden mb-8 flex flex-col md:flex-row"
+                    className="bg-[#FCFAFA] lg:h-[425px] overflow-hidden mb-8 flex flex-col md:flex-row"
                 >
                     {/* LEFT - TEXT */}
                     <div className="p-6 w-full md:w-1/2">
@@ -123,7 +123,7 @@ const Statement = () => {
                     whileInView="visible"
                     transition={{ duration: 0.9 }}
                     viewport={{ once: true }}
-                    className="bg-white lg:h-[323px] overflow-hidden flex flex-col md:flex-row"
+                    className="bg-[#FCFAFA] lg:h-[323px] overflow-hidden flex flex-col md:flex-row"
                 >
                     {/* LEFT - TEXT */}
                     <div className="p-6 w-full md:w-1/2">
