@@ -1,23 +1,44 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
-import golferImg from "../../assets/hero/golfer.png"
+import { motion } from "framer-motion";
+import golferImg from "../../assets/hero/golfer.png";
+
+const fadeUp = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0 },
+};
+
 const Bio = () => {
     return (
         <section className="w-full py-10 px-8 bg-white overflow-hidden">
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10">
 
                 {/* Image */}
-                <div className="w-full md:w-1/2 flex justify-start">
+                <motion.div
+                    className="w-full md:w-1/2 flex justify-start"
+                    variants={fadeUp}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ duration: 0.8 }}
+                >
                     <img
                         src={golferImg}
                         alt="Golfer"
                         className="w-[350px] md:w-[480px] object-contain"
-                        loading='lazy'
+                        loading="lazy"
                     />
-                </div>
+                </motion.div>
 
                 {/* Text Content */}
-                <div className="w-full md:w-[692px]">
+                <motion.div
+                    className="w-full md:w-[692px]"
+                    variants={fadeUp}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ duration: 0.8, delay: 0.3 }}
+                >
                     <h2 className="text-[20px] md:text-4xl font-bold text-[#0637A2] mb-5 leading-tight">
                         THE STANBIC ASANTEHENE GOLF TOURNAMENT
                     </h2>
@@ -35,7 +56,7 @@ const Bio = () => {
                         and community, creating meaningful connections on and off the
                         course.
                     </p>
-                </div>
+                </motion.div>
 
             </div>
         </section>

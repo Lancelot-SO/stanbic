@@ -22,7 +22,7 @@ const Statement = () => {
                     whileInView="visible"
                     transition={{ duration: 0.9 }}
                     viewport={{ once: true }}
-                    className="md:text-center text-[20px] md:text-4xl font-bold text-[#003087] mb-3"
+                    className="md:text-center text-[20px] md:text-4xl font-bold text-[#0637A2] mb-3"
                 >
                     THE ROYAL GOLF CLASSIC EXPERIENCE
                 </motion.h2>
@@ -33,7 +33,7 @@ const Statement = () => {
                     whileInView="visible"
                     transition={{ duration: 0.9, delay: 0.2 }}
                     viewport={{ once: true }}
-                    className="md:text-center text-[#003087] max-w-3xl mx-auto mb-10"
+                    className="md:text-center text-[#0637A2] max-w-3xl mx-auto mb-10"
                 >
                     An exclusive tournament hosted by Stanbic Bank in collaboration with His Majesty
                     Otumfuo Osei Tutu II celebrating excellence, sportsmanship, and lasting partnerships.

@@ -22,17 +22,23 @@ export default function Slider() {
         const handleResize = () => {
             setIsMobile(window.innerWidth <= 768);
         };
-
         handleResize(); // Check on mount
         window.addEventListener("resize", handleResize);
-
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
     const imagesDesktop = [Slider1, Slider2, Slider3, Slider4];
     const imagesMobile = [Slidermobile1, Slidermobile2, Slidermobile3, Slidermobile4];
-
     const images = isMobile ? imagesMobile : imagesDesktop;
+
+    // Autoplay every 10 seconds
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentIndex((prev) => (prev + 1) % images.length);
+        }, 10000); // 10000ms = 10s
+
+        return () => clearInterval(interval); // Clean up
+    }, [images.length]);
 
     // Snap to the closest slide after drag ends
     const handleDragEnd = (_, info) => {
@@ -84,8 +90,7 @@ export default function Slider() {
                         key={i}
                         onClick={() => setCurrentIndex(i)}
                         className={`w-3 h-3 rounded-full border transition
-                            ${currentIndex === i ? "bg-white" : "bg-transparent"}
-                        `}
+                            ${currentIndex === i ? "bg-white" : "bg-transparent"}`}
                     />
                 ))}
             </div>
