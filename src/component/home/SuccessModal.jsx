@@ -3,41 +3,37 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import icon from "../../assets/hero/doneshield.png"
 
-const SuccessModal = ({ onClose }) => {
+const SuccessModal = ({ onDone }) => {
     const [closing, setClosing] = useState(false);
 
-    const handleDone = () => {
+    const handleDoneClick = async () => {
         setClosing(true);
 
-        setTimeout(() => {
-            onClose(); // trigger close after animation
-        }, 250); // matches animation duration
+        setTimeout(async () => {
+            await onDone(); // send to API
+        }, 250);
     };
+
     return (
         <div className="fixed inset-0 bg-black bg-opacity-60 flex justify-center items-center z-50">
             <div className={`bg-white rounded-lg p-5 w-[589px] text-center shadow-lg 
-                    ${closing ? "animate-fade-out" : "animate-fade-in"}
-                `}>
+                ${closing ? "animate-fade-out" : "animate-fade-in"}`}>
 
-                {/* Icon */}
                 <div className="flex justify-center mb-4">
-                    <img src={icon} alt="Success Icon" loading="lazy" />
+                    <img src={icon} alt="Success Icon" />
                 </div>
 
-                {/* Heading */}
                 <h2 className="lg:text-[40px] text-[24px] font-bold text-[#0637A2] mb-2">
                     Thank you for registering!
                 </h2>
 
-                {/* Subtext */}
                 <p className="text-[#0637A2] lg:text-[36px] text-[20px] mb-6">
-                    Your account has been created successfully.
+                    Your registration has been received.
                 </p>
 
-                {/* Button */}
                 <button
-                    onClick={handleDone}
-                    className="bg-[#0637A2] text-white px-8 py-2 rounded hover:bg-blue-700"
+                    onClick={handleDoneClick}
+                    className="bg-[#0637A2] text-white px-8 py-2 rounded"
                 >
                     Done
                 </button>
@@ -47,7 +43,7 @@ const SuccessModal = ({ onClose }) => {
 };
 
 SuccessModal.propTypes = {
-    onClose: PropTypes.func.isRequired,
+    onDone: PropTypes.func.isRequired,
 };
 
 export default SuccessModal;
