@@ -54,12 +54,12 @@ export default function Essentials() {
 
             {/* Text Content */}
             <motion.div variants={fadeUp} className="space-y-4 flex-1">
-                <h2 className="text-[20px] md:text-[40px] font-bold text-gray-800 text-left">
+                <h2 className="text-[20px] md:text-[40px] font-bold text-[#494949] text-left">
                     Don’t Forget the Essentials
                 </h2>
 
                 <motion.ul
-                    className="list-disc pl-5 space-y-4 text-gray-700 text-base"
+                    className="list-disc pl-5 space-y-4 text-gray-700 text-[16px] font-libre"
                     variants={container}
                 >
                     {[

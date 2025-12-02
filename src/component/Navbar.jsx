@@ -31,7 +31,7 @@ const Navbar = () => {
             <div className="max-w-7xl mx-auto flex items-center justify-between px-8 py-5 text-white">
 
                 {/* LEFT MENU */}
-                <ul className="hidden md:flex gap-8 font-medium">
+                <ul className="hidden md:flex gap-8 font-normal font-roboto">
                     <li>
                         <NavLink
                             to="/"
@@ -109,7 +109,7 @@ const Navbar = () => {
                             ✕
                         </button>
 
-                        <ul className="flex flex-col gap-6 text-2xl font-medium pl-4">
+                        <ul className="flex flex-col gap-6 text-2xl font-normal font-roboto pl-4">
                             <li>
                                 <NavLink
                                     to="/"

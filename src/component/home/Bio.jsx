@@ -39,17 +39,17 @@ const Bio = () => {
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.8, delay: 0.3 }}
                 >
-                    <h2 className="text-[20px] md:text-4xl font-bold text-[#0637A2] mb-5 leading-tight">
+                    <h2 className="text-[20px] md:text-[32px] font-bold text-[#0637A2] mb-5 leading-tight">
                         THE STANBIC ASANTEHENE GOLF TOURNAMENT
                     </h2>
 
-                    <p className="text-[#0637A2] leading-relaxed mb-4">
+                    <p className="text-[#0637A2] leading-relaxed mb-4 text-[16px] font-libre">
                         The Stanbic Asantehene Golf Tournament is a premier annual event
                         hosted by Stanbic Bank in partnership with the Royal Golf Club,
                         Kumasi, under the patronage of His Majesty Otumfuo Osei Tutu II.
                     </p>
 
-                    <p className="text-[#0637A2] leading-relaxed">
+                    <p className="text-[#0637A2] leading-relaxed text-[16px] font-libre">
                         For over 15 years, it has united business leaders, clients, and golf
                         enthusiasts in a weekend of sport, networking, and celebration. The
                         tournament reflects Stanbic’s commitment to excellence, partnership,

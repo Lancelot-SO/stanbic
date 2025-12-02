@@ -71,14 +71,14 @@ export default function WeatherApp() {
 
                     {/* LEFT SIDE */}
                     <div className="flex-1">
-                        <h1 className="text-7xl font-bold mb-2">{weather.temp}°</h1>
-                        <p className="text-base">{weather.city}, {weather.country}</p>
+                        <h1 className="text-[96px] font-bold">{weather.temp}°</h1>
+                        <p className="text-[20px] text-[#AEAEAE] font-normal">{weather.city}, {weather.country}</p>
 
                         {/* HOURLY FORECAST */}
                         <div className="mt-10 flex gap-8 flex-wrap">
                             {hourly.map((h, index) => (
                                 <div key={index} className="text-center">
-                                    <p className="text-sm mb-3">{h.temp}°</p>
+                                    <p className="text-sm mb-3 text-[#3F3F3F]">{h.temp}°</p>
                                     <div className="flex justify-center mb-3">
                                         <WeatherIcon type={h.icon} />
                                     </div>

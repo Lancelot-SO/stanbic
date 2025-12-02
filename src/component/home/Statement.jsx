@@ -22,7 +22,7 @@ const Statement = () => {
                     whileInView="visible"
                     transition={{ duration: 0.9 }}
                     viewport={{ once: true }}
-                    className="md:text-center text-[20px] md:text-4xl font-bold text-[#0637A2] mb-3"
+                    className="md:text-center text-[20px] md:text-[32px] font-bold text-[#0637A2] mb-3"
                 >
                     THE ROYAL GOLF CLASSIC EXPERIENCE
                 </motion.h2>
@@ -33,7 +33,7 @@ const Statement = () => {
                     whileInView="visible"
                     transition={{ duration: 0.9, delay: 0.2 }}
                     viewport={{ once: true }}
-                    className="md:text-center text-[#0637A2] max-w-3xl mx-auto mb-10"
+                    className="md:text-center text-[#0637A2] font-libre text-[16px] max-w-3xl mx-auto mb-10"
                 >
                     An exclusive tournament hosted by Stanbic Bank in collaboration with His Majesty
                     Otumfuo Osei Tutu II celebrating excellence, sportsmanship, and lasting partnerships.
@@ -73,7 +73,7 @@ const Statement = () => {
                     <img
                         src={img1}
                         alt="event"
-                        className="w-full md:w-1/2 h-full object-cover"
+                        className="w-full md:w-1/2 h-full object-cover rounded-r-[10px]"
                     />
                 </motion.div>
 
@@ -112,7 +112,7 @@ const Statement = () => {
                     <img
                         src={img2}
                         alt="event"
-                        className="w-full md:w-1/2 h-full object-cover"
+                        className="w-full md:w-1/2 h-full object-cover rounded-r-[10px]"
                     />
                 </motion.div>
 
@@ -147,7 +147,7 @@ const Statement = () => {
                     <img
                         src={img3}
                         alt="event"
-                        className="w-full md:w-1/2 h-full object-cover"
+                        className="w-full md:w-1/2 h-full object-cover rounded-r-[10px]"
                     />
                 </motion.div>
             </div>

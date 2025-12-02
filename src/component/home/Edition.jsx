@@ -21,12 +21,12 @@ const Edition = () => {
                 viewport={{ once: true }}
                 className="max-w-5xl text-center text-white"
             >
-                <h1 className="text-[20px] md:text-4xl md:font-extrabold font-bold mb-6 leading-tight md:text-center text-left">
+                <h1 className="text-[20px] md:text-[40px] md:font-extrabold font-bold mb-6 leading-tight md:text-center text-left">
                     WELCOME TO THE 7TH<br className="md:hidden block" /> EDITION<br className="hidden md:block" />
                     OF THE OTUMFUO GOLF TOURNAMENT
                 </h1>
 
-                <p className="text-sm md:text-base leading-relaxed mb-8 md:text-center text-left">
+                <p className="text-[16px] font-libre md:text-base leading-relaxed mb-8 md:text-center text-left">
                     Stanbic Bank is the title sponsor of the 7th Otumfuo Invitational Golf Tournament Championship 2025,
                     celebrating the 26th anniversary of the Asantehene and the bank. The event aims to connect with
                     clients, and the golfing community, and foster growth opportunities. It also includes side activities
@@ -41,7 +41,7 @@ const Edition = () => {
                         onClick={() => setOpenModal(true)}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.97 }}
-                        className="px-8 py-3 bg-white text-[#0033A1] font-semibold rounded-[4px] shadow-lg hover:bg-gray-200 transition"
+                        className="px-8 py-3 text-[16px] font-libre bg-white text-[#0033A1] font-semibold rounded-[4px] shadow-lg hover:bg-gray-200 transition"
                     >
                         Confirm Your Details
                     </motion.button>

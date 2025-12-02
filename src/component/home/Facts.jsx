@@ -68,7 +68,7 @@ export default function Facts() {
                             <motion.li
                                 key={index}
                                 variants={fadeUp}
-                                className="list-item flex gap-3 items-start"
+                                className="list-item gap-3 items-start"
                             >
                                 <p>{fact}</p>
                             </motion.li>

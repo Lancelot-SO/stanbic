@@ -51,13 +51,13 @@ const Hero = () => {
                 />
 
                 <motion.p
-                    className="text-lg font-medium text-center lg:text-left"
+                    className="md:text-[24px] text-[16px] font-normal text-center lg:text-left"
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 1, delay: 1, ease: 'easeOut' }}
                 >
-                    December 12th–14th, 2025 <br />
-                    <span className="font-bold">Royal Golf Club, Kumasi</span>
+                    <b>December 12th–14th</b>, 2025 <br />
+                    <span className="font-normal"><b>Royal Golf Club</b>, Kumasi</span>
                 </motion.p>
             </motion.div>
         </section>
