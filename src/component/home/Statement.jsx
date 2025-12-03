@@ -52,7 +52,7 @@ const Statement = () => {
                     {/* LEFT - TEXT */}
                     <div className="p-6 w-full md:w-1/2">
                         <p className="text-sm uppercase font-semibold text-[#0637A2]">
-                            Fri Dec
+                            Friday December
                         </p>
                         <h3 className="text-[48px] font-bold text-[#003087]">12TH</h3>
 
@@ -73,7 +73,7 @@ const Statement = () => {
                     <img
                         src={img1}
                         alt="event"
-                        className="w-full md:w-1/2 h-full object-cover rounded-r-[10px]"
+                        className="w-full md:w-1/2 h-full object-cover rounded-[10px]"
                     />
                 </motion.div>
 
@@ -89,7 +89,7 @@ const Statement = () => {
                     {/* LEFT - TEXT */}
                     <div className="p-6 w-full md:w-1/2">
                         <p className="text-sm uppercase font-semibold text-[#0637A2]">
-                            Sat Dec
+                            Saturday December
                         </p>
                         <h3 className="text-[48px] font-bold text-[#003087]">13TH</h3>
 
@@ -112,7 +112,7 @@ const Statement = () => {
                     <img
                         src={img2}
                         alt="event"
-                        className="w-full md:w-1/2 h-full object-cover rounded-r-[10px]"
+                        className="w-full md:w-1/2 h-full object-cover rounded-[10px]"
                     />
                 </motion.div>
 
@@ -128,7 +128,7 @@ const Statement = () => {
                     {/* LEFT - TEXT */}
                     <div className="p-6 w-full md:w-1/2">
                         <p className="text-sm uppercase font-semibold text-[#0637A2]">
-                            Sun Dec
+                            Sunday December
                         </p>
                         <h3 className="text-[48px] font-bold text-[#003087]">14TH</h3>
 
@@ -147,7 +147,7 @@ const Statement = () => {
                     <img
                         src={img3}
                         alt="event"
-                        className="w-full md:w-1/2 h-full object-cover rounded-r-[10px]"
+                        className="w-full md:w-1/2 h-full object-cover rounded-[10px]"
                     />
                 </motion.div>
             </div>
