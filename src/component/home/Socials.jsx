@@ -18,7 +18,7 @@ export default function Socials() {
             {/* Social Icons */}
             <div className="flex gap-6 relative z-10">
                 <a
-                    href="https://www.linkedin.com"
+                    href="https://www.linkedin.com/company/stanbicbankgh/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-[36px] h-[36px] bg-[#0637A2] text-white rounded-full flex items-center justify-center"
@@ -27,7 +27,7 @@ export default function Socials() {
                 </a>
 
                 <a
-                    href="https://www.facebook.com"
+                    href="https://www.facebook.com/share/1DErT3E4c2/?mibextid=wwXIfr"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-[36px] h-[36px] bg-[#0637A2] text-white rounded-full flex items-center justify-center"
@@ -36,7 +36,7 @@ export default function Socials() {
                 </a>
 
                 <a
-                    href="https://www.instagram.com"
+                    href="https://www.instagram.com/stanbicbankgh/?igsh=MWhqZ2pvMTJzMnY3dw%3D%3D#"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-[36px] h-[36px] bg-[#0637A2] text-white rounded-full flex items-center justify-center"
@@ -45,7 +45,7 @@ export default function Socials() {
                 </a>
 
                 <a
-                    href="https://twitter.com"
+                    href="https://x.com/stanbicbankgh?s=21"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-[36px] h-[36px] bg-[#0637A2] text-white rounded-full flex items-center justify-center"
