@@ -3,7 +3,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import herobg from '../../assets/hero/stanbichero.png';
 import mobilebg from '../../assets/hero/heromobile.png';
-import shieldhero from '../../assets/hero/shieldhero.png';
+import shieldhero from '../../assets/hero/newshield.png';
 
 const Hero = () => {
     return (
@@ -31,7 +31,7 @@ const Hero = () => {
                 className="
           absolute
           lg:left-[95px] 4xl:left-[250px] left-[20%]
-          lg:top-[140px] 4xl:top-[200px] top-[17%]
+          lg:top-[140px] 4xl:top-[200px] top-[15%]
           -translate-y-1/2
           lg:h-[500px] lg:w-[459px]
           flex flex-col items-center justify-center
@@ -44,14 +44,14 @@ const Hero = () => {
                 <motion.img
                     src={shieldhero}
                     alt="shield"
-                    className="lg:w-[459px] w-[219px] lg:h-[282px] h-[135px] lg:mb-6 mb-2"
+                    className="lg:w-[295px] w-[157px] lg:h-[317px] h-[169px] lg:mb-6 mb-2"
                     initial={{ y: -30, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 1, delay: 0.8, ease: 'easeOut' }}
                 />
 
                 <motion.p
-                    className="md:text-[24px] text-[16px] font-normal text-center lg:text-left"
+                    className="md:text-[20px] text-[16px] font-normal text-center lg:text-left"
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 1, delay: 1, ease: 'easeOut' }}
